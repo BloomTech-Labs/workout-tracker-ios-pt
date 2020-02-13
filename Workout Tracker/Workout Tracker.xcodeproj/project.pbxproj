@@ -13,6 +13,9 @@
 		EF50C17C23F4FF5200B16179 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C17A23F4FF5200B16179 /* Main.storyboard */; };
 		EF50C17E23F4FF5200B16179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF50C17D23F4FF5200B16179 /* Assets.xcassets */; };
 		EF50C18123F4FF5200B16179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C17F23F4FF5200B16179 /* LaunchScreen.storyboard */; };
+		EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18D23F5084A00B16179 /* Signup.storyboard */; };
+		EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18F23F5087A00B16179 /* SignIn.storyboard */; };
+		EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C19123F5089C00B16179 /* Dashboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		EF50C17D23F4FF5200B16179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF50C18023F4FF5200B16179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF50C18223F4FF5200B16179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF50C18D23F5084A00B16179 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		EF50C18F23F5087A00B16179 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,60 @@
 		EF50C17323F4FF5200B16179 /* Workout Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				EF50C17423F4FF5200B16179 /* AppDelegate.swift */,
-				EF50C17623F4FF5200B16179 /* SceneDelegate.swift */,
-				EF50C17823F4FF5200B16179 /* ViewController.swift */,
-				EF50C17A23F4FF5200B16179 /* Main.storyboard */,
-				EF50C17D23F4FF5200B16179 /* Assets.xcassets */,
-				EF50C17F23F4FF5200B16179 /* LaunchScreen.storyboard */,
+				EF50C18A23F505E400B16179 /* Model */,
+				EF50C18B23F5061300B16179 /* Controller */,
+				EF50C18C23F5066000B16179 /* View Controllers */,
+				EF50C18823F5009700B16179 /* Storyboards */,
+				EF50C18923F504D800B16179 /* Resources */,
 				EF50C18223F4FF5200B16179 /* Info.plist */,
 			);
 			path = "Workout Tracker";
+			sourceTree = "<group>";
+		};
+		EF50C18823F5009700B16179 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF50C17F23F4FF5200B16179 /* LaunchScreen.storyboard */,
+				EF50C17A23F4FF5200B16179 /* Main.storyboard */,
+				EF50C18F23F5087A00B16179 /* SignIn.storyboard */,
+				EF50C18D23F5084A00B16179 /* Signup.storyboard */,
+				EF50C19123F5089C00B16179 /* Dashboard.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		EF50C18923F504D800B16179 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EF50C17423F4FF5200B16179 /* AppDelegate.swift */,
+				EF50C17623F4FF5200B16179 /* SceneDelegate.swift */,
+				EF50C17D23F4FF5200B16179 /* Assets.xcassets */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EF50C18A23F505E400B16179 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF50C18B23F5061300B16179 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		EF50C18C23F5066000B16179 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF50C17823F4FF5200B16179 /* ViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +177,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF50C18123F4FF5200B16179 /* LaunchScreen.storyboard in Resources */,
+				EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */,
+				EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */,
 				EF50C17E23F4FF5200B16179 /* Assets.xcassets in Resources */,
+				EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */,
 				EF50C17C23F4FF5200B16179 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,7 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaLabsPT7.Workout-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -310,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lambdaLabsPT7.Workout-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
