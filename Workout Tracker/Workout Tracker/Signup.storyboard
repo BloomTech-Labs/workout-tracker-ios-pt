@@ -162,7 +162,7 @@
                                         <state key="normal" title="Sign in here"/>
                                         <connections>
                                             <action selector="alreadyUserBtnPressed:" destination="rNR-yf-2DD" eventType="touchUpInside" id="9bf-TL-G4a"/>
-                                            <segue destination="PcZ-kE-L4s" kind="show" identifier="alreadyAUserSegue" id="dX4-DJ-4YE"/>
+                                            <segue destination="PcZ-kE-L4s" kind="presentation" identifier="alreadyAUserSegue" modalPresentationStyle="fullScreen" id="dX4-DJ-4YE"/>
                                         </connections>
                                     </button>
                                 </subviews>

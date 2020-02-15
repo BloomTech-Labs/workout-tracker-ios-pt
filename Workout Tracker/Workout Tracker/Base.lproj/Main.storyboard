@@ -14,7 +14,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Was-eD-StS">
+                                <rect key="frame" x="167" y="433" width="80" height="30"/>
+                                <state key="normal" title="Get Started"/>
+                                <connections>
+                                    <segue destination="OXW-x4-lnn" kind="presentation" modalPresentationStyle="fullScreen" id="2CX-LO-iFG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Was-eD-StS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Fs-9P-3DR"/>
+                            <constraint firstItem="Was-eD-StS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PF0-98-UmY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -25,10 +38,12 @@
         <!--Signup-->
         <scene sceneID="1Aa-v5-TlD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Signup" id="OXW-x4-lnn" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Signup" id="OXW-x4-lnn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4mY-UP-Anj"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5j-Nh-TTo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1014" y="47"/>
+            <point key="canvasLocation" x="675" y="41"/>
         </scene>
     </scenes>
 </document>
