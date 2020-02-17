@@ -57,6 +57,7 @@
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <action selector="signUpBtnPressed:" destination="rNR-yf-2DD" eventType="touchUpInside" id="Sh2-Dn-17W"/>
+                                    <segue destination="73Z-dD-0bU" kind="presentation" id="sQz-WJ-Gqc"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-hm-UYc" userLabel="__or__ StackView">
@@ -227,7 +228,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBF-X6-21b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="38"/>
+            <point key="canvasLocation" x="591" y="289"/>
+        </scene>
+        <!--Onboarding-->
+        <scene sceneID="c4Z-7v-lD7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Onboarding" id="73Z-dD-0bU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SS-IS-RJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607" y="102"/>
         </scene>
     </scenes>
 </document>
