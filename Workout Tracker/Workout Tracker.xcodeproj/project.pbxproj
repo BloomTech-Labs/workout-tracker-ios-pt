@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
 		EF50C17623F4FF5200B16179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Workout Tracker/SceneDelegate.swift"; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				EF50C17823F4FF5200B16179 /* ViewController.swift */,
 				EF7644C223F8464900B9D1F3 /* SignupVC.swift */,
 				EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */,
+				A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */,
+				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
 				EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */,
