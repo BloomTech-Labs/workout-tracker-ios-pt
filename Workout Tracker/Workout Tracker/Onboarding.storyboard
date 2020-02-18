@@ -14,37 +14,10 @@
                     <view key="view" contentMode="scaleToFill" id="rBw-yd-rTM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <userGuides>
-                            <userLayoutGuide location="647" affinity="minY"/>
-                            <userLayoutGuide location="209" affinity="minX"/>
-                            <userLayoutGuide location="448" affinity="minY"/>
-                        </userGuides>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVQ-4U-ApV">
                                 <rect key="frame" x="0.0" y="362" width="414" height="500"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's get to know you more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoq-ih-LPc">
-                                        <rect key="frame" x="94" y="43" width="207" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's your preferred time of the day for working out?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lul-m7-SRC">
-                                        <rect key="frame" x="77" y="86" width="286" height="61"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-oO-C7N">
-                                        <rect key="frame" x="170" y="274" width="79" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Evening">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <state key="selected" image="radiounchecked1"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-gC-hqr">
                                         <rect key="frame" x="154" y="396" width="103" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,36 +26,116 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-vP-h99">
-                                        <rect key="frame" x="146" y="217" width="123" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" title="Afternoon">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <state key="selected" image="radiounchecked1"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQP-NC-cTN">
-                                        <rect key="frame" x="146" y="155" width="123" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" title="Morning">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <state key="selected" image="radiounchecked1"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tt-Pj-KvJ">
-                                        <rect key="frame" x="174" y="331" width="66" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Anytime">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        </state>
-                                        <state key="selected" image="radiounchecked1"/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="qYc-kh-fzu">
+                                        <rect key="frame" x="65" y="45" width="284" height="127.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Let's get to know you more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoq-ih-LPc">
+                                                <rect key="frame" x="39" y="0.0" width="206.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your preferred time of the day for working out?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lul-m7-SRC">
+                                                <rect key="frame" x="13" y="27.5" width="258.5" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="EKT-no-38T"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" distribution="fillProportionally" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="kGB-Ra-SyO">
+                                        <rect key="frame" x="146" y="180" width="111" height="201"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="E29-XW-V9E">
+                                                <rect key="frame" x="0.0" y="4" width="20" height="197"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAL-Li-fy8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="ZVt-kl-y2b"/>
+                                                            <constraint firstAttribute="height" constant="20" id="ZfB-h1-RUn"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z2-3u-VPm">
+                                                        <rect key="frame" x="0.0" y="59" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="HoV-6e-zM9"/>
+                                                            <constraint firstAttribute="width" constant="20" id="ZnJ-H6-2cP"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAd-lJ-SgU">
+                                                        <rect key="frame" x="0.0" y="118" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="8oo-Oq-EIR"/>
+                                                            <constraint firstAttribute="width" constant="20" id="A8h-KO-kRg"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AX-qi-X0S">
+                                                        <rect key="frame" x="0.0" y="177" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Pxh-lH-8Ln"/>
+                                                            <constraint firstAttribute="width" constant="20" id="oZU-wW-I1g"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-FS-7Uy">
+                                                <rect key="frame" x="26" y="0.0" width="85" height="201"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGA-Fu-5tT">
+                                                        <rect key="frame" x="10.5" y="0.0" width="64" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Morning">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-vP-h99">
+                                                        <rect key="frame" x="0.0" y="56" width="85" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Afternoon  ">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tt-Pj-KvJ">
+                                                        <rect key="frame" x="11" y="112" width="63" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Anytime">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-oO-C7N">
+                                                        <rect key="frame" x="12" y="168" width="61" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Evening">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="qYc-kh-fzu" firstAttribute="centerX" secondItem="mVQ-4U-ApV" secondAttribute="centerX" id="2Du-5X-Qz7"/>
+                                    <constraint firstAttribute="trailing" secondItem="qYc-kh-fzu" secondAttribute="trailing" constant="65" id="YYl-Lz-kpp"/>
                                     <constraint firstAttribute="height" constant="500" id="Zfp-ho-mho"/>
+                                    <constraint firstItem="qYc-kh-fzu" firstAttribute="leading" secondItem="mVQ-4U-ApV" secondAttribute="leading" constant="65" id="bhb-jt-mFE"/>
+                                    <constraint firstItem="qYc-kh-fzu" firstAttribute="top" secondItem="mVQ-4U-ApV" secondAttribute="top" constant="45" id="l5n-5g-WGo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -129,21 +182,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bah-AG-CDp">
-                                        <rect key="frame" x="165" y="217" width="85" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Lose Weight"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lt4-8W-mQv">
-                                        <rect key="frame" x="163" y="159" width="88" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Get in Shape"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO1-C1-hlG">
-                                        <rect key="frame" x="163" y="273" width="88" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Build Muscle"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8R-O2-cWf">
                                         <rect key="frame" x="155" y="389" width="115" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,11 +190,88 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3D-Us-R1e">
-                                        <rect key="frame" x="155" y="330" width="105" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Overall Fitness "/>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="bottom" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-4j-bCN">
+                                        <rect key="frame" x="133" y="159" width="141" height="201"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="top" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="39I-ku-YDn">
+                                                <rect key="frame" x="0.0" y="7" width="20" height="194"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-uc-5Mf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="7Zi-vz-Ptt"/>
+                                                            <constraint firstAttribute="height" constant="20" id="gmI-Oa-sqm"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Up-L2-a43">
+                                                        <rect key="frame" x="0.0" y="58" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="I06-ff-3IM"/>
+                                                            <constraint firstAttribute="width" constant="20" id="tQV-69-Ipe"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cc7-at-NIc">
+                                                        <rect key="frame" x="0.0" y="116" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="6Om-qf-47v"/>
+                                                            <constraint firstAttribute="height" constant="20" id="WEw-dg-vZQ"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-ni-LHK">
+                                                        <rect key="frame" x="0.0" y="174" width="20" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="3ek-FJ-Pd7"/>
+                                                            <constraint firstAttribute="height" constant="20" id="ZQw-iY-qqe"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="radiounchecked1"/>
+                                                        <state key="selected" image="radiochecked"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="IZD-SG-NNC">
+                                                <rect key="frame" x="24" y="0.0" width="117" height="201"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUv-lE-Zkp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="117" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Get in Shape">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVX-jI-BEd">
+                                                        <rect key="frame" x="0.0" y="56" width="117" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Lose Weight">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-5U-e9b">
+                                                        <rect key="frame" x="0.0" y="112" width="117" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Build Muscle">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-8g-53e">
+                                                        <rect key="frame" x="0.0" y="168" width="117" height="33"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <state key="normal" title="Overall Fitness ">
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                        <state key="selected" image="radiounchecked1"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -167,7 +282,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BGq-N8-Ech" firstAttribute="trailing" secondItem="l49-8q-LTP" secondAttribute="trailing" id="bRP-Q6-7mF"/>
-                            <constraint firstItem="l49-8q-LTP" firstAttribute="leading" secondItem="BGq-N8-Ech" secondAttribute="leading" constant="20" symbolic="YES" id="dDj-3G-Osb"/>
+                            <constraint firstItem="l49-8q-LTP" firstAttribute="leading" secondItem="BGq-N8-Ech" secondAttribute="leading" symbolic="YES" id="dDj-3G-Osb"/>
                             <constraint firstItem="BGq-N8-Ech" firstAttribute="bottom" secondItem="l49-8q-LTP" secondAttribute="bottom" id="sSx-hS-Wlq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BGq-N8-Ech"/>
@@ -182,6 +297,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="radiochecked" width="512" height="512"/>
         <image name="radiounchecked1" width="512" height="512"/>
     </resources>
 </document>
