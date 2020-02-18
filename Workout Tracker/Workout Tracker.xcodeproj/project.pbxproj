@@ -22,6 +22,10 @@
 		EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C19123F5089C00B16179 /* Dashboard.storyboard */; };
 		EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C223F8464900B9D1F3 /* SignupVC.swift */; };
 		EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */; };
+		EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */; };
+		EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */; };
+		EF7644CC23FB953800B9D1F3 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */; };
+		EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		EF7644C223F8464900B9D1F3 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
+		EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = "Workout Tracker/DashboardVC.swift"; sourceTree = "<group>"; };
+		EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutLibraryVC.swift; path = "Workout Tracker/WorkoutLibraryVC.swift"; sourceTree = "<group>"; };
+		EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressVC.swift; path = "Workout Tracker/ProgressVC.swift"; sourceTree = "<group>"; };
+		EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = "Workout Tracker/SettingsVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,8 +140,21 @@
 				A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */,
 				A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */,
 				A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */,
+				EF7644C623FB949200B9D1F3 /* Dashboard */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EF7644C623FB949200B9D1F3 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */,
+				EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */,
+				EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */,
+				EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */,
+			);
+			name = Dashboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,11 +234,15 @@
 			files = (
 				EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */,
 				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
+				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
+				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
+				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
 				A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */,
 				EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */,
+				EF7644CC23FB953800B9D1F3 /* ProgressVC.swift in Sources */,
 				EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
