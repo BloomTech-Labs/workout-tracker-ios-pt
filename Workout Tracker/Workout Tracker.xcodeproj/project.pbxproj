@@ -20,6 +20,7 @@
 		EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18D23F5084A00B16179 /* Signup.storyboard */; };
 		EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18F23F5087A00B16179 /* SignIn.storyboard */; };
 		EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C19123F5089C00B16179 /* Dashboard.storyboard */; };
+		EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */; };
 		EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C223F8464900B9D1F3 /* SignupVC.swift */; };
 		EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */; };
 		EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */; };
@@ -44,6 +45,7 @@
 		EF50C18D23F5084A00B16179 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		EF50C18F23F5087A00B16179 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateANewScheduleVC.swift; path = "Workout Tracker/CreateANewScheduleVC.swift"; sourceTree = "<group>"; };
 		EF7644C223F8464900B9D1F3 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = "Workout Tracker/DashboardVC.swift"; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */,
+				EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */,
 				EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */,
 				EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */,
 				EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */,
@@ -237,6 +240,7 @@
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
+				EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */,
 				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
 				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
