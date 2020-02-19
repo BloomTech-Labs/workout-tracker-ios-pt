@@ -65,17 +65,20 @@ class OnBoardingPageViewController: UIPageViewController, UIPageViewControllerDe
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
-         configurePageControl()
+         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.configurePageControl()
+            print(self.pageControl)
+             }
     }
     
     func configurePageControl() {
    
-    pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
-//        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIView.frame.maxY - 50,width: UIView.frame.width,height: 50))
+//    pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
+        pageControl = UIPageControl(frame: CGRect(x: UIScreen.main.bounds.width/2,y: UIScreen.main.bounds.maxY - 100,width: 0,height: 0))
     self.pageControl.numberOfPages = orderedViewControllers.count
     self.pageControl.currentPage = 0
     self.pageControl.tintColor = UIColor.black
-    self.pageControl.pageIndicatorTintColor = UIColor.white
+    self.pageControl.pageIndicatorTintColor = UIColor.gray
     self.pageControl.currentPageIndicatorTintColor = UIColor.black
     self.view.addSubview(pageControl)
        
