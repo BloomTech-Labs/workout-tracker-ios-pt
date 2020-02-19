@@ -233,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29X-9Z-X88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689.8550724637682" y="148.66071428571428"/>
+            <point key="canvasLocation" x="1686" y="165"/>
         </scene>
         <!--Workout Library-->
         <scene sceneID="iw8-Fp-p9C">
