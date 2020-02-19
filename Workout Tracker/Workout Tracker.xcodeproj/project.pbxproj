@@ -21,6 +21,10 @@
 		EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18F23F5087A00B16179 /* SignIn.storyboard */; };
 		EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C19123F5089C00B16179 /* Dashboard.storyboard */; };
 		EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */; };
+		EF64D8E123FCEDFB00A42596 /* CreateASchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */; };
+		EF64D8E423FCEE9A00A42596 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E323FCEE9A00A42596 /* Progress.storyboard */; };
+		EF64D8E623FCEEC100A42596 /* WorkoutLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E523FCEEC100A42596 /* WorkoutLibrary.storyboard */; };
+		EF64D8E823FCEEDD00A42596 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E723FCEEDD00A42596 /* Settings.storyboard */; };
 		EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C223F8464900B9D1F3 /* SignupVC.swift */; };
 		EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */; };
 		EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */; };
@@ -44,8 +48,12 @@
 		EF50C18223F4FF5200B16179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF50C18D23F5084A00B16179 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		EF50C18F23F5087A00B16179 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
-		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Dashboard.storyboard; path = "Workout Tracker/Dashboard.storyboard"; sourceTree = "<group>"; };
 		EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateANewScheduleVC.swift; path = "Workout Tracker/CreateANewScheduleVC.swift"; sourceTree = "<group>"; };
+		EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CreateASchedule.storyboard; path = "Workout Tracker/CreateASchedule.storyboard"; sourceTree = "<group>"; };
+		EF64D8E323FCEE9A00A42596 /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Progress.storyboard; path = "Workout Tracker/Progress.storyboard"; sourceTree = "<group>"; };
+		EF64D8E523FCEEC100A42596 /* WorkoutLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = WorkoutLibrary.storyboard; path = "Workout Tracker/WorkoutLibrary.storyboard"; sourceTree = "<group>"; };
+		EF64D8E723FCEEDD00A42596 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = "Workout Tracker/Settings.storyboard"; sourceTree = "<group>"; };
 		EF7644C223F8464900B9D1F3 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		EF7644C423F84D7D00B9D1F3 /* SigninVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninVC.swift; sourceTree = "<group>"; };
 		EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardVC.swift; path = "Workout Tracker/DashboardVC.swift"; sourceTree = "<group>"; };
@@ -101,7 +109,7 @@
 				EF50C17A23F4FF5200B16179 /* Main.storyboard */,
 				EF50C18D23F5084A00B16179 /* Signup.storyboard */,
 				EF50C18F23F5087A00B16179 /* SignIn.storyboard */,
-				EF50C19123F5089C00B16179 /* Dashboard.storyboard */,
+				EF64D8E223FCEE0A00A42596 /* Dashboards */,
 				A35F297A23FA468200C8157E /* Onboarding.storyboard */,
 			);
 			name = Storyboards;
@@ -145,6 +153,19 @@
 				EF7644C623FB949200B9D1F3 /* Dashboard */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EF64D8E223FCEE0A00A42596 /* Dashboards */ = {
+			isa = PBXGroup;
+			children = (
+				EF50C19123F5089C00B16179 /* Dashboard.storyboard */,
+				EF64D8E723FCEEDD00A42596 /* Settings.storyboard */,
+				EF64D8E523FCEEC100A42596 /* WorkoutLibrary.storyboard */,
+				EF64D8E323FCEE9A00A42596 /* Progress.storyboard */,
+				EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */,
+			);
+			name = Dashboards;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		EF7644C623FB949200B9D1F3 /* Dashboard */ = {
@@ -220,10 +241,14 @@
 			files = (
 				EF50C18123F4FF5200B16179 /* LaunchScreen.storyboard in Resources */,
 				EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */,
+				EF64D8E823FCEEDD00A42596 /* Settings.storyboard in Resources */,
 				EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */,
+				EF64D8E123FCEDFB00A42596 /* CreateASchedule.storyboard in Resources */,
 				EF50C17E23F4FF5200B16179 /* Assets.xcassets in Resources */,
 				A35F297B23FA468200C8157E /* Onboarding.storyboard in Resources */,
+				EF64D8E423FCEE9A00A42596 /* Progress.storyboard in Resources */,
 				EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */,
+				EF64D8E623FCEEC100A42596 /* WorkoutLibrary.storyboard in Resources */,
 				EF50C17C23F4FF5200B16179 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

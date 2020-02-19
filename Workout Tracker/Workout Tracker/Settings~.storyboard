@@ -150,6 +150,22 @@
             </objects>
             <point key="canvasLocation" x="864" y="93"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="OKI-V4-X1w">
+            <objects>
+                <viewController id="baG-Oh-hbH" customClass="SettingsVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7RR-GZ-UJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eE4-mY-5s9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="pvY-Bf-OHD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFH-lq-6D9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571" y="842"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Bq-5S-Zlj">
             <objects>
@@ -164,7 +180,7 @@
                         <segue destination="ShT-An-yGE" kind="relationship" relationship="viewControllers" id="lCP-Tm-qb0"/>
                         <segue destination="5Ph-xz-ZEw" kind="relationship" relationship="viewControllers" id="LvQ-8M-3Eb"/>
                         <segue destination="89Z-SE-6wG" kind="relationship" relationship="viewControllers" id="x0e-Ct-ZV3"/>
-                        <segue destination="kcU-vF-wfu" kind="relationship" relationship="viewControllers" id="dtC-7a-YYg"/>
+                        <segue destination="baG-Oh-hbH" kind="relationship" relationship="viewControllers" id="dtC-7a-YYg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obx-6h-dVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -189,7 +205,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlL-eO-aIm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="635"/>
+            <point key="canvasLocation" x="887" y="843"/>
         </scene>
         <!--WorkoutLibrary-->
         <scene sceneID="oBT-Eq-fsJ">
@@ -199,21 +215,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLF-hb-DT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="491"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="b6x-bE-wFp">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="kcU-vF-wfu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8b2-5G-Aws"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GB5-gN-TFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="622" y="745"/>
+            <point key="canvasLocation" x="2571" y="165"/>
         </scene>
     </scenes>
     <resources>
         <image name="bell" catalog="system" width="64" height="62"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="gold shield" width="512" height="512"/>
         <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>
     </resources>
