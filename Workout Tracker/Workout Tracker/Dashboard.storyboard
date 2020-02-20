@@ -82,6 +82,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LH0-iq-Z1M">
                                 <rect key="frame" x="20" y="405" width="119" height="30"/>
                                 <state key="normal" title="View all schedule"/>
+                                <connections>
+                                    <segue destination="DNH-kd-aj6" kind="show" id="4JX-7v-g9l"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overall Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rk-ku-TW5">
                                 <rect key="frame" x="20" y="495" width="169" height="29"/>
@@ -171,6 +174,16 @@
             </objects>
             <point key="canvasLocation" x="101" y="491"/>
         </scene>
+        <!--MyActivities-->
+        <scene sceneID="8Kq-dG-8dn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyActivities" id="DNH-kd-aj6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="axW-Ju-Nug"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cbq-Gm-imR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608" y="81"/>
+        </scene>
         <!--CreateASchedule-->
         <scene sceneID="VhY-Vp-EaW">
             <objects>
@@ -179,7 +192,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K78-7N-fA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686" y="165"/>
+            <point key="canvasLocation" x="1722" y="15"/>
         </scene>
         <!--Progress-->
         <scene sceneID="doI-Ox-HQ9">

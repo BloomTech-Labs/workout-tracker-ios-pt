@@ -12,6 +12,7 @@
 		A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */; };
 		A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */; };
 		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
+		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondViewController.swift; sourceTree = "<group>"; };
 		A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
+		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivities.storyboard; sourceTree = "<group>"; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
 		EF50C17623F4FF5200B16179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Workout Tracker/SceneDelegate.swift"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				EF64D8E523FCEEC100A42596 /* WorkoutLibrary.storyboard */,
 				EF64D8E323FCEE9A00A42596 /* Progress.storyboard */,
 				EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */,
+				A35F298723FE439900C8157E /* MyActivities.storyboard */,
 			);
 			name = Dashboards;
 			path = ..;
@@ -253,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF50C18123F4FF5200B16179 /* LaunchScreen.storyboard in Resources */,
+				A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */,
 				EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */,
 				EF64D8E823FCEEDD00A42596 /* Settings.storyboard in Resources */,
 				EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */,
