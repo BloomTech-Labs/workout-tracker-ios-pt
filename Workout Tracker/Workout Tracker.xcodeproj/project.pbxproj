@@ -11,6 +11,7 @@
 		A35F297B23FA468200C8157E /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F297A23FA468200C8157E /* Onboarding.storyboard */; };
 		A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */; };
 		A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */; };
+		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -38,6 +39,8 @@
 		A35F297A23FA468200C8157E /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstViewController.swift; sourceTree = "<group>"; };
 		A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondViewController.swift; sourceTree = "<group>"; };
+		A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
+		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
 		EF50C17623F4FF5200B16179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Workout Tracker/SceneDelegate.swift"; sourceTree = "<group>"; };
@@ -73,11 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A35F298223FE3AE100C8157E /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		EF50C16823F4FF5100B16179 = {
 			isa = PBXGroup;
 			children = (
 				EF50C17323F4FF5200B16179 /* Workout Tracker */,
 				EF50C17223F4FF5200B16179 /* Products */,
+				A35F298223FE3AE100C8157E /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +162,7 @@
 				A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */,
 				A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */,
 				A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */,
+				A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */,
 				EF7644C623FB949200B9D1F3 /* Dashboard */,
 			);
 			name = "View Controllers";
@@ -266,6 +279,7 @@
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
 				EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */,
+				A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */,
 				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
 				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
