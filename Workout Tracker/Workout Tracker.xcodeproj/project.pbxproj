@@ -86,6 +86,20 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		A35F298923FF964200C8157E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		A35F298A23FF967800C8157E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
 		EF50C16823F4FF5100B16179 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +139,7 @@
 				EF50C18F23F5087A00B16179 /* SignIn.storyboard */,
 				EF64D8E223FCEE0A00A42596 /* Dashboards */,
 				A35F297A23FA468200C8157E /* Onboarding.storyboard */,
+				A35F298923FF964200C8157E /* Custom Views */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -166,6 +181,7 @@
 				A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */,
 				A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */,
 				EF7644C623FB949200B9D1F3 /* Dashboard */,
+				A35F298A23FF967800C8157E /* Custom Views */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
