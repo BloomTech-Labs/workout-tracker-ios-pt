@@ -14,13 +14,39 @@
                     <view key="view" contentMode="scaleToFill" id="g8y-Cq-tyb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-nQ-ic6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="Zv0-he-Azz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
+                                <rect key="frame" x="60" y="282" width="141" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upcoming Activities "/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-sZ-a3D">
+                                <rect key="frame" x="263" y="282" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Past activities "/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BHx-BN-v4N" firstAttribute="trailing" secondItem="xHt-nQ-ic6" secondAttribute="trailing" id="Paf-G3-1KF"/>
+                            <constraint firstItem="xHt-nQ-ic6" firstAttribute="top" secondItem="BHx-BN-v4N" secondAttribute="top" id="V9f-Pr-DNh"/>
+                            <constraint firstItem="xHt-nQ-ic6" firstAttribute="leading" secondItem="BHx-BN-v4N" secondAttribute="leading" id="iUt-2B-Z3Z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BHx-BN-v4N"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B88-W6-6Sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="94" y="129"/>
+            <point key="canvasLocation" x="92.753623188405811" y="128.57142857142856"/>
         </scene>
     </scenes>
 </document>
