@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E839565B2FC9565D151F0DE /* Pods_Workout_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */; };
 		A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */; };
 		A35F297B23FA468200C8157E /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F297A23FA468200C8157E /* Onboarding.storyboard */; };
 		A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */; };
 		A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */; };
 		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
 		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
+		A3E04CE42404D68200B114B9 /* CalendarSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -36,13 +38,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5AED793B5F3B04E7A685B5C2 /* Pods-Workout Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		A35F297823FA3DFC00C8157E /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		A35F297A23FA468200C8157E /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		A35F297C23FAE25000C8157E /* OnboardingFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFirstViewController.swift; sourceTree = "<group>"; };
 		A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSecondViewController.swift; sourceTree = "<group>"; };
 		A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
-		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyActivities.storyboard; sourceTree = "<group>"; };
+		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
+		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
+		E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
 		EF50C17623F4FF5200B16179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Workout Tracker/SceneDelegate.swift"; sourceTree = "<group>"; };
@@ -65,6 +70,7 @@
 		EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutLibraryVC.swift; path = "Workout Tracker/WorkoutLibraryVC.swift"; sourceTree = "<group>"; };
 		EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressVC.swift; path = "Workout Tracker/ProgressVC.swift"; sourceTree = "<group>"; };
 		EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = "Workout Tracker/SettingsVC.swift"; sourceTree = "<group>"; };
+		F6CF485891BBD03B7B5271C8 /* Pods-Workout Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Tracker.release.xcconfig"; path = "Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +78,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E839565B2FC9565D151F0DE /* Pods_Workout_Tracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BDDE0F0077A5CC3B4F79C0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A35F298223FE3AE100C8157E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +104,7 @@
 		A35F298923FF964200C8157E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -106,6 +122,8 @@
 				EF50C17323F4FF5200B16179 /* Workout Tracker */,
 				EF50C17223F4FF5200B16179 /* Products */,
 				A35F298223FE3AE100C8157E /* Recovered References */,
+				F8E3DE1331B7AF66C4AC6309 /* Pods */,
+				4BDDE0F0077A5CC3B4F79C0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +231,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		F8E3DE1331B7AF66C4AC6309 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5AED793B5F3B04E7A685B5C2 /* Pods-Workout Tracker.debug.xcconfig */,
+				F6CF485891BBD03B7B5271C8 /* Pods-Workout Tracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF50C18523F4FF5200B16179 /* Build configuration list for PBXNativeTarget "Workout Tracker" */;
 			buildPhases = (
+				C257E3DD6064A5054760BCC6 /* [CP] Check Pods Manifest.lock */,
 				EF50C16D23F4FF5200B16179 /* Sources */,
 				EF50C16E23F4FF5200B16179 /* Frameworks */,
 				EF50C16F23F4FF5200B16179 /* Resources */,
+				95C3C8068F055273A748E23F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,12 +310,55 @@
 				A35F297B23FA468200C8157E /* Onboarding.storyboard in Resources */,
 				EF64D8E423FCEE9A00A42596 /* Progress.storyboard in Resources */,
 				EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */,
+				A3E04CE42404D68200B114B9 /* CalendarSetup.storyboard in Resources */,
 				EF64D8E623FCEEC100A42596 /* WorkoutLibrary.storyboard in Resources */,
 				EF50C17C23F4FF5200B16179 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95C3C8068F055273A748E23F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C257E3DD6064A5054760BCC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Workout Tracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF50C16D23F4FF5200B16179 /* Sources */ = {
@@ -448,6 +520,7 @@
 		};
 		EF50C18623F4FF5200B16179 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AED793B5F3B04E7A685B5C2 /* Pods-Workout Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -465,6 +538,7 @@
 		};
 		EF50C18723F4FF5200B16179 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6CF485891BBD03B7B5271C8 /* Pods-Workout Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
