@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="rCI-iz-JUX" customClass="DateCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="rCI-iz-JUX" customClass="DateCell" customModule="Workout_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WH4-yg-CHy">
@@ -61,8 +61,8 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="80" height="80"/>
                                         <connections>
-                                            <outlet property="dateLabel" destination="E6M-Ap-H2b" id="Nqe-l1-fKb"/>
-                                            <outlet property="selectedView" destination="K1d-Ml-our" id="NKc-Vy-CJJ"/>
+                                            <outlet property="dateLabel" destination="E6M-Ap-H2b" id="Xpl-Bk-z37"/>
+                                            <outlet property="selectedView" destination="K1d-Ml-our" id="TUZ-fg-yVB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -83,7 +83,7 @@
                                         <constraint firstItem="tx9-WK-nCF" firstAttribute="centerY" secondItem="9b7-zD-0fZ" secondAttribute="centerY" id="gUa-bw-wbt"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="monthTitle" destination="tx9-WK-nCF" id="gMb-SD-61y"/>
+                                        <outlet property="monthTitle" destination="tx9-WK-nCF" id="Ruw-Za-FPH"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>

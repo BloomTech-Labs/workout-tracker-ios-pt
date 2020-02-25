@@ -11,8 +11,11 @@ import JTAppleCalendar
  
 
 class DateCell: JTACDayCell  {
+    
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var selectedView: UIView!
-   
+    
+    @IBOutlet var selectedView:UIView!
+
+ 
 }
 

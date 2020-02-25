@@ -22,19 +22,28 @@
                                     <constraint firstAttribute="height" constant="230" id="Zv0-he-Azz"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
-                                <rect key="frame" x="60" y="282" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Upcoming Activities "/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-sZ-a3D">
-                                <rect key="frame" x="263" y="282" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Past activities "/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
+                                <rect key="frame" x="56" y="290" width="302" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
+                                        <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
+                                        <state key="normal" title="Upcoming Activities "/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-sZ-a3D">
+                                        <rect key="frame" x="203" y="0.0" width="99" height="30"/>
+                                        <state key="normal" title="Past activities "/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="30x-RG-FR9"/>
+                                    <constraint firstAttribute="width" constant="302" id="sOV-G3-y4P"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="centerX" secondItem="xHt-nQ-ic6" secondAttribute="centerX" id="D3P-u8-3vr"/>
+                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="top" secondItem="xHt-nQ-ic6" secondAttribute="bottom" constant="16" id="GO5-BT-LYy"/>
                             <constraint firstItem="BHx-BN-v4N" firstAttribute="trailing" secondItem="xHt-nQ-ic6" secondAttribute="trailing" id="Paf-G3-1KF"/>
                             <constraint firstItem="xHt-nQ-ic6" firstAttribute="top" secondItem="BHx-BN-v4N" secondAttribute="top" id="V9f-Pr-DNh"/>
                             <constraint firstItem="xHt-nQ-ic6" firstAttribute="leading" secondItem="BHx-BN-v4N" secondAttribute="leading" id="iUt-2B-Z3Z"/>
