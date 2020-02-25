@@ -6,4 +6,12 @@
 //  Copyright © 2020 LambdaLabsPT7. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import JTAppleCalendar
+
+
+class DateHeader: JTACMonthReusableView {
+    @IBOutlet var monthTitle: UILabel!
+    
+  
+}

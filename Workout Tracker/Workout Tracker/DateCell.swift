@@ -6,4 +6,13 @@
 //  Copyright © 2020 LambdaLabsPT7. All rights reserved.
 //
 
-import Foundation
+mport UIKit
+import JTAppleCalendar
+ 
+
+class DateCell: JTACDayCell  {
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var selectedView: UIView!
+   
+}
+
