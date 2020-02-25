@@ -23,14 +23,14 @@
                                     <constraint firstAttribute="width" constant="294" id="cPu-2L-TZR"/>
                                     <constraint firstAttribute="height" constant="350" id="h9L-cc-cyw"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Q0F-ht-VWA">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Q0F-ht-VWA">
                                     <size key="itemSize" width="64" height="63"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rCI-iz-JUX" customClass="DateCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateCell" id="rCI-iz-JUX" customClass="DateCell">
                                         <rect key="frame" x="0.0" y="50" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="WH4-yg-CHy">
@@ -100,6 +100,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EcT-tA-pj8"/>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="015-OJ-ZZq" id="Xdk-bZ-L2N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be4-7F-vFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

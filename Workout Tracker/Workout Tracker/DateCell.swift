@@ -6,7 +6,7 @@
 //  Copyright © 2020 LambdaLabsPT7. All rights reserved.
 //
 
-mport UIKit
+import UIKit
 import JTAppleCalendar
  
 
