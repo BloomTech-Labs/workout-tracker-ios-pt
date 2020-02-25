@@ -15,6 +15,9 @@
 		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
 		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
 		A3E04CE42404D68200B114B9 /* CalendarSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */; };
+		A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */; };
+		A3E04CE82404E05300B114B9 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE72404E05300B114B9 /* DateCell.swift */; };
+		A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE92404E06E00B114B9 /* DateHeader.swift */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -47,6 +50,9 @@
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
 		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
+		A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainViewController.swift; sourceTree = "<group>"; };
+		A3E04CE72404E05300B114B9 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		A3E04CE92404E06E00B114B9 /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
 		E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -112,6 +118,9 @@
 		A35F298A23FF967800C8157E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */,
+				A3E04CE72404E05300B114B9 /* DateCell.swift */,
+				A3E04CE92404E06E00B114B9 /* DateHeader.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -366,12 +375,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */,
+				A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */,
 				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
 				EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */,
 				A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */,
+				A3E04CE82404E05300B114B9 /* DateCell.swift in Sources */,
+				A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */,
 				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
 				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
