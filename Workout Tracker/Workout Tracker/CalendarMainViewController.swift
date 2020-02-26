@@ -11,7 +11,8 @@ import JTAppleCalendar
 
 class CalendarMainViewController: UIViewController {
     
-  @IBOutlet var calendarView: JTACMonthView!
+    @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var calendarView: JTACMonthView!
     
     let formatter = DateFormatter()
     var numberOfRows = 6
@@ -81,7 +82,6 @@ class CalendarMainViewController: UIViewController {
 
 extension CalendarMainViewController: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
-        //        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
         let endDate = Date()
@@ -131,8 +131,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
     
     func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
-        
-        //        let formatter = DateFormatter()  // Declare this outside, to avoid instancing this heavy class multiple times.
+
         formatter.dateFormat = "MMM"
         
         let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader

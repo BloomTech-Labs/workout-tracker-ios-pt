@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="calendarSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rew-cc-DXK" customClass="CalendarMainViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZu-GP-go4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="382"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="015-OJ-ZZq" customClass="JTACMonthView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="60" y="76" width="294" height="350"/>
+                                <rect key="frame" x="60" y="32" width="294" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="cPu-2L-TZR"/>
@@ -95,13 +95,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="015-OJ-ZZq" firstAttribute="leading" secondItem="EcT-tA-pj8" secondAttribute="leading" constant="60" id="Vk5-UB-F5j"/>
-                            <constraint firstItem="015-OJ-ZZq" firstAttribute="top" secondItem="EcT-tA-pj8" secondAttribute="top" constant="32" id="iiK-HP-crn"/>
+                            <constraint firstItem="015-OJ-ZZq" firstAttribute="top" secondItem="gZu-GP-go4" secondAttribute="top" constant="32" id="iiK-HP-crn"/>
                             <constraint firstItem="EcT-tA-pj8" firstAttribute="trailing" secondItem="015-OJ-ZZq" secondAttribute="trailing" constant="60" id="mc8-83-R5T"/>
+                            <constraint firstAttribute="bottom" secondItem="015-OJ-ZZq" secondAttribute="bottom" id="oiv-8r-5fN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EcT-tA-pj8"/>
                     </view>
+                    <size key="freeformSize" width="414" height="382"/>
                     <connections>
                         <outlet property="calendarView" destination="015-OJ-ZZq" id="Xdk-bZ-L2N"/>
+                        <outlet property="calendarViewHeightConstraint" destination="h9L-cc-cyw" id="clO-fS-ccU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be4-7F-vFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

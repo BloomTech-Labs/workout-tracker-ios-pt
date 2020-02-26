@@ -16,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-nQ-ic6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="230"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="230" id="Zv0-he-Azz"/>
+                                    <constraint firstAttribute="height" constant="200" placeholder="YES" id="Zv0-he-Azz"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
-                                <rect key="frame" x="56" y="290" width="302" height="30"/>
+                                <rect key="frame" x="56" y="260" width="302" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
