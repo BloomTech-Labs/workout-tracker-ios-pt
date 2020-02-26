@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mle-rg-L7X">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,16 +12,41 @@
             <objects>
                 <viewController id="mle-rg-L7X" customClass="WorkoutLibraryVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ITi-0k-RNw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LLt-oD-66w">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="9Ms-By-dpm">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ms-By-dpm" id="Xf6-3c-3Fd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ebk-XI-KG6" firstAttribute="bottom" secondItem="LLt-oD-66w" secondAttribute="bottom" id="4g1-8G-dER"/>
+                            <constraint firstItem="LLt-oD-66w" firstAttribute="leading" secondItem="Ebk-XI-KG6" secondAttribute="leading" id="INo-Pj-Eaz"/>
+                            <constraint firstItem="LLt-oD-66w" firstAttribute="top" secondItem="Ebk-XI-KG6" secondAttribute="top" id="Yse-6N-maR"/>
+                            <constraint firstItem="Ebk-XI-KG6" firstAttribute="trailing" secondItem="LLt-oD-66w" secondAttribute="trailing" id="syV-4K-Tar"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ebk-XI-KG6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Workout Library" image="circle.fill" catalog="system" id="t31-YD-6UD"/>
+                    <connections>
+                        <outlet property="tableView" destination="LLt-oD-66w" id="fYJ-bV-5vC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhR-SL-CrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2571" y="165"/>
+            <point key="canvasLocation" x="2569.5652173913045" y="164.73214285714286"/>
         </scene>
     </scenes>
     <resources>
