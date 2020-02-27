@@ -43,7 +43,7 @@
                                 <rect key="frame" x="0.0" y="322" width="414" height="491"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="170" id="KjV-c8-nfb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="activityCell" rowHeight="170" id="KjV-c8-nfb">
                                         <rect key="frame" x="0.0" y="28" width="414" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjV-c8-nfb" id="g13-QA-Qko">
@@ -103,7 +103,6 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="310" id="ohp-v7-cVb"/>
-                                                        <constraint firstAttribute="height" constant="130" id="yYt-Pj-Puk"/>
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IED-RL-Wcy">
@@ -124,6 +123,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IwS-nh-VGf" id="rFG-uX-cOI"/>
+                                    <outlet property="delegate" destination="IwS-nh-VGf" id="Psp-3R-85l"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -144,6 +147,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="containerView" destination="xHt-nQ-ic6" id="Qxk-Zd-g1F"/>
+                        <outlet property="tableView" destination="TSH-nv-Iis" id="ZE3-yv-k8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B88-W6-6Sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

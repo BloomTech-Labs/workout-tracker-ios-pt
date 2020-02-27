@@ -8,20 +8,30 @@
 
 import UIKit
 
-class MyActivitiesViewController: UIViewController {
+class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    //    let calendarChildVC = CalendarMainViewController()
-    //
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
+        
+        return cell
+        
+    }
+    
+    
+  
+    @IBOutlet weak var tableView: UITableView!
     let calendarChildVC =
-        //    UIStoryboard(name: "CalendarSetup").instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
         UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
     @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
-        
-        //        calendarChildVC.dataSource = self
+    
     }
     
 //    func addCalendarChildVC(){
@@ -55,14 +65,6 @@ class MyActivitiesViewController: UIViewController {
         
         
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+ 
     
 }
