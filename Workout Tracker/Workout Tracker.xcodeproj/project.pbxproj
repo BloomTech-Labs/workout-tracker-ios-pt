@@ -39,6 +39,8 @@
 		EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */; };
 		EF7644CC23FB953800B9D1F3 /* ProgressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */; };
 		EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */; };
+		EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA4240767110051FA0C /* WorkoutController.swift */; };
+		EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutLibraryVC.swift; path = "Workout Tracker/WorkoutLibraryVC.swift"; sourceTree = "<group>"; };
 		EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProgressVC.swift; path = "Workout Tracker/ProgressVC.swift"; sourceTree = "<group>"; };
 		EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsVC.swift; path = "Workout Tracker/SettingsVC.swift"; sourceTree = "<group>"; };
+		EFAC0AA4240767110051FA0C /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutController.swift; path = "Workout Tracker/WorkoutController.swift"; sourceTree = "<group>"; };
+		EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
 		F6CF485891BBD03B7B5271C8 /* Pods-Workout Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workout Tracker.release.xcconfig"; path = "Target Support Files/Pods-Workout Tracker/Pods-Workout Tracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,7 @@
 		EF50C18A23F505E400B16179 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 		EF50C18B23F5061300B16179 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EFAC0AA32407669D0051FA0C /* Networking */,
 			);
 			name = Controller;
 			path = ..;
@@ -241,6 +247,14 @@
 			);
 			name = Dashboard;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		EFAC0AA32407669D0051FA0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EFAC0AA4240767110051FA0C /* WorkoutController.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		F8E3DE1331B7AF66C4AC6309 /* Pods */ = {
@@ -381,8 +395,10 @@
 				A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */,
 				A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */,
 				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
+				EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */,
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
+				EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
 				EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */,
 				A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */,

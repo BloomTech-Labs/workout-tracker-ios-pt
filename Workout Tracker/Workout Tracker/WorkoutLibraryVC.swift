@@ -13,38 +13,40 @@ class WorkoutLibraryVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
-
+    let workoutController = WorkoutController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        workoutController.fetchMuscleGroups { (muscleGroups, error) in
+            if error != nil {
+                NSLog("There was an error fetching Muscle Groups in ViewDidLoad: \(error)")
+            }
+            self.tableView.reloadData()
+        }
     }
-    */
-
+    
 }
 
 extension WorkoutLibraryVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 // Need to change this!
+        return workoutController.muscleCategoryArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        cell.textLabel?.text = "Test"
+        let workout = workoutController.muscleCategoryArray[indexPath.row]
+        print("Workout: \(workout)")
+        
+        cell.textLabel?.text = workout.name
+        
         
         return cell
     }
