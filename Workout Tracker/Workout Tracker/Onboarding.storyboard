@@ -46,47 +46,59 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="kGB-Ra-SyO">
-                                        <rect key="frame" x="138" y="180.5" width="138" height="228"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kGB-Ra-SyO">
+                                        <rect key="frame" x="138" y="180.5" width="138" height="242"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kYh-FS-7Uy">
-                                                <rect key="frame" x="15" y="0.0" width="108" height="192"/>
+                                                <rect key="frame" x="17" y="0.0" width="104" height="196"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGA-Fu-5tT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Morning">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGA-Fu-5tT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
+                                                        <state key="normal" title=" ⃝ Morning">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
+                                                        <state key="selected" title="◉ Morning"/>
+                                                        <connections>
+                                                            <action selector="timeWorkOutAnswerSelected:" destination="TCo-sq-UcN" eventType="touchUpInside" id="Qs2-Cm-9jC"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-vP-h99">
-                                                        <rect key="frame" x="0.0" y="53" width="108" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Afternoon  ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-vP-h99">
+                                                        <rect key="frame" x="0.0" y="54" width="104" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Afternoon ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Afternoon"/>
+                                                        <state key="selected" title="◉ Afternoon"/>
+                                                        <connections>
+                                                            <action selector="timeWorkOutAnswerSelected:" destination="TCo-sq-UcN" eventType="touchUpInside" id="yNB-tt-C1q"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tt-Pj-KvJ">
-                                                        <rect key="frame" x="0.0" y="106" width="108" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Anytime">
+                                                        <rect key="frame" x="0.0" y="108" width="104" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Anytime">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Anytime"/>
+                                                        <state key="selected" title="◉ Anytime"/>
+                                                        <connections>
+                                                            <action selector="timeWorkOutAnswerSelected:" destination="TCo-sq-UcN" eventType="touchUpInside" id="4Q2-UY-6op"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-oO-C7N">
-                                                        <rect key="frame" x="0.0" y="159" width="108" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Evening">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCy-oO-C7N">
+                                                        <rect key="frame" x="0.0" y="162" width="104" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Evening">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Evening "/>
+                                                        <state key="selected" title="◉ Evening "/>
+                                                        <connections>
+                                                            <action selector="timeWorkOutAnswerSelected:" destination="TCo-sq-UcN" eventType="touchUpInside" id="Jln-VV-84f"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-gC-hqr">
-                                                <rect key="frame" x="19" y="198" width="100" height="30"/>
+                                                <rect key="frame" x="19" y="212" width="100" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="mJH-kh-soc"/>
@@ -94,6 +106,9 @@
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextAndSave:" destination="TCo-sq-UcN" eventType="touchUpInside" id="1aG-FV-d3d"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -121,6 +136,10 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="mVQ-4U-ApV" id="Jk3-z1-8k8"/>
+                        <outletCollection property="timeWorkOutAnswerButtons" destination="cGA-Fu-5tT" collectionClass="NSMutableArray" id="ER2-fb-R3i"/>
+                        <outletCollection property="timeWorkOutAnswerButtons" destination="f2m-vP-h99" collectionClass="NSMutableArray" id="Acx-lF-9bd"/>
+                        <outletCollection property="timeWorkOutAnswerButtons" destination="5tt-Pj-KvJ" collectionClass="NSMutableArray" id="CGx-li-zqD"/>
+                        <outletCollection property="timeWorkOutAnswerButtons" destination="MCy-oO-C7N" collectionClass="NSMutableArray" id="Fru-oN-Z4U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CIp-sv-wQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -162,48 +181,59 @@ What are your fitness goals?
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-4j-bCN">
-                                        <rect key="frame" x="130" y="174.5" width="154" height="235"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FXE-4j-bCN">
+                                        <rect key="frame" x="130" y="174.5" width="154" height="251"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="IZD-SG-NNC">
-                                                <rect key="frame" x="7" y="0.0" width="140" height="201"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="IZD-SG-NNC">
+                                                <rect key="frame" x="5.5" y="0.0" width="143" height="205"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUv-lE-Zkp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Get in Shape">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUv-lE-Zkp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="143" height="34"/>
+                                                        <state key="normal" title=" ⃝ Get in Shape">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Get in Shape"/>
+                                                        <state key="selected" title="◉ Get in Shape"/>
+                                                        <connections>
+                                                            <action selector="fitnessGoalsSelected:" destination="40L-mR-RNJ" eventType="touchUpInside" id="LKA-c7-LrE"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVX-jI-BEd">
-                                                        <rect key="frame" x="0.0" y="56" width="140" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Lose Weight">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVX-jI-BEd">
+                                                        <rect key="frame" x="0.0" y="57" width="143" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Lose Weight">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Lose Weight"/>
+                                                        <state key="selected" title="◉ Lose Weight"/>
+                                                        <connections>
+                                                            <action selector="fitnessGoalsSelected:" destination="40L-mR-RNJ" eventType="touchUpInside" id="XF9-wK-4tx"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-5U-e9b">
-                                                        <rect key="frame" x="0.0" y="112" width="140" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Build Muscle">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-5U-e9b">
+                                                        <rect key="frame" x="0.0" y="114" width="143" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Build Muscle">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Build Muscle"/>
+                                                        <state key="selected" title="◉ Build Muscle"/>
+                                                        <connections>
+                                                            <action selector="fitnessGoalsSelected:" destination="40L-mR-RNJ" eventType="touchUpInside" id="7oh-Un-Sso"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-8g-53e">
-                                                        <rect key="frame" x="0.0" y="168" width="140" height="33"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <state key="normal" title="  ⃝ Overall Fitness ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LI-8g-53e">
+                                                        <rect key="frame" x="0.0" y="171" width="143" height="34"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title=" ⃝ Overall Fitness ">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
-                                                        <state key="selected" title=" ◉ Overall Fitness"/>
+                                                        <state key="selected" title="◉ Overall Fitness"/>
+                                                        <connections>
+                                                            <action selector="fitnessGoalsSelected:" destination="40L-mR-RNJ" eventType="touchUpInside" id="PmZ-aY-BW6"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8R-O2-cWf">
-                                                <rect key="frame" x="27" y="205" width="100" height="30"/>
+                                                <rect key="frame" x="27" y="221" width="100" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Zh6-xd-I8L"/>
@@ -212,6 +242,9 @@ What are your fitness goals?
                                                 <state key="normal" title="Next">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="nextAndSave:" destination="40L-mR-RNJ" eventType="touchUpInside" id="NBs-CY-OhR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -239,6 +272,10 @@ What are your fitness goals?
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="l49-8q-LTP" id="3Lf-zD-1Ud"/>
+                        <outletCollection property="fitnessGoalsAnswers" destination="NUv-lE-Zkp" collectionClass="NSMutableArray" id="u2g-Aw-B61"/>
+                        <outletCollection property="fitnessGoalsAnswers" destination="dVX-jI-BEd" collectionClass="NSMutableArray" id="BJP-fL-fyG"/>
+                        <outletCollection property="fitnessGoalsAnswers" destination="6zo-5U-e9b" collectionClass="NSMutableArray" id="YUY-AV-FAw"/>
+                        <outletCollection property="fitnessGoalsAnswers" destination="4LI-8g-53e" collectionClass="NSMutableArray" id="xbI-JR-TJw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ci-6A-LF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

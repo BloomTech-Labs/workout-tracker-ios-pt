@@ -10,6 +10,14 @@ import UIKit
 
 class OnboardingSecondViewController: UIViewController {
 
+    enum FitnessGoals: Int {
+        case shape
+        case weight
+        case muscle
+        case fitness
+    }
+    
+    @IBOutlet var fitnessGoalsAnswers: [UIButton]!
     @IBOutlet weak var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +27,25 @@ class OnboardingSecondViewController: UIViewController {
         backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func fitnessGoalsSelected(_ sender: UIButton) {
+        
+    fitnessGoalsAnswers.forEach({$0.isSelected = false})
+        sender.isSelected = true
     }
-    */
+    
+    @IBAction func nextAndSave(_ sender: UIButton) {
+        let fitnessGoals: FitnessGoals = getSelectedFitnessGoals()
+        print(fitnessGoals)
+    }
+    
+    func getSelectedFitnessGoals() -> FitnessGoals {
+        for (index, button) in fitnessGoalsAnswers.enumerated() {
+            if button.isSelected == true {
+                return FitnessGoals(rawValue: index) ?? .shape
+            }
+        }
+        return .shape
+    }
+ 
 
 }

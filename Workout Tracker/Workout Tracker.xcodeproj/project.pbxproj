@@ -19,6 +19,7 @@
 		A3E04CE82404E05300B114B9 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE72404E05300B114B9 /* DateCell.swift */; };
 		A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE92404E06E00B114B9 /* DateHeader.swift */; };
 		A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CEB2404E84000B114B9 /* MyActivitiesViewController.swift */; };
+		A3F9419F240CC54F00A04906 /* MyActivitiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9419E240CC54F00A04906 /* MyActivitiesDetailViewController.swift */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		A3E04CE72404E05300B114B9 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		A3E04CE92404E06E00B114B9 /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
 		A3E04CEB2404E84000B114B9 /* MyActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyActivitiesViewController.swift; path = "Workout Tracker/MyActivitiesViewController.swift"; sourceTree = "<group>"; };
+		A3F9419E240CC54F00A04906 /* MyActivitiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyActivitiesDetailViewController.swift; path = "Workout Tracker/MyActivitiesDetailViewController.swift"; sourceTree = "<group>"; };
 		E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				EF7644CB23FB953800B9D1F3 /* ProgressVC.swift */,
 				EF7644CD23FB957600B9D1F3 /* SettingsVC.swift */,
 				A3E04CEB2404E84000B114B9 /* MyActivitiesViewController.swift */,
+				A3F9419E240CC54F00A04906 /* MyActivitiesDetailViewController.swift */,
 			);
 			name = Dashboard;
 			path = ..;
@@ -397,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F9419F240CC54F00A04906 /* MyActivitiesDetailViewController.swift in Sources */,
 				EF7644C323F8464900B9D1F3 /* SignupVC.swift in Sources */,
 				A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */,
 				A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */,

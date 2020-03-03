@@ -34,17 +34,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
     }
     
-//    func addCalendarChildVC(){
-//        addChild(calendarChildVC)
-//        //        calendarChildVC.view.frame = containerView.frame
-//        //        calendarChildVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        //        calendarChildVC.view.frame = CGRect(x: 0, y: 0, width:  self.containerView.frame.size.width, height: self.containerView.frame.size.height)
-//        //            self.containerView.frame.width)
-//        calendarChildVC.view.frame = containerView.bounds
-//        containerView.addSubview(calendarChildVC.view)
-//        calendarChildVC.didMove(toParent: self)
- 
-        
+     
     func addCalendarChildVC(){
         addChild(calendarChildVC)
         //        calendarChildVC.view.frame = containerView.frame
