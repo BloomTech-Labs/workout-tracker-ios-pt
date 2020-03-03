@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mle-rg-L7X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1fP-g7-5Je">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workout Library-->
+        <!--Workout LibraryVC-->
         <scene sceneID="iw8-Fp-p9C">
             <objects>
                 <viewController id="mle-rg-L7X" customClass="WorkoutLibraryVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LLt-oD-66w">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="9Ms-By-dpm">
@@ -26,6 +26,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="sVe-MI-W2r" kind="show" identifier="ToWorkoutSegue" id="tPn-8g-ust"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -39,12 +42,72 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ebk-XI-KG6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Workout Library" image="circle.fill" catalog="system" id="t31-YD-6UD"/>
+                    <navigationItem key="navigationItem" id="hY7-3v-CIb"/>
                     <connections>
                         <outlet property="tableView" destination="LLt-oD-66w" id="fYJ-bV-5vC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JhR-SL-CrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479.7101449275365" y="164.73214285714286"/>
+        </scene>
+        <!--Workout SelectionVC-->
+        <scene sceneID="g3e-Y9-VWG">
+            <objects>
+                <viewController id="sVe-MI-W2r" customClass="WorkoutSelectionVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c5x-7v-ef0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Sp-Sm-58H">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkoutCell" id="6TL-Ka-rnj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6TL-Ka-rnj" id="W9G-HX-qJL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Sp-Sm-58H" firstAttribute="trailing" secondItem="a64-Or-Uco" secondAttribute="trailing" id="FT6-sZ-wC4"/>
+                            <constraint firstItem="0Sp-Sm-58H" firstAttribute="bottom" secondItem="a64-Or-Uco" secondAttribute="bottom" id="MhO-Ny-hyb"/>
+                            <constraint firstItem="0Sp-Sm-58H" firstAttribute="leading" secondItem="a64-Or-Uco" secondAttribute="leading" id="Oeu-sq-vK5"/>
+                            <constraint firstItem="0Sp-Sm-58H" firstAttribute="top" secondItem="a64-Or-Uco" secondAttribute="top" id="hne-Hs-E8f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a64-Or-Uco"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hyN-Hb-JYG"/>
+                    <connections>
+                        <outlet property="workoutTableView" destination="0Sp-Sm-58H" id="heU-S8-1vY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8aX-16-pWN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4250.7246376811599" y="164.73214285714286"/>
+        </scene>
+        <!--Workout Library-->
+        <scene sceneID="1dF-fa-Xbi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1fP-g7-5Je" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workout Library" image="circle.fill" catalog="system" id="t31-YD-6UD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTH-Tc-hQy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mle-rg-L7X" kind="relationship" relationship="rootViewController" id="0cA-7v-War"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jf8-pj-1fW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2569.5652173913045" y="164.73214285714286"/>
         </scene>

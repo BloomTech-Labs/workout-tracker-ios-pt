@@ -30,8 +30,20 @@ class WorkoutLibraryVC: UIViewController {
             self.tableView.reloadData()
         }
     }
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToWorkoutSegue" {
+            guard let workoutVC = segue.destination as? WorkoutSelectionVC,
+                let indexPath = self.tableView.indexPathForSelectedRow else { return }
+            let muscle = self.workoutController.muscleCategoryArray[indexPath.row]
+            workoutVC.muscle = muscle
+        }
+    }
     
 }
+
+
 
 extension WorkoutLibraryVC: UITableViewDataSource, UITableViewDelegate {
     
