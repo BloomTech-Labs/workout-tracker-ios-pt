@@ -56,6 +56,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="104" height="34"/>
                                                         <state key="normal" title=" ⃝ Morning">
                                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            </preferredSymbolConfiguration>
                                                         </state>
                                                         <state key="selected" title="◉ Morning"/>
                                                         <connections>
