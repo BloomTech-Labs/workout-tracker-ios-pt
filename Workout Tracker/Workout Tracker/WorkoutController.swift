@@ -47,7 +47,7 @@ class WorkoutController {
             
             do {
                 let muscleGroup = try JSONDecoder().decode(MuscleGroups.self, from: data)
-                print("Do Block: \(muscleGroup)")
+                //print("Do Block: \(muscleGroup)")
                 self.muscleCategoryArray = muscleGroup.results
                 DispatchQueue.main.async {
                     completion(muscleGroup, nil)
@@ -81,7 +81,7 @@ class WorkoutController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        print(request)
+        //print(request)
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             if let error = error {

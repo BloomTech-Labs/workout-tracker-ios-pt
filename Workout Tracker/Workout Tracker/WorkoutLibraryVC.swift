@@ -55,7 +55,7 @@ extension WorkoutLibraryVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
         let workout = workoutController.muscleCategoryArray[indexPath.row]
-        print("Workout: \(workout)")
+        //print("Workout: \(workout)")
         
         cell.textLabel?.text = workout.name
         
