@@ -263,8 +263,11 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGu-MN-8uJ">
                                         <rect key="frame" x="18.5" y="358" width="270" height="41"/>
+                                        <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Mark Activity as Complete"/>
+                                        <state key="normal" title="Mark Activity as Complete">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
                                         <connections>
                                             <action selector="markAsCompleted:" destination="W3d-vz-bCj" eventType="touchUpInside" id="KQz-xj-gSs"/>
                                         </connections>
