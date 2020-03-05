@@ -9,22 +9,60 @@
 import UIKit
 
 class DashboardVC: UIViewController {
-
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var scheduleBtn: UIButton!
+    @IBOutlet weak var viewAllScheduleBtn: UIButton!
+    @IBOutlet weak var seeMoreProgressBtn: UIButton!
+    
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var activitiesSubView: UIView!
+    @IBOutlet weak var overallProgressView: UIView!
+    
+    @IBOutlet weak var activitiesCountLbl: UILabel!
+    
+    @IBOutlet weak var sheildImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        setupUI()
+    }
+    
+    func setupUI() {
+        let cornerRadius: CGFloat = 5
+        let viewBorderColor = UIColor.systemGray.cgColor
+        let borderWidth: CGFloat = 1
+        
+        scheduleBtn.layer.cornerRadius = cornerRadius
+        viewAllScheduleBtn.layer.cornerRadius = cornerRadius
+        seeMoreProgressBtn.layer.cornerRadius = cornerRadius
+        
+        overallProgressView.layer.borderColor = viewBorderColor
+        overallProgressView.layer.borderWidth = borderWidth
+        overallProgressView.layer.cornerRadius = cornerRadius
+        activitiesSubView.backgroundColor = .systemBlue
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1 // TODO: Change this to the data source.
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myActivitiesCell", for: indexPath) as? DashboardMyActivitiesTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
+    
+    
+    
 }

@@ -20,6 +20,7 @@
 		A3E04CEA2404E06E00B114B9 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE92404E06E00B114B9 /* DateHeader.swift */; };
 		A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CEB2404E84000B114B9 /* MyActivitiesViewController.swift */; };
 		A3F9419F240CC54F00A04906 /* MyActivitiesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F9419E240CC54F00A04906 /* MyActivitiesDetailViewController.swift */; };
+		EF1B953C2410ADAF00F65824 /* DashboardMyActivitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1B953B2410ADAF00F65824 /* DashboardMyActivitiesTableViewCell.swift */; };
 		EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17423F4FF5200B16179 /* AppDelegate.swift */; };
 		EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17623F4FF5200B16179 /* SceneDelegate.swift */; };
 		EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF50C17823F4FF5200B16179 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		A3E04CEB2404E84000B114B9 /* MyActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyActivitiesViewController.swift; path = "Workout Tracker/MyActivitiesViewController.swift"; sourceTree = "<group>"; };
 		A3F9419E240CC54F00A04906 /* MyActivitiesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyActivitiesDetailViewController.swift; path = "Workout Tracker/MyActivitiesDetailViewController.swift"; sourceTree = "<group>"; };
 		E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workout_Tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1B953B2410ADAF00F65824 /* DashboardMyActivitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DashboardMyActivitiesTableViewCell.swift; path = "Workout Tracker/DashboardMyActivitiesTableViewCell.swift"; sourceTree = "<group>"; };
 		EF50C17123F4FF5200B16179 /* Workout Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF50C17423F4FF5200B16179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Workout Tracker/AppDelegate.swift"; sourceTree = "<group>"; };
 		EF50C17623F4FF5200B16179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Workout Tracker/SceneDelegate.swift"; sourceTree = "<group>"; };
@@ -176,8 +178,8 @@
 				EF50C17A23F4FF5200B16179 /* Main.storyboard */,
 				EF50C18D23F5084A00B16179 /* Signup.storyboard */,
 				EF50C18F23F5087A00B16179 /* SignIn.storyboard */,
-				EF64D8E223FCEE0A00A42596 /* Dashboards */,
 				A35F297A23FA468200C8157E /* Onboarding.storyboard */,
+				EF64D8E223FCEE0A00A42596 /* Dashboards */,
 				A35F298923FF964200C8157E /* Custom Views */,
 			);
 			name = Storyboards;
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7644C723FB94DB00B9D1F3 /* DashboardVC.swift */,
+				EF1B953B2410ADAF00F65824 /* DashboardMyActivitiesTableViewCell.swift */,
 				EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */,
 				EF7644C923FB950900B9D1F3 /* WorkoutLibraryVC.swift */,
 				EFED6D93240B7BAA00BCB88B /* WorkoutSelectionVC.swift */,
@@ -409,6 +412,7 @@
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */,
+				EF1B953C2410ADAF00F65824 /* DashboardMyActivitiesTableViewCell.swift in Sources */,
 				EF50C17923F4FF5200B16179 /* ViewController.swift in Sources */,
 				EFD367E8240DF93B00E3B523 /* Workouts.swift in Sources */,
 				EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */,
