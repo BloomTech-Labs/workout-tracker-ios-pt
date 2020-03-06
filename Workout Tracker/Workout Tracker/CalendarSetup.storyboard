@@ -21,7 +21,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELN-fB-Led">
                                         <rect key="frame" x="0.0" y="0.0" width="133.5" height="30"/>
-                                        <state key="normal" title="Calendar View"/>
+                                        <state key="normal" title="Week View"/>
+                                        <connections>
+                                            <action selector="toggleCalendarView:" destination="Rew-cc-DXK" eventType="touchUpInside" id="At7-rI-fmD"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMV-cx-cyx">
                                         <rect key="frame" x="160.5" y="0.0" width="133.5" height="30"/>
