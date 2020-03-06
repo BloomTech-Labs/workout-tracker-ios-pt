@@ -14,6 +14,8 @@ class CalendarMainViewController: UIViewController {
     @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var calendarView: JTACMonthView!
     
+    @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var monthLabel2: UILabel!
     let formatter = DateFormatter()
     var numberOfRows = 6
     
@@ -23,6 +25,15 @@ class CalendarMainViewController: UIViewController {
         calendarView.scrollDirection = .horizontal
         calendarView.scrollingMode   = .stopAtEachCalendarFrame
         calendarView.showsHorizontalScrollIndicator = true
+    }
+    
+    func setUpMonthViews(from visibleDates: DateSegmentInfo) {
+        let date = visibleDates.monthDates.first!.date
+        formatter.dateFormat = "yyyy"
+        let year = formatter.string(from: date)
+        formatter.dateFormat = "MMMM"
+        let month = formatter.string(from: date)
+        monthLabel2.text = "\(month), \(year)"
     }
     func configureCell(view: JTACDayCell?, cellState: CellState) {
         guard let cell = view as? DateCell  else { return }
@@ -44,18 +55,7 @@ class CalendarMainViewController: UIViewController {
         }
     }
     
-    //    func sharedFunctionToConfigureCell(myCustomCell: CellView, cellState: CellState, date: Date) {
-    //        myCustomCell.dayLabel.text = cellState.text
-    //        if testCalendar.isDateInToday(date) {
-    //            myCustomCell.backgroundColor = red
-    //        } else {
-    //            myCustomCell.backgroundColor = white
-    //        }
-    //        // more code configurations
-    //        // ...
-    //        // ...
-    //        // ...
-    //    }
+ 
     func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
             
@@ -121,6 +121,8 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
+        //MARK: improvement
+//        could do a set date here
     }
     
     func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool{
@@ -141,5 +143,9 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
     func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
         return MonthSize(defaultSize: 50)
+    }
+    
+    func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        setUpMonthViews(from: visibleDates)
     }
 }
