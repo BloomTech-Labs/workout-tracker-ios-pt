@@ -16,22 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-LM-tJ7" userLabel="Date View">
-                                <rect key="frame" x="60" y="50" width="294" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDn-v6-L7V">
-                                        <rect key="frame" x="0.0" y="7" width="294" height="20.5"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="I9S-7M-9ST">
-                                <rect key="frame" x="60" y="88" width="294" height="30"/>
+                                <rect key="frame" x="60" y="10" width="294" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELN-fB-Led">
                                         <rect key="frame" x="0.0" y="0.0" width="133.5" height="30"/>
@@ -46,8 +32,35 @@
                                     <constraint firstAttribute="width" constant="294" id="7dG-aw-RvC"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S90-Il-uGu">
-                                <rect key="frame" x="60" y="118" width="294" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="URs-Jx-vMO" userLabel="Month Stack View">
+                                <rect key="frame" x="60" y="40" width="294" height="50"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIB-LM-tJ7" userLabel="Date View">
+                                        <rect key="frame" x="0.0" y="0.0" width="294" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Month" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDn-v6-L7V">
+                                                <rect key="frame" x="113.5" y="10.5" width="67.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="VDn-v6-L7V" firstAttribute="centerY" secondItem="eIB-LM-tJ7" secondAttribute="centerY" id="2dh-Ii-BPg"/>
+                                            <constraint firstItem="VDn-v6-L7V" firstAttribute="centerX" secondItem="eIB-LM-tJ7" secondAttribute="centerX" id="QH8-1E-lvj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eIB-LM-tJ7" firstAttribute="centerX" secondItem="URs-Jx-vMO" secondAttribute="centerX" id="9JM-e8-qWP"/>
+                                    <constraint firstAttribute="height" constant="50" id="YKd-Jo-6n2"/>
+                                    <constraint firstItem="eIB-LM-tJ7" firstAttribute="centerY" secondItem="URs-Jx-vMO" secondAttribute="centerY" id="Zaf-oE-vsJ"/>
+                                    <constraint firstAttribute="width" constant="294" id="mo2-HS-iHU"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="S90-Il-uGu" userLabel="Weekday Stack View">
+                                <rect key="frame" x="60" y="90" width="294" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHp-3J-3ef">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="30"/>
@@ -105,7 +118,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="015-OJ-ZZq" customClass="JTACMonthView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="60" y="148" width="294" height="350"/>
+                                <rect key="frame" x="60" y="120" width="294" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="cPu-2L-TZR"/>
@@ -182,13 +195,16 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="EcT-tA-pj8" firstAttribute="bottom" secondItem="015-OJ-ZZq" secondAttribute="bottom" constant="2" id="DJE-OI-jKh"/>
-                            <constraint firstItem="I9S-7M-9ST" firstAttribute="centerX" secondItem="S90-Il-uGu" secondAttribute="centerX" id="KDg-h0-nEL"/>
+                            <constraint firstItem="EcT-tA-pj8" firstAttribute="bottom" secondItem="015-OJ-ZZq" secondAttribute="bottom" constant="30" id="Cnr-gH-jJh"/>
                             <constraint firstItem="015-OJ-ZZq" firstAttribute="leading" secondItem="EcT-tA-pj8" secondAttribute="leading" constant="60" id="Vk5-UB-F5j"/>
-                            <constraint firstItem="S90-Il-uGu" firstAttribute="top" secondItem="I9S-7M-9ST" secondAttribute="bottom" id="aN7-eH-xoc"/>
+                            <constraint firstItem="URs-Jx-vMO" firstAttribute="centerX" secondItem="S90-Il-uGu" secondAttribute="centerX" id="bVo-1k-oZs"/>
+                            <constraint firstItem="S90-Il-uGu" firstAttribute="top" secondItem="URs-Jx-vMO" secondAttribute="bottom" id="i60-Cd-dEp"/>
+                            <constraint firstItem="I9S-7M-9ST" firstAttribute="top" secondItem="gZu-GP-go4" secondAttribute="top" constant="10" id="iJr-Sx-YRm"/>
                             <constraint firstItem="015-OJ-ZZq" firstAttribute="top" secondItem="S90-Il-uGu" secondAttribute="bottom" id="iiK-HP-crn"/>
                             <constraint firstItem="EcT-tA-pj8" firstAttribute="trailing" secondItem="015-OJ-ZZq" secondAttribute="trailing" constant="60" id="mc8-83-R5T"/>
                             <constraint firstItem="S90-Il-uGu" firstAttribute="centerX" secondItem="015-OJ-ZZq" secondAttribute="centerX" id="rnO-uL-yYq"/>
+                            <constraint firstItem="I9S-7M-9ST" firstAttribute="centerX" secondItem="URs-Jx-vMO" secondAttribute="centerX" id="vLf-nX-4DX"/>
+                            <constraint firstItem="URs-Jx-vMO" firstAttribute="top" secondItem="I9S-7M-9ST" secondAttribute="bottom" id="zWL-eU-AX8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EcT-tA-pj8"/>
                     </view>
