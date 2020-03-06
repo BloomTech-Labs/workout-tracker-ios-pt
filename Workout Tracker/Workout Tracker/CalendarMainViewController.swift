@@ -26,13 +26,13 @@ class CalendarMainViewController: UIViewController {
         calendarView.scrollingMode   = .stopAtEachCalendarFrame
         calendarView.showsHorizontalScrollIndicator = true
         calendarView.visibleDates { (visibleDates) in
-                   self.setUpMonthViews(from: visibleDates)
-               }
+            self.setUpMonthViews(from: visibleDates)
+        }
         
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.calendarView.reloadData(withAnchor: Date())
-//    }
+    //    override func viewWillAppear(_ animated: Bool) {
+    //        self.calendarView.reloadData(withAnchor: Date())
+    //    }
     func setUpMonthViews(from visibleDates: DateSegmentInfo) {
         let date = visibleDates.monthDates.first!.date
         formatter.dateFormat = "yyyy"
@@ -49,11 +49,11 @@ class CalendarMainViewController: UIViewController {
     }
     
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
-//                   if cellState.dateBelongsTo == .thisMonth {
-//                      cell.dateLabel.textColor = UIColor.black
-//                   } else {
-//                      cell.dateLabel.textColor = UIColor.gray
-//                   }
+        //                   if cellState.dateBelongsTo == .thisMonth {
+        //                      cell.dateLabel.textColor = UIColor.black
+        //                   } else {
+        //                      cell.dateLabel.textColor = UIColor.gray
+        //                   }
         if cellState.dateBelongsTo == .thisMonth {
             cell.isHidden = false
         } else {
@@ -61,7 +61,7 @@ class CalendarMainViewController: UIViewController {
         }
     }
     
- 
+    
     func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
             
@@ -84,25 +84,70 @@ class CalendarMainViewController: UIViewController {
     //        calendarView.viewWillTransition(to: .zero, with: coordinator, anchorDate: visibleDates.monthDates.first?.date)
     //    }  -< To rotate views
     
-    @IBAction func toggleCalendarView(_ sender: Any) {
+    @IBAction func toggleWeekView(_ sender: Any) {
         if numberOfRows == 6 {
-                  self.calendarViewHeightConstraint.constant = 58.33
-                  self.numberOfRows = 1
-                  UIView.animate(withDuration: 0.2, animations: {
-                      self.view.layoutIfNeeded()
-                  }) { completed in
-                      self.calendarView.reloadData(withAnchor: Date())
-                  }
-              } else {
-                  self.calendarViewHeightConstraint.constant = 350
-                  self.numberOfRows = 6
-                  
-                  UIView.animate(withDuration: 0.2, animations: {
-                      self.view.layoutIfNeeded()
-                      self.calendarView.reloadData(withAnchor: Date())
-                  })
-              }
+            self.calendarView.alpha = 0
+            self.calendarViewHeightConstraint.constant = 58.33
+            self.numberOfRows = 1
+            
+            //            self.calendarView.transform = view.transform.scaledBy(x: 1, y: 0.5)
+            //            let scale = CGAffineTransform(scaleX: 1, y: 1)
+            //            self.view.transform = scale
+            
+            let translate = CGAffineTransform(translationX: 0, y: 30)
+            self.calendarView.transform = translate
+            
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCurlUp], animations: {
+                //                self.view.layoutIfNeeded()
+                //page curl
+                //                UIView.transition(with: self.calendarView, duration: 2, options: .transitionCrossDissolve, animations: {
+                self.calendarView.layoutIfNeeded()
+                self.calendarView.alpha = 1
+                self.calendarView.transform = .identity
+                //page curl end
+            }) { completed in self.calendarView.reloadData(withAnchor: Date())
+            } } else {
+            self.calendarView.alpha = 0
+            self.calendarViewHeightConstraint.constant = 350
+            self.numberOfRows = 6
+            let translate = CGAffineTransform(translationX: 0, y: 30)
+            self.calendarView.transform = translate
+            
+            UIView.animate(withDuration: 0.3, delay: 0.1, options: [.transitionCurlUp], animations: {
+                self.calendarView.layoutIfNeeded()
+                self.calendarView.alpha = 1
+                self.calendarView.transform = .identity
+                self.calendarView.reloadData(withAnchor: Date())
+            })
+        }
     }
+    
+    @IBAction func toggleMonthView(_ sender: Any) {
+        if numberOfRows == 6 {
+            self.calendarViewHeightConstraint.constant = 58.33
+            self.numberOfRows = 1
+            UIView.animate(withDuration: 0.5, animations: {
+                self.calendarView.layoutIfNeeded()
+            }) { completed in
+                DispatchQueue.main.async {
+                    self.calendarView.reloadData(withAnchor: Date())
+                }
+                
+            }
+        } else {
+            self.calendarViewHeightConstraint.constant = 350
+            self.numberOfRows = 6
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                self.view.layoutIfNeeded()
+                DispatchQueue.main.async {
+                    self.calendarView.reloadData(withAnchor: Date())
+                }
+                
+            })
+        }
+    }
+    
 }
 
 extension CalendarMainViewController: JTACMonthViewDataSource {
@@ -116,11 +161,6 @@ extension CalendarMainViewController: JTACMonthViewDataSource {
             return ConfigurationParameters(startDate:    startDate,endDate:endDate,numberOfRows: numberOfRows,generateInDates: .forFirstMonthOnly,generateOutDates: .off,hasStrictBoundaries: false)
         }
     }
-    //        return ConfigurationParameters(startDate: startDate,
-    //                                       endDate: endDate,
-    //                                       generateInDates: .forAllMonths,
-    //                                       generateOutDates: .tillEndOfGrid)
-    //    }
     
 }
 
@@ -147,7 +187,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
         configureCell(view: cell, cellState: cellState)
         //MARK: improvement
-//        could do a set date here
+        //        could do a set date here
     }
     
     func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool{
@@ -157,18 +197,18 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     //MARK: Headers
     
     
-//    func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
-//
-//        formatter.dateFormat = "MMM"
-//
-//        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
-//        header.monthTitle.text = formatter.string(from: range.start)
-//        return header
-//    }
-//
-//    func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
-//        return MonthSize(defaultSize: 50)
-//    }
+    //    func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
+    //
+    //        formatter.dateFormat = "MMM"
+    //
+    //        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
+    //        header.monthTitle.text = formatter.string(from: range.start)
+    //        return header
+    //    }
+    //
+    //    func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
+    //        return MonthSize(defaultSize: 50)
+    //    }
     
     func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpMonthViews(from: visibleDates)
