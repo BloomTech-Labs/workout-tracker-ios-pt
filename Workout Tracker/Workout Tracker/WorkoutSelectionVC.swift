@@ -39,7 +39,18 @@ class WorkoutSelectionVC: UIViewController {
             }
             self.workoutTableView.reloadData()
         }
+        self.navigationItem.title = muscle.name
         
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWorkoutDetailSegue" {
+            guard let workoutDetailVC = segue.destination as? WorkoutDetailVC,
+                let indexPath = self.workoutTableView.indexPathForSelectedRow else { return }
+            let workout = self.workoutController.workoutsArray[indexPath.row]
+            workoutDetailVC.workout = workout
+        }
     }
     
 

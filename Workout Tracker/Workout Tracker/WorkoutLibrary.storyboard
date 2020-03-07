@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workout LibraryVC-->
+        <!--Choose Muscle Group-->
         <scene sceneID="iw8-Fp-p9C">
             <objects>
                 <viewController id="mle-rg-L7X" customClass="WorkoutLibraryVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ebk-XI-KG6"/>
                     </view>
-                    <navigationItem key="navigationItem" id="hY7-3v-CIb"/>
+                    <navigationItem key="navigationItem" title="Choose Muscle Group" id="hY7-3v-CIb"/>
                     <connections>
                         <outlet property="tableView" destination="LLt-oD-66w" id="fYJ-bV-5vC"/>
                     </connections>
@@ -70,6 +70,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="PEi-Fa-jX7" kind="show" identifier="toWorkoutDetailSegue" id="zXu-MM-3at"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -92,6 +95,49 @@
             </objects>
             <point key="canvasLocation" x="4250.7246376811599" y="164.73214285714286"/>
         </scene>
+        <!--Workout DetailVC-->
+        <scene sceneID="HRW-3z-ws4">
+            <objects>
+                <viewController id="PEi-Fa-jX7" customClass="WorkoutDetailVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="atn-UI-upm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-zb-PHK">
+                                <rect key="frame" x="20" y="434.5" width="200" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="byW-Fw-GaP">
+                                <rect key="frame" x="20" y="469.5" width="374" height="392.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yVV-qE-alG" firstAttribute="trailing" secondItem="byW-Fw-GaP" secondAttribute="trailing" constant="20" id="8Mh-7V-Wur"/>
+                            <constraint firstItem="byW-Fw-GaP" firstAttribute="bottom" secondItem="yVV-qE-alG" secondAttribute="bottom" id="OGa-8U-pCn"/>
+                            <constraint firstItem="hQp-zb-PHK" firstAttribute="centerY" secondItem="atn-UI-upm" secondAttribute="centerY" id="OLN-QM-aR1"/>
+                            <constraint firstItem="byW-Fw-GaP" firstAttribute="leading" secondItem="yVV-qE-alG" secondAttribute="leading" constant="20" id="b1V-yS-DIa"/>
+                            <constraint firstItem="hQp-zb-PHK" firstAttribute="leading" secondItem="yVV-qE-alG" secondAttribute="leading" constant="20" id="v44-yv-GSr"/>
+                            <constraint firstItem="byW-Fw-GaP" firstAttribute="top" secondItem="hQp-zb-PHK" secondAttribute="bottom" constant="8" id="xQT-ls-H3c"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yVV-qE-alG"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EKd-5Z-P1V"/>
+                    <connections>
+                        <outlet property="workoutTextView" destination="byW-Fw-GaP" id="0JS-Eb-ldH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uo7-A9-UVJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5060.8695652173919" y="164.73214285714286"/>
+        </scene>
         <!--Workout Library-->
         <scene sceneID="1dF-fa-Xbi">
             <objects>
@@ -101,6 +147,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xTH-Tc-hQy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.79491651060000001" green="0.4421835542" blue="0.23520737890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.79491651060000001" green="0.4421835542" blue="0.23520737890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.79491651060000001" green="0.4421835542" blue="0.23520737890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
