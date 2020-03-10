@@ -65,11 +65,8 @@ class CalendarMainViewController: UIViewController {
     
     func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
-            
-            
+               
             cell.selectedView.layer.cornerRadius =  (cell.selectedView.frame.size.height)/2
-            //            cell.selectedView.layer.masksToBounds = true
-            //            cell.selectedView.clipsToBounds = true
             cell.selectedView.layer.borderWidth = 1
             
             cell.selectedView.isHidden = false
@@ -138,7 +135,6 @@ class CalendarMainViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.calendarView.reloadData(withAnchor: Date())
                 }
-                
             }
         } else {
             self.calendarViewHeightConstraint.constant = 350
@@ -149,7 +145,6 @@ class CalendarMainViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.calendarView.reloadData(withAnchor: Date())
                 }
-                
             })
         }
     }
@@ -196,6 +191,10 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
         //        could do a set date here
         //save index path?
         selectedDates.append(date)
+    }
+    
+    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool{
