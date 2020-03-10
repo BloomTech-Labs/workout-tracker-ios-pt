@@ -68,7 +68,6 @@ class WorkoutController {
     func fetchWorkouts(categoryNumber: String, completion: @escaping (Workouts?, Error?) -> Void) {
         var urlComponents = URLComponents(url: workoutBaseURL, resolvingAgainstBaseURL: true)
         
-        
         let categorySearchTerm = URLQueryItem(name: "category", value: categoryNumber)
         let languageSearchTerm = URLQueryItem(name: "language", value: "2")
         let licenseSearchTerm = URLQueryItem(name: "license_author", value: "wger.de")

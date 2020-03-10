@@ -35,5 +35,13 @@ class WorkoutDetailVC: UIViewController {
         workoutTextView.text = formattedDescription
         navigationItem.title = workout.name
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func chooseWorkoutBtnPressed(_ sender: UIBarButtonItem) {
+        
+        
+    }
+    
 
 }

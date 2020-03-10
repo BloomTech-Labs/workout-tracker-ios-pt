@@ -129,7 +129,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yVV-qE-alG"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EKd-5Z-P1V"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EKd-5Z-P1V">
+                        <barButtonItem key="rightBarButtonItem" title="Choose Workout" id="Y4S-L5-9Nf">
+                            <connections>
+                                <action selector="chooseWorkoutBtnPressed:" destination="PEi-Fa-jX7" id="lDM-8V-zyv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="workoutTextView" destination="byW-Fw-GaP" id="0JS-Eb-ldH"/>
                     </connections>
