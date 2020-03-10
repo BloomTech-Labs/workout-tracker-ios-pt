@@ -127,23 +127,33 @@ class CalendarMainViewController: UIViewController {
     
     @IBAction func toggleMonthView(_ sender: Any) {
         if numberOfRows == 6 {
+            self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 58.33
             self.numberOfRows = 1
-            UIView.animate(withDuration: 0.5, animations: {
+            let translate = CGAffineTransform(translationX: 0, y: 30)
+            self.calendarView.transform = translate
+            UIView.animate(withDuration: 0.2, animations: {
                 self.calendarView.layoutIfNeeded()
+                self.calendarView.alpha = 1
+                self.calendarView.transform = .identity
             }) { completed in
                 DispatchQueue.main.async {
-                    self.calendarView.reloadData(withAnchor: Date())
+                    self.calendarView.reloadData(withAnchor: self.monthLabelDate)
                 }
             }
         } else {
+            self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 350
             self.numberOfRows = 6
+            let translate = CGAffineTransform(translationX: 0, y: 30)
+            self.calendarView.transform = translate
             
-            UIView.animate(withDuration: 0.5, animations: {
-                self.view.layoutIfNeeded()
+            UIView.animate(withDuration: 0.2, animations: {
+                self.calendarView.layoutIfNeeded()
+                self.calendarView.alpha = 1
+                self.calendarView.transform = .identity
                 DispatchQueue.main.async {
-                    self.calendarView.reloadData(withAnchor: Date())
+                    self.calendarView.reloadData(withAnchor: self.monthLabelDate)
                 }
             })
         }
