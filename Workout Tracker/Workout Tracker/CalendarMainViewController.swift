@@ -18,7 +18,8 @@ class CalendarMainViewController: UIViewController {
     @IBOutlet weak var monthLabel2: UILabel!
     let formatter = DateFormatter()
     var numberOfRows = 6
-    
+    var monthLabelDate = Date()
+    var selectedDates = [Date]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,11 @@ class CalendarMainViewController: UIViewController {
     //        self.calendarView.reloadData(withAnchor: Date())
     //    }
     func setUpMonthViews(from visibleDates: DateSegmentInfo) {
-        let date = visibleDates.monthDates.first!.date
+        monthLabelDate = visibleDates.monthDates.first!.date
         formatter.dateFormat = "yyyy"
-        let year = formatter.string(from: date)
+        let year = formatter.string(from: monthLabelDate)
         formatter.dateFormat = "MMMM"
-        let month = formatter.string(from: date)
+        let month = formatter.string(from: monthLabelDate)
         monthLabel2.text = "\(month), \(year)"
     }
     func configureCell(view: JTACDayCell?, cellState: CellState) {
@@ -86,6 +87,9 @@ class CalendarMainViewController: UIViewController {
     
     @IBAction func toggleWeekView(_ sender: Any) {
         if numberOfRows == 6 {
+            
+            calendarView.selectDates(selectedDates)
+            
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 58.33
             self.numberOfRows = 1
@@ -105,8 +109,10 @@ class CalendarMainViewController: UIViewController {
                 self.calendarView.alpha = 1
                 self.calendarView.transform = .identity
                 //page curl end
-            }) { completed in self.calendarView.reloadData(withAnchor: Date())
-            } } else {
+            }) { completed in self.calendarView.reloadData(withAnchor:self.monthLabelDate)
+            } }
+        else {
+            calendarView.selectDates(selectedDates)
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 350
             self.numberOfRows = 6
@@ -117,7 +123,7 @@ class CalendarMainViewController: UIViewController {
                 self.calendarView.layoutIfNeeded()
                 self.calendarView.alpha = 1
                 self.calendarView.transform = .identity
-                self.calendarView.reloadData(withAnchor: Date())
+                self.calendarView.reloadData(withAnchor: self.monthLabelDate)
             })
         }
     }
@@ -188,29 +194,19 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
         configureCell(view: cell, cellState: cellState)
         //MARK: improvement
         //        could do a set date here
+        //save index path?
+        selectedDates.append(date)
     }
     
     func calendar(_ calendar: JTACMonthView, shouldSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) -> Bool{
         return true // Based on a criteria, return true or false
     }
     
-    //MARK: Headers
-    
-    
-    //    func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
-    //
-    //        formatter.dateFormat = "MMM"
-    //
-    //        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
-    //        header.monthTitle.text = formatter.string(from: range.start)
-    //        return header
-    //    }
-    //
-    //    func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
-    //        return MonthSize(defaultSize: 50)
-    //    }
+
     
     func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpMonthViews(from: visibleDates)
+        calendarView.selectDates(selectedDates)
+      
     }
 }
