@@ -15,6 +15,7 @@ struct Workouts: Codable {
 struct Workout: Codable {
     let name: String
     let description: String
+    let id: Int
 }
 
 

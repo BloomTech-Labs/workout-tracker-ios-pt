@@ -104,7 +104,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQp-zb-PHK">
-                                <rect key="frame" x="20" y="434.5" width="200" height="27"/>
+                                <rect key="frame" x="20" y="435" width="200" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -117,26 +117,55 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0h-iN-hwl">
+                                <rect key="frame" x="20" y="108" width="374" height="247"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gmg-OI-epR">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="247"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-ZY-UlB">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="247"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a0s-gc-7Rt">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="247"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gmg-OI-epR" secondAttribute="bottom" id="Cd6-Ch-wCv"/>
+                                    <constraint firstItem="gmg-OI-epR" firstAttribute="leading" secondItem="D0h-iN-hwl" secondAttribute="leading" id="Rxd-Gr-OIR"/>
+                                    <constraint firstItem="gmg-OI-epR" firstAttribute="top" secondItem="D0h-iN-hwl" secondAttribute="top" id="i2u-Cv-05M"/>
+                                    <constraint firstAttribute="trailing" secondItem="gmg-OI-epR" secondAttribute="trailing" id="p4d-vZ-acp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hQp-zb-PHK" firstAttribute="top" secondItem="D0h-iN-hwl" secondAttribute="bottom" constant="80" id="1Tq-Wa-TF8"/>
                             <constraint firstItem="yVV-qE-alG" firstAttribute="trailing" secondItem="byW-Fw-GaP" secondAttribute="trailing" constant="20" id="8Mh-7V-Wur"/>
+                            <constraint firstItem="yVV-qE-alG" firstAttribute="trailing" secondItem="D0h-iN-hwl" secondAttribute="trailing" constant="20" id="JuL-0Q-iS9"/>
                             <constraint firstItem="byW-Fw-GaP" firstAttribute="bottom" secondItem="yVV-qE-alG" secondAttribute="bottom" id="OGa-8U-pCn"/>
                             <constraint firstItem="hQp-zb-PHK" firstAttribute="centerY" secondItem="atn-UI-upm" secondAttribute="centerY" id="OLN-QM-aR1"/>
                             <constraint firstItem="byW-Fw-GaP" firstAttribute="leading" secondItem="yVV-qE-alG" secondAttribute="leading" constant="20" id="b1V-yS-DIa"/>
+                            <constraint firstItem="D0h-iN-hwl" firstAttribute="leading" secondItem="yVV-qE-alG" secondAttribute="leading" constant="20" id="pQm-m5-tbb"/>
                             <constraint firstItem="hQp-zb-PHK" firstAttribute="leading" secondItem="yVV-qE-alG" secondAttribute="leading" constant="20" id="v44-yv-GSr"/>
                             <constraint firstItem="byW-Fw-GaP" firstAttribute="top" secondItem="hQp-zb-PHK" secondAttribute="bottom" constant="8" id="xQT-ls-H3c"/>
+                            <constraint firstItem="D0h-iN-hwl" firstAttribute="top" secondItem="yVV-qE-alG" secondAttribute="top" constant="20" id="zh5-OR-GLg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yVV-qE-alG"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="EKd-5Z-P1V">
-                        <barButtonItem key="rightBarButtonItem" title="Choose Workout" id="Y4S-L5-9Nf">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Y4S-L5-9Nf">
                             <connections>
                                 <action selector="chooseWorkoutBtnPressed:" destination="PEi-Fa-jX7" id="lDM-8V-zyv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="workoutImage1" destination="8FR-ZY-UlB" id="aLf-dH-yki"/>
+                        <outlet property="workoutImage2" destination="a0s-gc-7Rt" id="TMP-vU-Piz"/>
                         <outlet property="workoutTextView" destination="byW-Fw-GaP" id="0JS-Eb-ldH"/>
                     </connections>
                 </viewController>
