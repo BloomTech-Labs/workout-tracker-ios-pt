@@ -8,11 +8,18 @@
 
 import UIKit
 
-class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalendarMainViewControllerDelegate {
+class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalendarMainViewControllerDelegate, CalendarMainViewControllerDelegate2 {
+    func calendarController(_ controller: CalendarMainViewController, didScrollTo visibleDates: [Date]) {
+//        getSchedule()
+    }
+    
+   
+    
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
         //trigger point
         //should work like DidSelectCell on calendarMainVC
         //now should try to make the stuff work from this VC only.
+//        tableView.reloadData()
         getSchedule()
     }
     

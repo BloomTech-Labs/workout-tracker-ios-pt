@@ -13,6 +13,10 @@ protocol CalendarMainViewControllerDelegate: class {
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date)
 }
 
+protocol CalendarMainViewControllerDelegate2: class {
+    func calendarController(_ controller: CalendarMainViewController, didScrollTo visibleDates: [Date])
+}
+
 class CalendarMainViewController: UIViewController {
     
     @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
@@ -27,6 +31,7 @@ class CalendarMainViewController: UIViewController {
     let numOfRandomEvent = 100
 
     weak var delegate: CalendarMainViewControllerDelegate?
+    weak var delegate2: CalendarMainViewControllerDelegate2?
 //    var scheduleGroup : [String: [Schedule]]? {
 //              didSet {
 //                  calendarView.reloadData()
@@ -97,24 +102,17 @@ class CalendarMainViewController: UIViewController {
     
     @IBAction func toggleWeekView(_ sender: Any) {
         if numberOfRows == 6 {
-            
-            calendarView.selectDates(selectedDates)
+            // note: bugging out with .selectDates
+//            calendarView.selectDates(selectedDates)
             
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 58.33
             self.numberOfRows = 1
             
-            //            self.calendarView.transform = view.transform.scaledBy(x: 1, y: 0.5)
-            //            let scale = CGAffineTransform(scaleX: 1, y: 1)
-            //            self.view.transform = scale
-            
             let translate = CGAffineTransform(translationX: 0, y: 30)
             self.calendarView.transform = translate
             
             UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCurlUp], animations: {
-                //                self.view.layoutIfNeeded()
-                //page curl
-                //                UIView.transition(with: self.calendarView, duration: 2, options: .transitionCrossDissolve, animations: {
                 self.calendarView.layoutIfNeeded()
                 self.calendarView.alpha = 1
                 self.calendarView.transform = .identity
@@ -122,7 +120,7 @@ class CalendarMainViewController: UIViewController {
             }) { completed in self.calendarView.reloadData(withAnchor:self.monthLabelDate)
             } }
         else {
-            calendarView.selectDates(selectedDates)
+//            calendarView.selectDates(selectedDates)
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 350
             self.numberOfRows = 6
@@ -232,6 +230,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
         setUpMonthViews(from: visibleDates)
 //        getSchedule()
         calendarView.selectDates(selectedDates)
+        delegate2?.calendarController(self, didScrollTo: selectedDates)
       
     }
     

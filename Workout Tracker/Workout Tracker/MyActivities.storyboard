@@ -51,7 +51,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="W3d-vz-bCj" kind="show" id="D40-fJ-Tge"/>
+                                            <segue destination="W3d-vz-bCj" kind="show" identifier="toActivityDetail" id="D40-fJ-Tge"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
