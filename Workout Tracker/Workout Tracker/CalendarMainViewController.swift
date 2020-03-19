@@ -9,6 +9,10 @@
 import UIKit
 import JTAppleCalendar
 
+protocol CalendarMainViewControllerDelegate: class {
+    func calendarController(_ controller: CalendarMainViewController, didSelect day: Date)
+}
+
 class CalendarMainViewController: UIViewController {
     
     @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
@@ -22,13 +26,13 @@ class CalendarMainViewController: UIViewController {
     var selectedDates = [Date]()
     let numOfRandomEvent = 100
 
-        
-    var scheduleGroup : [String: [Schedule]]? {
-              didSet {
-                  calendarView.reloadData()
-//                  tableView.reloadData()
-              }
-          }
+    weak var delegate: CalendarMainViewControllerDelegate?
+//    var scheduleGroup : [String: [Schedule]]? {
+//              didSet {
+//                  calendarView.reloadData()
+////                  tableView.reloadData()
+//              }
+//          }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -213,6 +217,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
         //        could do a set date here
         //save index path?
         selectedDates.append(date)
+        delegate?.calendarController(self, didSelect: date)
     }
     
     func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
@@ -227,24 +232,10 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
     func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpMonthViews(from: visibleDates)
-        getSchedule()
+//        getSchedule()
         calendarView.selectDates(selectedDates)
       
     }
     
 }
-extension CalendarMainViewController {
 
-    func getSchedule(){
-         let _ = (calendarView.visibleDates().monthDates.first?.date)!
-    }
-    func getSchedule(fromDate: Date, toDate: Date) {
-        var schedules: [Schedule] = []
-        for _ in 1...numOfRandomEvent {
-            schedules.append(Schedule(fromStartDate: fromDate))
-        }
-        
-        scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
-        //The hashable
-    }
-}

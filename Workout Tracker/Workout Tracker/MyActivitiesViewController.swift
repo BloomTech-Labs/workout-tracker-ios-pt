@@ -8,7 +8,14 @@
 
 import UIKit
 
-class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalendarMainViewControllerDelegate {
+    func calendarController(_ controller: CalendarMainViewController, didSelect day: Date) {
+        //trigger point
+        //should work like DidSelectCell on calendarMainVC
+        //now should try to make the stuff work from this VC only.
+        //getSchedule()? 
+    }
+    
     
   
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +29,6 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
    var scheduleGroup : [String: [Schedule]]? {
            didSet {
-//               calendarChildVC.reloadData()
                tableView.reloadData()
            }
        }
@@ -42,6 +48,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
+        calendarChildVC.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         setupViewNibs()
@@ -70,16 +77,28 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         
         
     }
- func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 1
-   }
-   
-   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath)
-       
-       return cell
-       
-   }
-   
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return schedules.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as! ActivityScheduledTableViewCell
+        cell.schedule = schedules[indexPath.row]
+        return cell
+        
+    }
+    
+
+        func getSchedule(){
+             let _ = (calendarView.visibleDates().monthDates.first?.date)!
+        }
+        func getSchedule(fromDate: Date, toDate: Date) {
+            var schedules: [Schedule] = []
+            for _ in 1...numOfRandomEvent {
+                schedules.append(Schedule(fromStartDate: fromDate))
+            }
+            
+            scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
+            //The hashable
+        }
 }
