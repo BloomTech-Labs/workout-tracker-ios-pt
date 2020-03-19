@@ -10,13 +10,35 @@ import UIKit
 
 class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-let activityScheduledCellIdentifier = "activityScheduledCell"
-
+  
     @IBOutlet weak var tableView: UITableView!
-    let calendarChildVC =
-        UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
+    
     @IBOutlet weak var containerView: UIView!
     
+    let activityScheduledCellIdentifier = "activityScheduledCell"
+    let formatter = DateFormatter()
+    let calendarChildVC =
+      UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
+    
+   var scheduleGroup : [String: [Schedule]]? {
+           didSet {
+//               calendarChildVC.reloadData()
+               tableView.reloadData()
+           }
+       }
+    var schedules: [Schedule] {
+           get {
+               guard let selectedDate = calendarChildVC.selectedDates.first else {
+                   return []
+               }
+               
+               guard let data = scheduleGroup?[self.formatter.string(from: selectedDate)] else {
+                   return []
+               }
+               
+               return data.sorted()
+           }
+       }
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()

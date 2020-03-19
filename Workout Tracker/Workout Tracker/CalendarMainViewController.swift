@@ -20,7 +20,15 @@ class CalendarMainViewController: UIViewController {
     var numberOfRows = 6
     var monthLabelDate = Date()
     var selectedDates = [Date]()
+    let numOfRandomEvent = 100
 
+        
+    var scheduleGroup : [String: [Schedule]]? {
+              didSet {
+                  calendarView.reloadData()
+//                  tableView.reloadData()
+              }
+          }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -219,7 +227,24 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
     func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpMonthViews(from: visibleDates)
+        getSchedule()
         calendarView.selectDates(selectedDates)
       
+    }
+    
+}
+extension CalendarMainViewController {
+
+    func getSchedule(){
+         let _ = (calendarView.visibleDates().monthDates.first?.date)!
+    }
+    func getSchedule(fromDate: Date, toDate: Date) {
+        var schedules: [Schedule] = []
+        for _ in 1...numOfRandomEvent {
+            schedules.append(Schedule(fromStartDate: fromDate))
+        }
+        
+        scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
+        //The hashable
     }
 }
