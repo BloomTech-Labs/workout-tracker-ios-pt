@@ -20,6 +20,7 @@ class CalendarMainViewController: UIViewController {
     var numberOfRows = 6
     var monthLabelDate = Date()
     var selectedDates = [Date]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -196,6 +197,9 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        //check cell state
+        //if cell state is already selected then
+    
         configureCell(view: cell, cellState: cellState)
         //MARK: improvement
         //        could do a set date here

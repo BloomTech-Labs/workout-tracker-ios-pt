@@ -119,6 +119,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A358D8DF24230F6B00AD45B4 /* Activity Scheduled with Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Activity Scheduled with Xib";
+			sourceTree = "<group>";
+		};
+		A358D8E024230F8800AD45B4 /* Date Cell with Xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Date Cell with Xib";
+			sourceTree = "<group>";
+		};
 		A35F298223FE3AE100C8157E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +185,8 @@
 				EF50C18A23F505E400B16179 /* Model */,
 				EF50C18B23F5061300B16179 /* Controller */,
 				EF50C18C23F5066000B16179 /* View Controllers */,
+				A358D8DF24230F6B00AD45B4 /* Activity Scheduled with Xib */,
+				A358D8E024230F8800AD45B4 /* Date Cell with Xib */,
 				EF50C18823F5009700B16179 /* Storyboards */,
 				EF50C18923F504D800B16179 /* Resources */,
 				EF50C18223F4FF5200B16179 /* Info.plist */,
