@@ -28,48 +28,63 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECj-DL-Xjf">
-                                <rect key="frame" x="25" y="313" width="79" height="21"/>
+                                <rect key="frame" x="25" y="324" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-Rx-JtU">
-                                <rect key="frame" x="25" y="342" width="364" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F7w-Rx-JtU" customClass="CustomTextField" customModule="Workout_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="25" y="353" width="364" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dTU-vg-QMG"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-fp-fJY">
-                                <rect key="frame" x="25" y="259" width="364" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-fp-fJY" customClass="CustomTextField" customModule="Workout_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="25" y="259" width="364" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bcZ-UH-zB8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKt-zu-Y5e">
-                                <rect key="frame" x="25" y="384" width="94" height="26"/>
+                                <rect key="frame" x="25" y="406" width="94" height="26"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="11"/>
-                                <state key="normal" title="Forgot password?"/>
+                                <state key="normal" title="Forgot password?">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="forgotPasswordBtnPressed:" destination="MQ4-ZY-uOf" eventType="touchUpInside" id="Td0-SQ-lkQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3MM-Na-uGh">
-                                <rect key="frame" x="25" y="496" width="364" height="40"/>
+                                <rect key="frame" x="25" y="518" width="364" height="40"/>
+                                <color key="backgroundColor" red="0.79491651060000001" green="0.4421835542" blue="0.23520737890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1EN-zF-tsN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Sign in"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signInBtnPressed:" destination="MQ4-ZY-uOf" eventType="touchUpInside" id="KbF-Cm-zLd"/>
                                     <segue destination="g0w-fb-jNk" kind="presentation" identifier="toDashboardVCSegue" modalPresentationStyle="fullScreen" id="Xlh-bE-8rm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNJ-Lq-bZ0">
-                                <rect key="frame" x="102" y="746" width="210" height="26"/>
+                                <rect key="frame" x="102" y="776" width="210" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="210" id="h3l-Cm-8wm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <state key="normal" title="New to Workout Tracker? Sign up here"/>
+                                <state key="normal" title="New to Workout Tracker? Sign up here">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="newSignupBtnPressed:" destination="MQ4-ZY-uOf" eventType="touchUpInside" id="jID-Zf-hmw"/>
                                     <segue destination="vw1-wl-cK4" kind="presentation" identifier="toSignUpVCSegue" modalPresentationStyle="fullScreen" id="CTl-H4-7ao"/>
@@ -85,8 +100,8 @@
                             <constraint firstItem="IMg-bb-qcG" firstAttribute="top" secondItem="BAr-UQ-oQU" secondAttribute="bottom" constant="65" id="OAG-7M-RCh"/>
                             <constraint firstItem="F7w-Rx-JtU" firstAttribute="top" secondItem="ECj-DL-Xjf" secondAttribute="bottom" constant="8" id="Pfl-Wv-85G"/>
                             <constraint firstItem="F7w-Rx-JtU" firstAttribute="leading" secondItem="iY5-J6-b1U" secondAttribute="leading" constant="25" id="RpV-tR-UcU"/>
+                            <constraint firstItem="iY5-J6-b1U" firstAttribute="bottom" secondItem="gNJ-Lq-bZ0" secondAttribute="bottom" constant="60" id="URp-au-oFg"/>
                             <constraint firstItem="iY5-J6-b1U" firstAttribute="trailing" secondItem="F7w-Rx-JtU" secondAttribute="trailing" constant="25" id="Vnt-zn-3Hn"/>
-                            <constraint firstItem="gNJ-Lq-bZ0" firstAttribute="top" secondItem="3MM-Na-uGh" secondAttribute="bottom" constant="210" id="WNK-qD-rUo"/>
                             <constraint firstItem="3MM-Na-uGh" firstAttribute="top" secondItem="F7w-Rx-JtU" secondAttribute="bottom" constant="120" id="XFp-QG-zWv"/>
                             <constraint firstItem="kHC-fp-fJY" firstAttribute="top" secondItem="IMg-bb-qcG" secondAttribute="bottom" constant="8" id="ZLK-pn-jOx"/>
                             <constraint firstItem="TKt-zu-Y5e" firstAttribute="top" secondItem="F7w-Rx-JtU" secondAttribute="bottom" constant="8" id="g8U-OH-xmo"/>

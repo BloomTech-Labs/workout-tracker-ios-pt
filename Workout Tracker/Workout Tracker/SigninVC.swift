@@ -24,8 +24,13 @@ class SigninVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buttonStyling()
         
+    }
+    
+    // MARK: - Button Setup
+    func buttonStyling() {
+        signInButton.layer.cornerRadius = 5
     }
     
     

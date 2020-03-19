@@ -64,8 +64,8 @@ class WorkoutDetailVC: UIViewController {
                     }
                 }
             } else {
-                self.workoutImage1.image = UIImage(systemName: "tornado")
-                self.workoutImage2.image = UIImage(systemName: "waveform.path.ecg")
+                self.workoutImage1.image = UIImage(named: "noImageAvailable")
+                self.workoutImage2.image = UIImage(named: "noImageAvailable")
             }
         }
     }
