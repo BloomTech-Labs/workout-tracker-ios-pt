@@ -100,6 +100,10 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "toActivityDetail", sender: indexPath)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return schedules.count
     }
