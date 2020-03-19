@@ -10,19 +10,8 @@ import UIKit
 
 class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath)
-        
-        return cell
-        
-    }
-    
-    
-  
+let activityScheduledCellIdentifier = "activityScheduledCell"
+
     @IBOutlet weak var tableView: UITableView!
     let calendarChildVC =
         UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
@@ -31,17 +20,21 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
-    
+        tableView.dataSource = self
+        tableView.delegate = self
+        setupViewNibs()
     }
-    
+    func setupViewNibs() {
+//        let myNib = UINib(nibName: "CellView", bundle: Bundle.main)
+//        calendarView.register(myNib, forCellWithReuseIdentifier: calendarCellIdentifier)
+//
+        let myNib2 = UINib(nibName: "ActivityScheduledTableViewCell", bundle: Bundle.main)
+        tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
+    }
      
     func addCalendarChildVC(){
         addChild(calendarChildVC)
-        //        calendarChildVC.view.frame = containerView.frame
-        //        calendarChildVC.view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        //        calendarChildVC.view.frame = containerView.bounds
-        
-        calendarChildVC.view.translatesAutoresizingMaskIntoConstraints = false
+    calendarChildVC.view.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(calendarChildVC.view)
         
         calendarChildVC.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
@@ -55,6 +48,16 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         
         
     }
- 
+ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return 1
+   }
+   
+   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath)
+       
+       return cell
+       
+   }
+   
     
 }
