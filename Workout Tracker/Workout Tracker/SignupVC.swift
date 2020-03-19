@@ -22,12 +22,32 @@ class SignupVC: UIViewController {
     @IBOutlet weak var signUpGoogleButton:   UIButton!
     @IBOutlet weak var alreadyUserButton:    UIButton!
     
+    @IBOutlet weak var facebookLbl: UILabel!
+    @IBOutlet weak var googleLbl: UILabel!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        buttonStyling()
         
+    }
+    
+    // MARK: - Button Setup
+    func buttonStyling() {
+        let cornerRadius: CGFloat = 5
+        let borderWidth: CGFloat = 1.0
+        let borderColor = UIColor.black.cgColor
+        
+        signUpButton.layer.cornerRadius = cornerRadius
+        signUpFacebookButton.layer.borderWidth = borderWidth
+        signUpGoogleButton.layer.borderWidth = borderWidth
+        facebookLbl.layer.borderWidth = borderWidth
+        googleLbl.layer.borderWidth = borderWidth
+        
+        signUpFacebookButton.layer.borderColor = borderColor
+        signUpGoogleButton.layer.borderColor = borderColor
+        facebookLbl.layer.borderColor = borderColor
+        googleLbl.layer.borderColor = borderColor
     }
     
 

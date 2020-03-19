@@ -30,6 +30,7 @@
 		EF50C18E23F5084A00B16179 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18D23F5084A00B16179 /* Signup.storyboard */; };
 		EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C18F23F5087A00B16179 /* SignIn.storyboard */; };
 		EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF50C19123F5089C00B16179 /* Dashboard.storyboard */; };
+		EF5D16562423111A00B1F0D3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5D16552423111A00B1F0D3 /* CustomTextField.swift */; };
 		EF64D8DF23FCD31700A42596 /* CreateANewScheduleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */; };
 		EF64D8E123FCEDFB00A42596 /* CreateASchedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */; };
 		EF64D8E423FCEE9A00A42596 /* Progress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF64D8E323FCEE9A00A42596 /* Progress.storyboard */; };
@@ -77,6 +78,7 @@
 		EF50C18D23F5084A00B16179 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		EF50C18F23F5087A00B16179 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		EF50C19123F5089C00B16179 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Dashboard.storyboard; path = "Workout Tracker/Dashboard.storyboard"; sourceTree = "<group>"; };
+		EF5D16552423111A00B1F0D3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EF64D8DE23FCD31700A42596 /* CreateANewScheduleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateANewScheduleVC.swift; path = "Workout Tracker/CreateANewScheduleVC.swift"; sourceTree = "<group>"; };
 		EF64D8E023FCEDFB00A42596 /* CreateASchedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CreateASchedule.storyboard; path = "Workout Tracker/CreateASchedule.storyboard"; sourceTree = "<group>"; };
 		EF64D8E323FCEE9A00A42596 /* Progress.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Progress.storyboard; path = "Workout Tracker/Progress.storyboard"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		EF50C17323F4FF5200B16179 /* Workout Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				EF5D1654242310D600B1F0D3 /* Helpers */,
 				EF50C18A23F505E400B16179 /* Model */,
 				EF50C18B23F5061300B16179 /* Controller */,
 				EF50C18C23F5066000B16179 /* View Controllers */,
@@ -233,6 +236,14 @@
 				A35F298A23FF967800C8157E /* Custom Views */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EF5D1654242310D600B1F0D3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EF5D16552423111A00B1F0D3 /* CustomTextField.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		EF64D8E223FCEE0A00A42596 /* Dashboards */ = {
@@ -417,6 +428,7 @@
 				EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */,
 				EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */,
 				EF91949E2417387C009FAE77 /* WorkoutImage.swift in Sources */,
+				EF5D16562423111A00B1F0D3 /* CustomTextField.swift in Sources */,
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */,
