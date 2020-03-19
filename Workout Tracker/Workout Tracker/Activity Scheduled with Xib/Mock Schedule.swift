@@ -25,7 +25,7 @@ extension Schedule {
         let day = [Int](0...27).randomValue()
         let hour = [Int](0...23).randomValue()
         let month = [Int](0...12).randomValue()
-        let year = 2020
+        let year = 0
         let startDate = Calendar.current.date(byAdding: .day, value: day, to: fromStartDate)!
         
         

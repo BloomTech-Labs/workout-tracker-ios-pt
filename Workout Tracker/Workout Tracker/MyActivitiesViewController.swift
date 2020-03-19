@@ -9,11 +9,11 @@
 import UIKit
 
 class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalendarMainViewControllerDelegate {
-    func calendarController(_ controller: CalendarMainViewController, didSelect day: Date) {
+    func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
         //trigger point
         //should work like DidSelectCell on calendarMainVC
         //now should try to make the stuff work from this VC only.
-        //getSchedule()? 
+        getSchedule()
     }
     
     
@@ -21,7 +21,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var containerView: UIView!
-    
+    let numOfRandomEvent = 10
     let activityScheduledCellIdentifier = "activityScheduledCell"
     let formatter = DateFormatter()
     let calendarChildVC =
@@ -29,12 +29,13 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
    var scheduleGroup : [String: [Schedule]]? {
            didSet {
+               calendarChildVC.calendarView.reloadData()
                tableView.reloadData()
            }
        }
     var schedules: [Schedule] {
            get {
-               guard let selectedDate = calendarChildVC.selectedDates.first else {
+            guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {
                    return []
                }
                
@@ -59,6 +60,21 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
 //
         let myNib2 = UINib(nibName: "ActivityScheduledTableViewCell", bundle: Bundle.main)
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
+    }
+    
+
+    func getSchedule(){
+        let startDate = (calendarChildVC.calendarView.visibleDates().monthDates.first!.date)
+        getSchedule(fromDate: startDate)
+    }
+    func getSchedule(fromDate: Date) {
+        var schedules: [Schedule] = []
+        for _ in 1...numOfRandomEvent {
+            schedules.append(Schedule(fromStartDate: fromDate))
+        }
+        
+        scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
+        //The hashable
     }
      
     func addCalendarChildVC(){
@@ -89,16 +105,4 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     }
     
 
-        func getSchedule(){
-             let _ = (calendarView.visibleDates().monthDates.first?.date)!
-        }
-        func getSchedule(fromDate: Date, toDate: Date) {
-            var schedules: [Schedule] = []
-            for _ in 1...numOfRandomEvent {
-                schedules.append(Schedule(fromStartDate: fromDate))
-            }
-            
-            scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
-            //The hashable
-        }
 }

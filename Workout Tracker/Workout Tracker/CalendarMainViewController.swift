@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 
 protocol CalendarMainViewControllerDelegate: class {
-    func calendarController(_ controller: CalendarMainViewController, didSelect day: Date)
+    func calendarController(_ controller: CalendarMainViewController, didSelect date: Date)
 }
 
 class CalendarMainViewController: UIViewController {
@@ -209,14 +209,12 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
-        //check cell state
-        //if cell state is already selected then
+       
     
         configureCell(view: cell, cellState: cellState)
-        //MARK: improvement
-        //        could do a set date here
-        //save index path?
+     
         selectedDates.append(date)
+        //delegate to reload tableview 
         delegate?.calendarController(self, didSelect: date)
     }
     
