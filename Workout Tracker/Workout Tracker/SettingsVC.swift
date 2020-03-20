@@ -9,22 +9,35 @@
 import UIKit
 
 class SettingsVC: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var emailTextLbl: UILabel!
+    @IBOutlet weak var resetPasswordBtn: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        buttonStyling()
+        
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Actions
+    
+    @IBAction func resetPasswordBtnPressed(_ sender: UIButton) {
+        passwordResetAlert()
     }
-    */
+    
+    func buttonStyling() {
+        resetPasswordBtn.layer.cornerRadius = 5
+    }
+    
+    func passwordResetAlert() {
+        guard let emailText = emailTextLbl.text else { return }
+        let alert = UIAlertController(title: "Password Reset!", message: "An email has been sent to \(emailText). Please follow the link to reset your password.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 
 }
