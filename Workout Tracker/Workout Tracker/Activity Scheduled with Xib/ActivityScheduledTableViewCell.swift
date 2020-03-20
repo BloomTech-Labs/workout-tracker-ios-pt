@@ -27,7 +27,7 @@ class ActivityScheduledTableViewCell: UITableViewCell {
             startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
-            dateScheduledLabel.text = dateFormatter.string(from: schedule.dateScheduled)
+            dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
              
         }
     }

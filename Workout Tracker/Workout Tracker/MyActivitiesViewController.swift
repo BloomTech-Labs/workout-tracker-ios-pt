@@ -28,7 +28,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var containerView: UIView!
-    let numOfRandomEvent = 10
+    let numOfRandomEvent = 100
     let activityScheduledCellIdentifier = "activityScheduledCell"
     let formatter = DateFormatter()
     let calendarChildVC =
@@ -60,6 +60,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.delegate = self
         setupViewNibs()
+        formatter.dateFormat = "yyyy MM dd"
     }
     func setupViewNibs() {
 //        let myNib = UINib(nibName: "CellView", bundle: Bundle.main)
@@ -71,16 +72,22 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
 
     func getSchedule(){
-        let startDate = (calendarChildVC.calendarView.visibleDates().monthDates.first!.date)
-        getSchedule(fromDate: startDate)
+        if let startDate = calendarChildVC.calendarView.visibleDates().monthDates.first?.date {
+        let endDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)
+            getSchedule(fromDate: startDate, toDate: endDate!)
+            print("Showing enddate:\(endDate)")
+            print("Showing startdate: \(startDate)")
+        }
     }
-    func getSchedule(fromDate: Date) {
+    func getSchedule(fromDate: Date, toDate: Date) {
         var schedules: [Schedule] = []
         for _ in 1...numOfRandomEvent {
             schedules.append(Schedule(fromStartDate: fromDate))
         }
         
-        scheduleGroup = schedules.group{self.formatter.string(from: $0.startTime)}
+        scheduleGroup = schedules.group{
+            return self.formatter.string(from: $0.startTime)}
+        //empty string from formatter .  po a self.formatter.string 
         //The hashable
     }
      
@@ -111,6 +118,8 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as! ActivityScheduledTableViewCell
         cell.schedule = schedules[indexPath.row]
+        
+        print(cell.schedule!)
         return cell
         
     }

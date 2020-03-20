@@ -12,7 +12,6 @@ import UIKit
 struct Schedule {
     var workoutName: String
     var startTime: Date
-    var dateScheduled: Date
 }
 
 
@@ -22,22 +21,16 @@ extension Schedule {
     init(fromStartDate: Date) {
         workoutName = ["Run", "Go to gym", "Legs"].randomValue()
         
-        let day = [Int](0...27).randomValue()
-        let hour = [Int](0...23).randomValue()
-        let month = [Int](0...12).randomValue()
-        let year = 0
-        let startDate = Calendar.current.date(byAdding: .day, value: day, to: fromStartDate)!
+        let randomDay = [Int](0...27).randomValue()
+        let randomHour = [Int](0...23).randomValue()
+        let randomizedDate = Calendar.current.date(byAdding: .day,
+                                                   value: randomDay,
+                                                   to: fromStartDate)!
         
-        
-        startTime = Calendar.current.date(byAdding: .hour, value: hour, to: startDate)!
-        
-        var dateComponent = DateComponents()
-        dateComponent.month = month
-        dateComponent.year = year
-        dateComponent.day = day
-        
-//        let dateComponents = DateComponents(year: year, day: day, month: month)
-        dateScheduled = Calendar.current.date(byAdding: dateComponent, to: startDate)!
+        //start time represents both year, month,day, and the hour, minute and second.
+        startTime = Calendar.current.date(byAdding: .hour,
+                                          value: randomHour,
+                                          to: randomizedDate)!
       
     }
 }
