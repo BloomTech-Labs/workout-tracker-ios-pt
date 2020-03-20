@@ -76,10 +76,26 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eag-94-iKL">
                                 <rect key="frame" x="305" y="595.5" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABa-Yk-vLF">
+                                <rect key="frame" x="107" y="663" width="200" height="45"/>
+                                <color key="backgroundColor" red="0.79491651060000001" green="0.4421835542" blue="0.23520737890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="BfY-jW-Cim"/>
+                                    <constraint firstAttribute="width" constant="200" id="mBG-hL-sXU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutBtnPressed:" destination="baG-Oh-hbH" eventType="touchUpInside" id="Jd2-pL-5Fy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IAR-t7-54E" firstAttribute="top" secondItem="Twm-lA-NAl" secondAttribute="bottom" constant="20" id="4Lu-04-2N0"/>
+                            <constraint firstItem="ABa-Yk-vLF" firstAttribute="centerX" secondItem="7RR-GZ-UJ2" secondAttribute="centerX" id="5vc-JH-hPL"/>
                             <constraint firstItem="Naa-5R-lxh" firstAttribute="top" secondItem="nXb-5T-dvZ" secondAttribute="bottom" constant="40" id="7El-7n-AyQ"/>
                             <constraint firstItem="Twm-lA-NAl" firstAttribute="top" secondItem="jlV-C1-53C" secondAttribute="bottom" constant="20" id="Cqs-TW-lYO"/>
                             <constraint firstItem="Mqb-46-OSD" firstAttribute="centerX" secondItem="7RR-GZ-UJ2" secondAttribute="centerX" id="Eia-GL-LnM"/>
@@ -93,6 +109,7 @@
                             <constraint firstItem="jlV-C1-53C" firstAttribute="top" secondItem="eE4-mY-5s9" secondAttribute="top" constant="20" id="c1B-C3-YDG"/>
                             <constraint firstItem="slm-wF-r5z" firstAttribute="top" secondItem="IAR-t7-54E" secondAttribute="bottom" constant="8" id="cUW-wd-Sth"/>
                             <constraint firstItem="PQp-jv-M3b" firstAttribute="leading" secondItem="eE4-mY-5s9" secondAttribute="leading" constant="60" id="eaW-de-NSh"/>
+                            <constraint firstItem="ABa-Yk-vLF" firstAttribute="top" secondItem="PQp-jv-M3b" secondAttribute="bottom" constant="40" id="i2X-xY-IHp"/>
                             <constraint firstItem="eE4-mY-5s9" firstAttribute="trailing" secondItem="eag-94-iKL" secondAttribute="trailing" constant="60" id="nrF-Tp-CQI"/>
                             <constraint firstItem="nXb-5T-dvZ" firstAttribute="top" secondItem="Mqb-46-OSD" secondAttribute="bottom" constant="8" id="oAz-rb-uje"/>
                             <constraint firstItem="IAR-t7-54E" firstAttribute="centerX" secondItem="7RR-GZ-UJ2" secondAttribute="centerX" id="tIA-lV-Gym"/>
@@ -103,6 +120,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="pvY-Bf-OHD"/>
                     <connections>
                         <outlet property="emailTextLbl" destination="nXb-5T-dvZ" id="M08-aH-YyJ"/>
+                        <outlet property="logoutBtn" destination="ABa-Yk-vLF" id="eyo-Co-ZJh"/>
                         <outlet property="resetPasswordBtn" destination="Naa-5R-lxh" id="CLU-zh-fcK"/>
                     </connections>
                 </viewController>

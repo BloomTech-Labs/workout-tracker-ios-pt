@@ -14,6 +14,7 @@ class SettingsVC: UIViewController {
     
     @IBOutlet weak var emailTextLbl: UILabel!
     @IBOutlet weak var resetPasswordBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
     
 
     override func viewDidLoad() {
@@ -29,13 +30,26 @@ class SettingsVC: UIViewController {
         passwordResetAlert()
     }
     
+    @IBAction func logoutBtnPressed(_ sender: UIButton) {
+        logoutAlert()
+    }
+    
+    
     func buttonStyling() {
-        resetPasswordBtn.layer.cornerRadius = 5
+        let cornerRadiusValue: CGFloat = 5
+        resetPasswordBtn.layer.cornerRadius = cornerRadiusValue
+        logoutBtn.layer.cornerRadius = cornerRadiusValue
     }
     
     func passwordResetAlert() {
         guard let emailText = emailTextLbl.text else { return }
         let alert = UIAlertController(title: "Password Reset!", message: "An email has been sent to \(emailText). Please follow the link to reset your password.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func logoutAlert() {
+        let alert = UIAlertController(title: "You Are Logged Out!", message: "Please sign in again to access your account", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
