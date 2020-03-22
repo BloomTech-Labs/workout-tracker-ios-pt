@@ -19,9 +19,8 @@
                             <userLayoutGuide location="209" affinity="minX"/>
                         </userGuides>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-Wc-w3J">
                                 <rect key="frame" x="96" y="295" width="222" height="151.5"/>
@@ -59,7 +58,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="zTL-3Q-PAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DN-gQ-Ll1"/>
-                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Tr-2m-tU8"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="9Tr-2m-tU8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Was-eD-StS" secondAttribute="bottom" constant="32" id="9oh-Y9-vBr"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerY" secondItem="Was-eD-StS" secondAttribute="centerY" constant="-437" id="Du0-jG-0tE"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="96" id="Pjg-8t-uhD"/>
@@ -67,7 +66,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Was-eD-StS" secondAttribute="trailing" constant="32" id="eHv-MJ-Fp9"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gF0-Mu-xD5"/>
                             <constraint firstAttribute="trailing" secondItem="dCy-Wc-w3J" secondAttribute="trailing" constant="96" id="oLd-hD-lj4"/>
-                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ocv-b2-2ry"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ocv-b2-2ry"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
