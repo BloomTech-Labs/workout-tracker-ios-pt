@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E839565B2FC9565D151F0DE /* Pods_Workout_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3FE37D0B544104F5948AD16 /* Pods_Workout_Tracker.framework */; };
+		A34BD86C242767DF00D87601 /* workoutvid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A3C96DD42427617000E59186 /* workoutvid.mp4 */; };
 		A358D8E32423101C00AD45B4 /* ActivityScheduledTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358D8E12423101C00AD45B4 /* ActivityScheduledTableViewCell.swift */; };
 		A358D8E42423101C00AD45B4 /* ActivityScheduledTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A358D8E22423101C00AD45B4 /* ActivityScheduledTableViewCell.xib */; };
 		A358D8E62423156900AD45B4 /* Mock Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A358D8E52423156900AD45B4 /* Mock Schedule.swift */; };
@@ -390,6 +391,7 @@
 				EF50C19223F5089C00B16179 /* Dashboard.storyboard in Resources */,
 				EF64D8E823FCEEDD00A42596 /* Settings.storyboard in Resources */,
 				A358D8E42423101C00AD45B4 /* ActivityScheduledTableViewCell.xib in Resources */,
+				A34BD86C242767DF00D87601 /* workoutvid.mp4 in Resources */,
 				EF50C19023F5087A00B16179 /* SignIn.storyboard in Resources */,
 				EF64D8E123FCEDFB00A42596 /* CreateASchedule.storyboard in Resources */,
 				EF50C17E23F4FF5200B16179 /* Assets.xcassets in Resources */,
