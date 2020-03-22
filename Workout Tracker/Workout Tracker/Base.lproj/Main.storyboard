@@ -51,20 +51,29 @@
                                     <segue destination="OXW-x4-lnn" kind="presentation" modalPresentationStyle="fullScreen" id="2CX-LO-iFG"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DN-gQ-Ll1"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Tr-2m-tU8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Was-eD-StS" secondAttribute="bottom" constant="32" id="9oh-Y9-vBr"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerY" secondItem="Was-eD-StS" secondAttribute="centerY" constant="-437" id="Du0-jG-0tE"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="96" id="Pjg-8t-uhD"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aLU-hg-rbf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Was-eD-StS" secondAttribute="trailing" constant="32" id="eHv-MJ-Fp9"/>
                             <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gF0-Mu-xD5"/>
                             <constraint firstAttribute="trailing" secondItem="dCy-Wc-w3J" secondAttribute="trailing" constant="96" id="oLd-hD-lj4"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ocv-b2-2ry"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="getStartedButton" destination="Was-eD-StS" id="H1q-8F-avj"/>
+                        <outlet property="videoBackground" destination="zTL-3Q-PAI" id="4Tq-d7-Met"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -67,6 +67,7 @@
 		A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
+		A3C96DD42427617000E59186 /* workoutvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = workoutvid.mp4; sourceTree = "<group>"; };
 		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
 		A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainViewController.swift; sourceTree = "<group>"; };
 		A3E04CE72404E05300B114B9 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
@@ -225,6 +226,7 @@
 			children = (
 				EF50C17423F4FF5200B16179 /* AppDelegate.swift */,
 				EF50C17623F4FF5200B16179 /* SceneDelegate.swift */,
+				A3C96DD42427617000E59186 /* workoutvid.mp4 */,
 				EF50C17D23F4FF5200B16179 /* Assets.xcassets */,
 			);
 			name = Resources;
