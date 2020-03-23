@@ -10,34 +10,40 @@ import UIKit
 import AVFoundation
 
 class LandingPageViewController: UIViewController {
-
+    
     @IBOutlet weak var videoBackground: UIView!
     @IBOutlet weak var getStartedButton: UIButton!
     
     
     var player: AVPlayer?
     let videoURL = Bundle.main.url(forResource: "workoutvid", withExtension: "mp4")!
-    
+    var playerItem: AVPlayerItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         getStartedButton.layer.cornerRadius = 10
         getStartedButton.layer.maskedCorners = [.layerMinXMinYCorner]
-        let playerItem = AVPlayerItem(url: videoURL)
-        playerItem.videoComposition = createVideoComposition(for: playerItem)
+        playerItem = AVPlayerItem(url: videoURL)
+        playerItem!.videoComposition = createVideoComposition(for: playerItem!)
+        
         playBackgroundVideo()
+        
         
     }
     
     func playBackgroundVideo(){
         
-       
-        player = AVPlayer(url: videoURL)
+//        videoBackground.alpha = 0.7
+//        videoBackground.layer.isOpaque = false
+        videoBackground.layer.opacity = 0.5
+        player = AVPlayer(playerItem: playerItem)
+        
         player!.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoBackground.frame
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+//        playerLayer.opacity = 0.3
         self.videoBackground.layer.addSublayer(playerLayer)
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
         player!.seek(to: CMTime.zero)
@@ -45,23 +51,30 @@ class LandingPageViewController: UIViewController {
         self.player?.isMuted = true
         
     }
-
-    @objc func playerItemDidReachEnd(){
-        player!.seek(to: CMTime.zero)
+    
+    @objc func playerItemDidReachEnd(notification: Notification){
+        if let playerItem = notification.object as? AVPlayerItem {
+            playerItem.seek(to: CMTime.zero, completionHandler: nil)
+        }
+        
     }
     
     func createVideoComposition(for playerItem: AVPlayerItem) -> AVVideoComposition {
-       let composition = AVVideoComposition(asset: playerItem.asset, applyingCIFiltersWithHandler: { request in
-         // Here we can use any CIFilter
-         guard let filter = CIFilter(name: "CIColorMonochrome") else {
-           return request.finish(with: NSError())
-         }
-         filter.setValue(request.sourceImage, forKey: "inputImage")
-         filter.setValue(CIColor(red: 212, green: 104, blue: 41), forKey: "inputColor")
-
-         filter.setValue(1.0, forKey: "inputIntensity")
-         return request.finish(with: filter.outputImage!, context: nil)
-       })
-       return composition
-     }
+        let composition = AVVideoComposition(asset: playerItem.asset, applyingCIFiltersWithHandler: { request in
+            
+            guard let filter = CIFilter(name: "CIColorMonochrome") else { return request.finish(with: NSError())}
+            
+//            guard let filter2 = CIFilter(name: "CIDissolveTransition") else { return request.finish(with: NSError())}
+                      
+            filter.setValue(request.sourceImage, forKey: kCIInputImageKey)
+            filter.setValue(CIColor(red: 212.0/255.0, green: 104.0/255.0, blue: 41.0/255.0), forKey: kCIInputColorKey)
+            
+//            filter.setValue(1.0, forKey: kCIInputIntensityKey)
+//            filter2.setValue(filter.outputImage!, forKey: kCIInputImageKey)
+//            filter2.setValue(1, forKey: kCIInputTimeKey)
+            return request.finish(with: filter.outputImage!, context: nil)
+            
+        })
+        return composition
+    }
 }

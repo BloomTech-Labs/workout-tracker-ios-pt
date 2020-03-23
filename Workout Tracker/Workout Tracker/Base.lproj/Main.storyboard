@@ -19,8 +19,10 @@
                             <userLayoutGuide location="209" affinity="minX"/>
                         </userGuides>
                         <subviews>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.95705107869999995" green="0.94709905940000005" blue="0.91724300179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-Wc-w3J">
                                 <rect key="frame" x="96" y="295" width="222" height="151.5"/>
@@ -55,7 +57,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.957051078680203" green="0.94709905944966377" blue="0.91724300175804585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="zTL-3Q-PAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DN-gQ-Ll1"/>
                             <constraint firstItem="zTL-3Q-PAI" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="9Tr-2m-tU8"/>
