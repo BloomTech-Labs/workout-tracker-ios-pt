@@ -36,6 +36,14 @@ class OnboardingSecondViewController: UIViewController {
     @IBAction func nextAndSave(_ sender: UIButton) {
         let fitnessGoals: FitnessGoals = getSelectedFitnessGoals()
         print(fitnessGoals)
+        self.dismiss(animated: true, completion: nil)
+        
+//        let viewController:
+//        UIViewController = UIStoryboard(
+//            name: "Dashboard", bundle: nil
+//        ).instantiateViewController(withIdentifier: "Dashboard") as UIViewController
+//        self.performSegue(withIdentifier: viewController, sender: nil)
+//        self.present(viewController, animated: false, completion: nil)
     }
     
     func getSelectedFitnessGoals() -> FitnessGoals {

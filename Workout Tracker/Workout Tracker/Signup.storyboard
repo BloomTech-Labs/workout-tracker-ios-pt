@@ -75,7 +75,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpBtnPressed:" destination="rNR-yf-2DD" eventType="touchUpInside" id="Sh2-Dn-17W"/>
-                                    <segue destination="73Z-dD-0bU" kind="presentation" id="sQz-WJ-Gqc"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="JBq-hm-UYc" userLabel="__or__ StackView">
@@ -240,6 +239,7 @@
                         <outlet property="signUpButton" destination="qDj-fb-onB" id="awT-mo-u5L"/>
                         <outlet property="signUpFacebookButton" destination="Qpl-zd-KS0" id="PA5-CV-59d"/>
                         <outlet property="signUpGoogleButton" destination="xUP-fs-GEX" id="PZh-Tx-6Ew"/>
+                        <segue destination="73Z-dD-0bU" kind="presentation" identifier="toOnboarding" id="1Qv-Ze-UKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEX-4I-s0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

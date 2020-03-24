@@ -10,7 +10,7 @@
         <!--Dashboard-->
         <scene sceneID="651-pD-cKE">
             <objects>
-                <viewController id="ShT-An-yGE" customClass="DashboardVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" id="ShT-An-yGE" customClass="DashboardVC" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zve-g8-yfP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
