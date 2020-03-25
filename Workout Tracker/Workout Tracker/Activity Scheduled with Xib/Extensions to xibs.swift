@@ -26,7 +26,7 @@ public extension Sequence {
                 categories[key]?.append(element)
             }
         }
-
+        
         return categories
     }
 }

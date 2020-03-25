@@ -9,18 +9,18 @@
 import UIKit
 
 class MyActivitiesDetailViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.4631554372, green: 0.3478105556, blue: 0.1369482507, alpha: 1)
     }
     
-
+    
     @IBAction func markAsCompleted(_ sender: Any) {
         self.dismiss(animated:true)
         
     }
     
-
+    
 }

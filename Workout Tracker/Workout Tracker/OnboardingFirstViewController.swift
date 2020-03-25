@@ -13,13 +13,6 @@ protocol OnboardingFirstViewControllerDelegate: class {
 }
 
 class OnboardingFirstViewController: UIViewController {
-//    func pageViewController(_ controller: OnBoardingPageViewController, controllerAfter viewController: UIViewController) {
-//        nextAndSave(goToNextPageButton)
-//    }
-    
-//    let parentVC = self.parent as! OnBoardingPageViewController
-//    parentVC.orderedViewControllers([parentVC.pages[1]], direction: .forward, animated: true, completion: nil)
-    
     
     weak var delegate:  OnboardingFirstViewControllerDelegate?
     
@@ -35,7 +28,7 @@ class OnboardingFirstViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         backgroundView.layer.cornerRadius = 50
         backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
@@ -44,12 +37,12 @@ class OnboardingFirstViewController: UIViewController {
     
     @IBAction func timeWorkOutAnswerSelected(_ sender: UIButton) {
         
-    timeWorkOutAnswerButtons.forEach({$0.isSelected = false})
-       
+        timeWorkOutAnswerButtons.forEach({$0.isSelected = false})
+        
         sender.isSelected = true
     }
     
-
+    
     @IBAction func nextAndSave(_ sender: UIButton) {
         let timeWorkout: TimeWorkout = getSelectedTimeWorkout()
         print(timeWorkout)
@@ -65,7 +58,7 @@ class OnboardingFirstViewController: UIViewController {
         }
         return .morning
     }
-
+    
 }
 
 

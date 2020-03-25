@@ -13,9 +13,6 @@ protocol CalendarMainViewControllerDelegate: class {
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date)
 }
 
-protocol CalendarMainViewControllerDelegate2: class {
-    func calendarController(_ controller: CalendarMainViewController, didScrollTo visibleDates: [Date])
-}
 
 class CalendarMainViewController: UIViewController {
     
@@ -29,15 +26,8 @@ class CalendarMainViewController: UIViewController {
     var monthLabelDate = Date()
     var selectedDates = [Date]()
     let numOfRandomEvent = 100
-
+    
     weak var delegate: CalendarMainViewControllerDelegate?
-    weak var delegate2: CalendarMainViewControllerDelegate2?
-//    var scheduleGroup : [String: [Schedule]]? {
-//              didSet {
-//                  calendarView.reloadData()
-////                  tableView.reloadData()
-//              }
-//          }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,9 +39,7 @@ class CalendarMainViewController: UIViewController {
         }
         
     }
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        self.calendarView.reloadData(withAnchor: Date())
-    //    }
+    
     func setUpMonthViews(from visibleDates: DateSegmentInfo) {
         monthLabelDate = visibleDates.monthDates.first!.date
         formatter.dateFormat = "yyyy"
@@ -68,11 +56,11 @@ class CalendarMainViewController: UIViewController {
     }
     
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
-        //                   if cellState.dateBelongsTo == .thisMonth {
-        //                      cell.dateLabel.textColor = UIColor.black
-        //                   } else {
-        //                      cell.dateLabel.textColor = UIColor.gray
-        //                   }
+        //if cellState.dateBelongsTo == .thisMonth {
+        //cell.dateLabel.textColor = UIColor.black
+        //} else {
+        //      cell.dateLabel.textColor = UIColor.gray
+        //}
         if cellState.dateBelongsTo == .thisMonth {
             cell.isHidden = false
         } else {
@@ -83,7 +71,7 @@ class CalendarMainViewController: UIViewController {
     
     func handleCellSelected(cell: DateCell, cellState: CellState) {
         if cellState.isSelected {
-               
+            
             cell.selectedView.layer.cornerRadius =  (cell.selectedView.frame.size.height)/2
             cell.selectedView.layer.borderWidth = 1
             
@@ -103,7 +91,7 @@ class CalendarMainViewController: UIViewController {
     @IBAction func toggleWeekView(_ sender: Any) {
         if numberOfRows == 6 {
             // note: bugging out with .selectDates
-//            calendarView.selectDates(selectedDates)
+            //            calendarView.selectDates(selectedDates)
             
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 58.33
@@ -116,11 +104,10 @@ class CalendarMainViewController: UIViewController {
                 self.calendarView.layoutIfNeeded()
                 self.calendarView.alpha = 1
                 self.calendarView.transform = .identity
-                //page curl end
             }) { completed in self.calendarView.reloadData(withAnchor:self.monthLabelDate)
             } }
         else {
-//            calendarView.selectDates(selectedDates)
+            //calendarView.selectDates(selectedDates)
             self.calendarView.alpha = 0
             self.calendarViewHeightConstraint.constant = 350
             self.numberOfRows = 6
@@ -193,8 +180,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
             calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCell
         self.calendar(calendar, willDisplay: cell, forItemAt: date, cellState: cellState, indexPath: indexPath)
         return cell
-        
-        
+   
         
     }
     
@@ -207,10 +193,10 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     }
     
     func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
-       
-    
+        
+        
         configureCell(view: cell, cellState: cellState)
-     
+        
         selectedDates.append(date)
         //delegate to reload tableview 
         delegate?.calendarController(self, didSelect: date)
@@ -224,14 +210,12 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
         return true // Based on a criteria, return true or false
     }
     
-
+    
     
     func calendar(_ calendar: JTACMonthView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setUpMonthViews(from: visibleDates)
-//        getSchedule()
         calendarView.selectDates(selectedDates)
-        delegate2?.calendarController(self, didScrollTo: selectedDates)
-      
+        
     }
     
 }

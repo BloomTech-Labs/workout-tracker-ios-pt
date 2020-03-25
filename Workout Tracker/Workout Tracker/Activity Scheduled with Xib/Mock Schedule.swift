@@ -31,7 +31,7 @@ extension Schedule {
         startTime = Calendar.current.date(byAdding: .hour,
                                           value: randomHour,
                                           to: randomizedDate)!
-      
+        
     }
 }
 extension Schedule : Equatable {

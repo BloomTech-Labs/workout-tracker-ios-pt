@@ -33,9 +33,6 @@ class LandingPageViewController: UIViewController {
     }
     
     func playBackgroundVideo(){
-        
-//        videoBackground.alpha = 0.7
-//        videoBackground.layer.isOpaque = false
         videoBackground.layer.opacity = 0.5
         player = AVPlayer(playerItem: playerItem)
         
@@ -43,7 +40,6 @@ class LandingPageViewController: UIViewController {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.frame = self.videoBackground.frame
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-//        playerLayer.opacity = 0.3
         self.videoBackground.layer.addSublayer(playerLayer)
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player!.currentItem)
         player!.seek(to: CMTime.zero)
@@ -63,15 +59,9 @@ class LandingPageViewController: UIViewController {
         let composition = AVVideoComposition(asset: playerItem.asset, applyingCIFiltersWithHandler: { request in
             
             guard let filter = CIFilter(name: "CIColorMonochrome") else { return request.finish(with: NSError())}
-            
-//            guard let filter2 = CIFilter(name: "CIDissolveTransition") else { return request.finish(with: NSError())}
-                      
             filter.setValue(request.sourceImage, forKey: kCIInputImageKey)
             filter.setValue(CIColor(red: 212.0/255.0, green: 104.0/255.0, blue: 41.0/255.0), forKey: kCIInputColorKey)
             
-//            filter.setValue(1.0, forKey: kCIInputIntensityKey)
-//            filter2.setValue(filter.outputImage!, forKey: kCIInputImageKey)
-//            filter2.setValue(1, forKey: kCIInputTimeKey)
             return request.finish(with: filter.outputImage!, context: nil)
             
         })

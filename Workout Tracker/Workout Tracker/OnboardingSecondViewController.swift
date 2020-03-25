@@ -9,7 +9,7 @@
 import UIKit
 
 class OnboardingSecondViewController: UIViewController {
-
+    
     enum FitnessGoals: Int {
         case shape
         case weight
@@ -21,7 +21,7 @@ class OnboardingSecondViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         backgroundView.layer.cornerRadius = 50
         backgroundView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -29,23 +29,15 @@ class OnboardingSecondViewController: UIViewController {
     
     @IBAction func fitnessGoalsSelected(_ sender: UIButton) {
         
-    fitnessGoalsAnswers.forEach({$0.isSelected = false})
+        fitnessGoalsAnswers.forEach({$0.isSelected = false})
         sender.isSelected = true
     }
     
     @IBAction func nextAndSave(_ sender: UIButton) {
         let fitnessGoals: FitnessGoals = getSelectedFitnessGoals()
         print(fitnessGoals)
-//        self.dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: "toDashboard", sender: nil)
-      
         
-//        let viewController:
-//        UIViewController = UIStoryboard(
-//            name: "Dashboard", bundle: nil
-//        ).instantiateViewController(withIdentifier: "Dashboard") as UIViewController
-//        self.performSegue(withIdentifier: viewController, sender: nil)
-//        self.present(viewController, animated: false, completion: nil)
     }
     
     func getSelectedFitnessGoals() -> FitnessGoals {
@@ -56,6 +48,6 @@ class OnboardingSecondViewController: UIViewController {
         }
         return .shape
     }
- 
-
+    
+    
 }
