@@ -198,6 +198,16 @@
                                     <outlet property="ibCalendarDelegate" destination="Rew-cc-DXK" id="kVl-4j-DXP"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nAj-Kr-tEg">
+                                <rect key="frame" x="60" y="469" width="294" height="32"/>
+                                <segments>
+                                    <segment title="Month"/>
+                                    <segment title="Week"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toggleCalendarViewWithSegmentedControl:" destination="Rew-cc-DXK" eventType="valueChanged" id="j9z-ci-B4O"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -208,7 +218,9 @@
                             <constraint firstItem="I9S-7M-9ST" firstAttribute="top" secondItem="gZu-GP-go4" secondAttribute="top" constant="10" id="iJr-Sx-YRm"/>
                             <constraint firstItem="015-OJ-ZZq" firstAttribute="top" secondItem="S90-Il-uGu" secondAttribute="bottom" id="iiK-HP-crn"/>
                             <constraint firstItem="EcT-tA-pj8" firstAttribute="trailing" secondItem="015-OJ-ZZq" secondAttribute="trailing" constant="60" id="mc8-83-R5T"/>
+                            <constraint firstItem="nAj-Kr-tEg" firstAttribute="top" secondItem="015-OJ-ZZq" secondAttribute="bottom" constant="-1" id="nBD-M3-m2r"/>
                             <constraint firstItem="S90-Il-uGu" firstAttribute="centerX" secondItem="015-OJ-ZZq" secondAttribute="centerX" id="rnO-uL-yYq"/>
+                            <constraint firstItem="nAj-Kr-tEg" firstAttribute="bottom" secondItem="EcT-tA-pj8" secondAttribute="bottom" id="vD7-69-lWi"/>
                             <constraint firstItem="I9S-7M-9ST" firstAttribute="centerX" secondItem="URs-Jx-vMO" secondAttribute="centerX" id="vLf-nX-4DX"/>
                             <constraint firstItem="URs-Jx-vMO" firstAttribute="top" secondItem="I9S-7M-9ST" secondAttribute="bottom" id="zWL-eU-AX8"/>
                         </constraints>
@@ -220,6 +232,7 @@
                         <outlet property="calendarViewHeightConstraint" destination="h9L-cc-cyw" id="clO-fS-ccU"/>
                         <outlet property="dateView" destination="eIB-LM-tJ7" id="3t8-wp-xtj"/>
                         <outlet property="monthLabel2" destination="VDn-v6-L7V" id="Hrf-oW-c3Z"/>
+                        <outlet property="segmentedControl" destination="nAj-Kr-tEg" id="Nxs-U1-gvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="be4-7F-vFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -29,6 +29,9 @@ class CalendarMainViewController: UIViewController {
     
     weak var delegate: CalendarMainViewControllerDelegate?
     
+    
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         calendarView.scrollDirection = .horizontal
@@ -154,6 +157,48 @@ class CalendarMainViewController: UIViewController {
                     self.calendarView.reloadData(withAnchor: self.monthLabelDate)
                 }
             })
+        }
+    }
+    
+    
+    @IBAction func toggleCalendarViewWithSegmentedControl(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if numberOfRows == 1 {
+                self.calendarView.alpha = 0
+                self.calendarViewHeightConstraint.constant = 350
+                self.numberOfRows = 6
+                let translate = CGAffineTransform(translationX: 0, y: 30)
+                self.calendarView.transform = translate
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.calendarView.layoutIfNeeded()
+                    self.calendarView.alpha = 1
+                    self.calendarView.transform = .identity
+                    DispatchQueue.main.async {
+                        self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+                    }
+                })
+            }
+        case 1:
+            if numberOfRows == 6 {
+                       self.calendarView.alpha = 0
+                       self.calendarViewHeightConstraint.constant = 58.33
+                       self.numberOfRows = 1
+                       let translate = CGAffineTransform(translationX: 0, y: 30)
+                       self.calendarView.transform = translate
+                       UIView.animate(withDuration: 0.2, animations: {
+                           self.calendarView.layoutIfNeeded()
+                           self.calendarView.alpha = 1
+                           self.calendarView.transform = .identity
+                       }) { completed in
+                           DispatchQueue.main.async {
+                               self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+                           }
+                       }
+            }
+        default:
+            break
         }
     }
     
