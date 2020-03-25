@@ -16,6 +16,7 @@ protocol CalendarMainViewControllerDelegate: class {
 
 class CalendarMainViewController: UIViewController {
     
+    //MARK: Outlets
     @IBOutlet weak var calendarViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var calendarView: JTACMonthView!
     
@@ -42,7 +43,7 @@ class CalendarMainViewController: UIViewController {
         }
         
     }
-    
+    //MARK: View Setup
     func setUpMonthViews(from visibleDates: DateSegmentInfo) {
         monthLabelDate = visibleDates.monthDates.first!.date
         formatter.dateFormat = "yyyy"
@@ -90,8 +91,9 @@ class CalendarMainViewController: UIViewController {
     //        let visibleDates = calendarView.visibleDates()
     //        calendarView.viewWillTransition(to: .zero, with: coordinator, anchorDate: visibleDates.monthDates.first?.date)
     //    }  -< To rotate views
-    
-    @IBAction func toggleWeekView(_ sender: Any) {
+    //MARK: In case of buttons instead of segmented control
+   /*
+     @IBAction func toggleWeekView(_ sender: Any) {
         if numberOfRows == 6 {
             // note: bugging out with .selectDates
             //            calendarView.selectDates(selectedDates)
@@ -158,7 +160,7 @@ class CalendarMainViewController: UIViewController {
                 }
             })
         }
-    }
+    } */
     
     
     @IBAction func toggleCalendarViewWithSegmentedControl(_ sender: Any) {
@@ -203,7 +205,7 @@ class CalendarMainViewController: UIViewController {
     }
     
 }
-
+//MARK: Calendar Data Source
 extension CalendarMainViewController: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
@@ -218,7 +220,7 @@ extension CalendarMainViewController: JTACMonthViewDataSource {
     
 }
 
-
+//MARK: Calendar Delegate
 extension CalendarMainViewController: JTACMonthViewDelegate {
     func calendar(_ calendar: JTACMonthView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTACDayCell {
         let cell =
