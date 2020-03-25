@@ -8,10 +8,21 @@
 
 import UIKit
 
-
+protocol OnboardingFirstViewControllerDelegate: class {
+    func showNextScreen()
+}
 
 class OnboardingFirstViewController: UIViewController {
-
+//    func pageViewController(_ controller: OnBoardingPageViewController, controllerAfter viewController: UIViewController) {
+//        nextAndSave(goToNextPageButton)
+//    }
+    
+//    let parentVC = self.parent as! OnBoardingPageViewController
+//    parentVC.orderedViewControllers([parentVC.pages[1]], direction: .forward, animated: true, completion: nil)
+    
+    
+    weak var delegate:  OnboardingFirstViewControllerDelegate?
+    
     enum TimeWorkout: Int {
         case morning
         case afternoon
@@ -20,6 +31,7 @@ class OnboardingFirstViewController: UIViewController {
     }
     @IBOutlet var timeWorkOutAnswerButtons: [UIButton]!
     
+    @IBOutlet weak var goToNextPageButton: UIButton!
     @IBOutlet weak var backgroundView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +53,8 @@ class OnboardingFirstViewController: UIViewController {
     @IBAction func nextAndSave(_ sender: UIButton) {
         let timeWorkout: TimeWorkout = getSelectedTimeWorkout()
         print(timeWorkout)
+        delegate?.showNextScreen()
+        
     }
     
     func getSelectedTimeWorkout() -> TimeWorkout {

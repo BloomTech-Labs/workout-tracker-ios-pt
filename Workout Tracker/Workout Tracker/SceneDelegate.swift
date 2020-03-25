@@ -19,6 +19,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
 //        window?.rootViewController =  UIStoryboard(name: "MyActivities", bundle: nil).instantiateInitialViewController()
+        
+      /*
+         this would orrived scene delegate presentation , main tab bar controller of the Dashboard would be the "Main"storyboard & then could do : 
+         if not login {
+        let loginvc = UIStoryboard(name: "LOGIN", bundle: nil).instantiateInitialViewController()
+        window?.rootViewController?.present(loginvc, animated: false, completion: nil)
+         
+         could dismiss & then pass info if needed with a delegate
+ */
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

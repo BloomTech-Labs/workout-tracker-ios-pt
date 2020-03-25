@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var facebookLbl: UILabel!
     @IBOutlet weak var googleLbl: UILabel!
     
-    var userController: UserController?
+    var userController = UserController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class SignupVC: UIViewController {
 
     // MARK: - Button Actions
     @IBAction func signUpBtnPressed(_ sender: UIButton) {
-        guard let userController = self.userController else {return}
+      let userController = self.userController
         
         if let username = self.nameTextField.text, !username.isEmpty, let email = self.emailTextField.text, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
             

@@ -8,15 +8,28 @@
 
 import UIKit
 
-class OnBoardingPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+//protocol OnBoardingPageViewControllerDelegate: class {
+//    func pageViewController(_ controller: OnBoardingPageViewController, controllerAfter viewController: UIViewController)
+//}
+
+class OnBoardingPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource, OnboardingFirstViewControllerDelegate {
+    func showNextScreen() {
+        self.setViewControllers([orderedViewControllers[1]], direction: .forward, animated: true, completion: nil)
+        self.pageControl.currentPage = 1 
+    }
     
+    
+    
+//    weak var pageDelegate: OnBoardingPageViewControllerDelegate?
     
     var pageControl = UIPageControl()
-
-      lazy var orderedViewControllers: [UIViewController] = {
-          return [self.newVC(viewController: "OnboardingFirst"),
-                  self.newVC(viewController: "OnboardingSecond")]
-      }()
+    
+    lazy var orderedViewControllers: [UIViewController] = {
+        let firstViewController = self.newVC(viewController: "OnboardingFirst") as! OnboardingFirstViewController
+        firstViewController.delegate = self
+        return [firstViewController,
+                self.newVC(viewController: "OnboardingSecond")]
+    }()
       
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
            guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
@@ -26,7 +39,6 @@ class OnBoardingPageViewController: UIPageViewController, UIPageViewControllerDe
                 
                 guard previousIndex >= 0 else {
                     return orderedViewControllers.last
-        //            return nil
                 }
                 
                 guard orderedViewControllers.count > previousIndex else {
@@ -50,9 +62,11 @@ class OnBoardingPageViewController: UIPageViewController, UIPageViewControllerDe
                 guard orderedViewControllers.count > nextIndex else {
                     return nil
                 }
-                
+//                pageDelegate?.pageViewController(self, controllerAfter: orderedViewControllers[nextIndex])
                 return orderedViewControllers[nextIndex]
-            
+        
+        
+    
     }
     
   

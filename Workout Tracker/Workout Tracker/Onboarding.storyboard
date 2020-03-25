@@ -139,6 +139,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="mVQ-4U-ApV" id="Jk3-z1-8k8"/>
+                        <outlet property="goToNextPageButton" destination="ahI-gC-hqr" id="TS5-OY-gW2"/>
                         <outletCollection property="timeWorkOutAnswerButtons" destination="cGA-Fu-5tT" collectionClass="NSMutableArray" id="ER2-fb-R3i"/>
                         <outletCollection property="timeWorkOutAnswerButtons" destination="f2m-vP-h99" collectionClass="NSMutableArray" id="Acx-lF-9bd"/>
                         <outletCollection property="timeWorkOutAnswerButtons" destination="5tt-Pj-KvJ" collectionClass="NSMutableArray" id="CGx-li-zqD"/>
@@ -273,17 +274,29 @@ What are your fitness goals?
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BGq-N8-Ech"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0Ik-nJ-mfj"/>
                     <connections>
                         <outlet property="backgroundView" destination="l49-8q-LTP" id="3Lf-zD-1Ud"/>
                         <outletCollection property="fitnessGoalsAnswers" destination="NUv-lE-Zkp" collectionClass="NSMutableArray" id="u2g-Aw-B61"/>
                         <outletCollection property="fitnessGoalsAnswers" destination="dVX-jI-BEd" collectionClass="NSMutableArray" id="BJP-fL-fyG"/>
                         <outletCollection property="fitnessGoalsAnswers" destination="6zo-5U-e9b" collectionClass="NSMutableArray" id="YUY-AV-FAw"/>
                         <outletCollection property="fitnessGoalsAnswers" destination="4LI-8g-53e" collectionClass="NSMutableArray" id="xbI-JR-TJw"/>
+                        <segue destination="Aq1-hN-E9N" kind="presentation" identifier="toDashboard" modalPresentationStyle="fullScreen" id="gtX-oL-MHC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ci-6A-LF6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="730.43478260869574" y="145.98214285714286"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="cDs-f5-9jy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="Aq1-hN-E9N" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Kml-ZE-gsi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yOF-ap-OVN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="247"/>
         </scene>
     </scenes>
 </document>
