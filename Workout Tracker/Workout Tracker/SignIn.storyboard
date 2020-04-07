@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="height" constant="45" id="dTU-vg-QMG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-fp-fJY" customClass="CustomTextField" customModule="Workout_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="25" y="259" width="364" height="45"/>
