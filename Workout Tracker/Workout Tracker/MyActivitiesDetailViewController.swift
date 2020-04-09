@@ -34,27 +34,23 @@ class MyActivitiesDetailViewController: UIViewController {
     
     
     @IBAction func markAsCompleted(_ sender: Any) {
-        self.dismiss(animated:true)
-        
+//        self.dismiss(animated:true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func updateViews(){
+        guard let schedule = schedule,
+            isViewLoaded else { return }
+      
+        title = schedule.workoutName
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateLabel.text = dateFormatter.string(from: schedule.startTime)
+    
+        let startTimeFormatter = DateFormatter()
+        startTimeFormatter.dateFormat = "HH:mm"
+        timeLabel.text = startTimeFormatter.string(from: schedule.startTime)
         
     }
-    
-//    var schedule: Schedule! {
-//          didSet {
-//              
-//              workoutNameLabel.text = schedule.workoutName
-//              
-//              
-//              let startTimeFormatter = DateFormatter()
-//              startTimeFormatter.dateFormat = "HH:mm"
-//              startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
-//              let dateFormatter = DateFormatter()
-//              dateFormatter.dateFormat = "MM/dd/yyyy"
-//              dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
-//              
-//          }
-//    
+      
 }
