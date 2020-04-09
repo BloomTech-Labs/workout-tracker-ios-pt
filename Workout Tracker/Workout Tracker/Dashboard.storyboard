@@ -71,70 +71,13 @@
                                     <constraint firstAttribute="height" constant="100" id="iIj-o9-Cch"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myActivitiesCell" rowHeight="77" id="u3F-BL-7Fv" customClass="DashboardMyActivitiesTableViewCell" customModule="Workout_Tracker" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myActivitiesCell" rowHeight="77" id="u3F-BL-7Fv" customClass="ActivityScheduledTableViewCell" customModule="Workout_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="335" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u3F-BL-7Fv" id="oLE-fj-WpI">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiP-sd-iDM">
-                                                    <rect key="frame" x="15.000000000000004" y="11" width="57.333333333333343" height="15.666666666666664"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtV-Yv-vN4">
-                                                    <rect key="frame" x="15.000000000000002" y="34.666666666666664" width="31.666666666666671" height="14.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:00 AM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1i-CQ-6Gc">
-                                                    <rect key="frame" x="54.666666666666657" y="34.666666666666664" width="54" height="14.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-S0-1PR">
-                                                    <rect key="frame" x="133.66666666666666" y="34.666666666666664" width="30.333333333333343" height="14.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/17/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfg-i9-gqp">
-                                                    <rect key="frame" x="172" y="34.666666666666664" width="62.666666666666657" height="14.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQO-j5-ESS">
-                                                    <rect key="frame" x="300" y="8" width="19" height="22"/>
-                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <state key="normal" image="bell" catalog="system"/>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="FQO-j5-ESS" firstAttribute="top" secondItem="oLE-fj-WpI" secondAttribute="top" constant="8" id="2i1-cS-UMl"/>
-                                                <constraint firstItem="mtV-Yv-vN4" firstAttribute="leading" secondItem="oLE-fj-WpI" secondAttribute="leadingMargin" id="2mJ-Pu-gPx"/>
-                                                <constraint firstItem="M1i-CQ-6Gc" firstAttribute="centerY" secondItem="mtV-Yv-vN4" secondAttribute="centerY" id="4la-YP-qKz"/>
-                                                <constraint firstItem="fiP-sd-iDM" firstAttribute="leading" secondItem="oLE-fj-WpI" secondAttribute="leadingMargin" id="9kK-uR-StX"/>
-                                                <constraint firstItem="Bfg-i9-gqp" firstAttribute="centerY" secondItem="QQC-S0-1PR" secondAttribute="centerY" id="9ua-tT-S7W"/>
-                                                <constraint firstAttribute="trailing" secondItem="FQO-j5-ESS" secondAttribute="trailing" constant="16" id="HIs-Vg-Xkf"/>
-                                                <constraint firstItem="QQC-S0-1PR" firstAttribute="centerY" secondItem="M1i-CQ-6Gc" secondAttribute="centerY" id="Unp-Iy-EYf"/>
-                                                <constraint firstItem="Bfg-i9-gqp" firstAttribute="centerY" secondItem="QQC-S0-1PR" secondAttribute="centerY" id="f19-n2-I0O"/>
-                                                <constraint firstItem="QQC-S0-1PR" firstAttribute="leading" secondItem="M1i-CQ-6Gc" secondAttribute="trailing" constant="25" id="gq3-DI-jKH"/>
-                                                <constraint firstItem="fiP-sd-iDM" firstAttribute="top" secondItem="oLE-fj-WpI" secondAttribute="topMargin" id="jzu-bt-zt8"/>
-                                                <constraint firstItem="M1i-CQ-6Gc" firstAttribute="leading" secondItem="mtV-Yv-vN4" secondAttribute="trailing" constant="8" id="kqP-RL-XCt"/>
-                                                <constraint firstItem="Bfg-i9-gqp" firstAttribute="leading" secondItem="QQC-S0-1PR" secondAttribute="trailing" constant="8" id="mxz-jZ-5xh"/>
-                                                <constraint firstItem="mtV-Yv-vN4" firstAttribute="top" secondItem="fiP-sd-iDM" secondAttribute="bottom" constant="8" id="vS3-7n-W0T"/>
-                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="bellBtn" destination="FQO-j5-ESS" id="4k8-hp-bO4"/>
-                                            <outlet property="dateLbl" destination="Bfg-i9-gqp" id="rnb-OZ-7Au"/>
-                                            <outlet property="timeLbl" destination="M1i-CQ-6Gc" id="VWR-pM-EFO"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -324,7 +267,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="64" height="62"/>
         <image name="gold shield" width="512" height="512"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>

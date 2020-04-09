@@ -23,7 +23,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
-                                <rect key="frame" x="56" y="304" width="302" height="30"/>
+                                <rect key="frame" x="56" y="296" width="302" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
                                         <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
@@ -40,7 +40,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TSH-nv-Iis">
-                                <rect key="frame" x="10" y="366" width="394" height="447"/>
+                                <rect key="frame" x="10" y="334" width="394" height="479"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="KjV-c8-nfb" customClass="ActivityScheduledTableViewCell" customModule="Workout_Tracker" customModuleProvider="target">
@@ -64,8 +64,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="7HQ-mS-0jN" firstAttribute="centerX" secondItem="xHt-nQ-ic6" secondAttribute="centerX" id="D3P-u8-3vr"/>
-                            <constraint firstItem="TSH-nv-Iis" firstAttribute="top" secondItem="7HQ-mS-0jN" secondAttribute="bottom" constant="32" id="F0B-Ez-qe1"/>
-                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="top" secondItem="xHt-nQ-ic6" secondAttribute="bottom" constant="16" id="GO5-BT-LYy"/>
+                            <constraint firstItem="TSH-nv-Iis" firstAttribute="top" secondItem="7HQ-mS-0jN" secondAttribute="bottom" constant="8" id="F0B-Ez-qe1"/>
+                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="top" secondItem="xHt-nQ-ic6" secondAttribute="bottom" constant="8" id="GO5-BT-LYy"/>
                             <constraint firstItem="BHx-BN-v4N" firstAttribute="trailing" secondItem="xHt-nQ-ic6" secondAttribute="trailing" id="Paf-G3-1KF"/>
                             <constraint firstItem="xHt-nQ-ic6" firstAttribute="top" secondItem="BHx-BN-v4N" secondAttribute="top" id="V9f-Pr-DNh"/>
                             <constraint firstItem="TSH-nv-Iis" firstAttribute="leading" secondItem="g8y-Cq-tyb" secondAttribute="leading" constant="10" id="anx-tl-ms9"/>

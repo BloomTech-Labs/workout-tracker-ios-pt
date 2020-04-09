@@ -19,7 +19,7 @@ class ActivityScheduledTableViewCell: UITableViewCell {
     override func awakeFromNib() {
            super.awakeFromNib()
            layer.borderWidth = 1
-           layer.borderColor = #colorLiteral(red: 0.9004005393, green: 0.6187065274, blue: 0.1791373985, alpha: 1)
+           layer.borderColor = #colorLiteral(red: 0.9973149896, green: 0.9178334519, blue: 0.8440256684, alpha: 1)
            layer.cornerRadius = 5
        }
     var schedule: Schedule! {

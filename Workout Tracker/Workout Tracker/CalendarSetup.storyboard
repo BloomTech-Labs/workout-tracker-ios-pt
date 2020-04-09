@@ -13,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="calendarSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rew-cc-DXK" customClass="CalendarMainViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gZu-GP-go4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="470"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="URs-Jx-vMO" userLabel="Month Stack View">
@@ -187,7 +187,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="EcT-tA-pj8" firstAttribute="bottom" secondItem="015-OJ-ZZq" secondAttribute="bottom" constant="30" id="Cnr-gH-jJh"/>
+                            <constraint firstItem="015-OJ-ZZq" firstAttribute="bottom" secondItem="EcT-tA-pj8" secondAttribute="bottom" id="T6K-cX-Efp"/>
                             <constraint firstItem="015-OJ-ZZq" firstAttribute="leading" secondItem="EcT-tA-pj8" secondAttribute="leading" constant="60" id="Vk5-UB-F5j"/>
                             <constraint firstItem="URs-Jx-vMO" firstAttribute="centerX" secondItem="S90-Il-uGu" secondAttribute="centerX" id="bVo-1k-oZs"/>
                             <constraint firstItem="S90-Il-uGu" firstAttribute="top" secondItem="URs-Jx-vMO" secondAttribute="bottom" id="i60-Cd-dEp"/>
@@ -198,7 +198,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EcT-tA-pj8"/>
                     </view>
-                    <size key="freeformSize" width="414" height="500"/>
+                    <size key="freeformSize" width="414" height="470"/>
                     <connections>
                         <outlet property="calendarView" destination="015-OJ-ZZq" id="Xdk-bZ-L2N"/>
                         <outlet property="calendarViewHeightConstraint" destination="h9L-cc-cyw" id="clO-fS-ccU"/>

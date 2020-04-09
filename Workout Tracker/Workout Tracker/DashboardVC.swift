@@ -9,7 +9,7 @@
 import UIKit
 
 class DashboardVC: UIViewController {
-    
+    let activityScheduledCellIdentifier = "activityScheduledCell"
     // MARK: - Outlets
     
     @IBOutlet weak var scheduleBtn: UIButton!
@@ -31,6 +31,7 @@ class DashboardVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
+        setupViewNibs()
     }
     
     func setupUI() {
@@ -48,7 +49,11 @@ class DashboardVC: UIViewController {
         activitiesSubView.backgroundColor = .systemBlue
     }
     
-
+    func setupViewNibs() {
+      
+        let myNib2 = UINib(nibName: "ActivityScheduledTableViewCell", bundle: Bundle.main)
+        tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
+    }
 
 }
 
@@ -58,7 +63,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "myActivitiesCell", for: indexPath) as? DashboardMyActivitiesTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         
         return cell
     }
