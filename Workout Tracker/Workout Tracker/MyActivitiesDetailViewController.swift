@@ -34,7 +34,6 @@ class MyActivitiesDetailViewController: UIViewController {
     
     
     @IBAction func markAsCompleted(_ sender: Any) {
-//        self.dismiss(animated:true)
         self.navigationController?.popViewController(animated: true)
     }
     
