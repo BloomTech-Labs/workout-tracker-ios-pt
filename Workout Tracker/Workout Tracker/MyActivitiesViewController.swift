@@ -113,5 +113,13 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toActivityDetail" {
+            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            
+            destinationVC.schedule = schedules[indexPath.row]
+        }
+    }
     
 }

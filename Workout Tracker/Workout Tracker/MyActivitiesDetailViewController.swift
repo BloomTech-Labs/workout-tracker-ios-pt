@@ -10,6 +10,22 @@ import UIKit
 
 class MyActivitiesDetailViewController: UIViewController {
     
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    
+    
+    @IBOutlet weak var whereLocationLabel: UILabel!
+    
+    var schedule: Schedule? {
+        didSet {
+            DispatchQueue.main.async {
+                self.updateViews()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,5 +38,23 @@ class MyActivitiesDetailViewController: UIViewController {
         
     }
     
+    func updateViews(){
+        
+    }
     
+//    var schedule: Schedule! {
+//          didSet {
+//              
+//              workoutNameLabel.text = schedule.workoutName
+//              
+//              
+//              let startTimeFormatter = DateFormatter()
+//              startTimeFormatter.dateFormat = "HH:mm"
+//              startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+//              let dateFormatter = DateFormatter()
+//              dateFormatter.dateFormat = "MM/dd/yyyy"
+//              dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
+//              
+//          }
+//    
 }
