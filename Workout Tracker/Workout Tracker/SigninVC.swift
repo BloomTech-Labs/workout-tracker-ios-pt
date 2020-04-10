@@ -48,9 +48,9 @@ class SigninVC: UIViewController {
                     NSLog("Error occured during sign up: \(error)")
                 } else {
                     DispatchQueue.main.async {
-                        let alertController = UIAlertController(title: "Sign up successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Sign in successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
                         let alertAction =  UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                            self.performSegue(withIdentifier: "toOnboarding", sender: nil)
+                            self.performSegue(withIdentifier: "toDashboardVCSegue", sender: nil)
                         })
                         alertController.addAction(alertAction)
                         self.present(alertController, animated: true)

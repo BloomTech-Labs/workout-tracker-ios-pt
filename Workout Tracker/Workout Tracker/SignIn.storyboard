@@ -73,7 +73,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signInBtnPressed:" destination="MQ4-ZY-uOf" eventType="touchUpInside" id="KbF-Cm-zLd"/>
-                                    <segue destination="g0w-fb-jNk" kind="presentation" identifier="toDashboardVCSegue" modalPresentationStyle="fullScreen" id="Xlh-bE-8rm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNJ-Lq-bZ0">
@@ -121,6 +120,7 @@
                         <outlet property="newSignupButton" destination="gNJ-Lq-bZ0" id="Wz2-k8-D9t"/>
                         <outlet property="passwordTextField" destination="F7w-Rx-JtU" id="XbR-LJ-WBt"/>
                         <outlet property="signInButton" destination="3MM-Na-uGh" id="XiY-Pg-Tz7"/>
+                        <segue destination="g0w-fb-jNk" kind="presentation" identifier="toDashboardVCSegue" modalPresentationStyle="fullScreen" id="3yg-6w-UKO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="306-In-9Tu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
