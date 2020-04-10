@@ -50,6 +50,7 @@
 		EF91949E2417387C009FAE77 /* WorkoutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF91949D2417387C009FAE77 /* WorkoutImage.swift */; };
 		EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA4240767110051FA0C /* WorkoutController.swift */; };
 		EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */; };
+		EFB63D52244026830060D5CF /* WorkoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */; };
 		EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7674E2413426400FA3071 /* WorkoutDetailVC.swift */; };
 		EFD367E8240DF93B00E3B523 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD367E7240DF93B00E3B523 /* Workouts.swift */; };
 		EFED6D94240B7BAA00BCB88B /* WorkoutSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFED6D93240B7BAA00BCB88B /* WorkoutSelectionVC.swift */; };
@@ -103,6 +104,7 @@
 		EF91949D2417387C009FAE77 /* WorkoutImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImage.swift; sourceTree = "<group>"; };
 		EFAC0AA4240767110051FA0C /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutController.swift; path = "Workout Tracker/WorkoutController.swift"; sourceTree = "<group>"; };
 		EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
+		EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFC7674E2413426400FA3071 /* WorkoutDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutDetailVC.swift; path = "Workout Tracker/WorkoutDetailVC.swift"; sourceTree = "<group>"; };
 		EFD367E7240DF93B00E3B523 /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
 		EFED6D93240B7BAA00BCB88B /* WorkoutSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutSelectionVC.swift; path = "Workout Tracker/WorkoutSelectionVC.swift"; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */,
 				A3E04CE72404E05300B114B9 /* DateCell.swift */,
 				A3E04CE92404E06E00B114B9 /* DateHeader.swift */,
+				EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */,
 				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
 				A358D8E62423156900AD45B4 /* Mock Schedule.swift in Sources */,
+				EFB63D52244026830060D5CF /* WorkoutCollectionViewCell.swift in Sources */,
 				EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */,
 				EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */,
 				EF91949E2417387C009FAE77 /* WorkoutImage.swift in Sources */,
