@@ -25,7 +25,7 @@ class SignupVC: UIViewController {
     @IBOutlet weak var facebookLbl: UILabel!
     @IBOutlet weak var googleLbl: UILabel!
     
-    var userController = UserController()
+    var userController: UserController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,8 @@ class SignupVC: UIViewController {
 
     // MARK: - Button Actions
     @IBAction func signUpBtnPressed(_ sender: UIButton) {
-      let userController = self.userController
+    
+        guard let userController = self.userController else {return}
         
         if let username = self.nameTextField.text, !username.isEmpty, let email = self.emailTextField.text, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
             
@@ -87,5 +88,12 @@ class SignupVC: UIViewController {
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toSigIn" {
+            if let signinVC = segue.destination as? SigninVC {
+                signinVC.userController = userController
+            }
+        }
+    }
 }

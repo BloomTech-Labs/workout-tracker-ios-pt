@@ -21,7 +21,7 @@ class SigninVC: UIViewController {
     @IBOutlet weak var newSignupButton:      UIButton!
     
     
-
+    var userController: UserController?
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonStyling()
@@ -40,12 +40,37 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func signInBtnPressed(_ sender: UIButton) {
+        guard let userController = self.userController else {return}
         
+        if let username = self.emailTextField.text, !username.isEmpty, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
+            userController.logIn(username: username, userpassword: userpassword) { (error) in
+                if let error = error {
+                    NSLog("Error occured during sign up: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Sign in successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
+                        let alertAction =  UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                            self.performSegue(withIdentifier: "toDashboardVCSegue", sender: nil)
+                        })
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true)
+                    }
+                }
+            }
+        }
     }
+    
     
     @IBAction func newSignupBtnPressed(_ sender: UIButton) {
         
     }
     
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDashboardVCSegue" {
+            if let dashboardVC = segue.destination as? DashboardVC {
+                dashboardVC.userController = userController
+            }
+        }
+    }
 }

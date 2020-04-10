@@ -19,6 +19,7 @@ enum HTTPMethod: String {
 enum NetworkError: Error {
     case otherError
     case badData
+    case badAuth
 }
 
 
