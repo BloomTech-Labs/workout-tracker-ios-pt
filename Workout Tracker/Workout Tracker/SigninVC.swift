@@ -40,32 +40,32 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func signInBtnPressed(_ sender: UIButton) {
-//        let userController = self.userController
-//               
-//               if let username = self.nameTextField.text, !username.isEmpty, let email = self.emailTextField.text, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
-//                   
-//                   userController.signUp(username: username, email: email, userpassword: userpassword) { (error) in
-//                       if let error = error {
-//                           NSLog("Error occured during sign up: \(error)")
-//                       } else {
-//                           DispatchQueue.main.async {
-//                               let alertController = UIAlertController(title: "Sign up successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
-//                               let alertAction =  UIAlertAction(title: "OK", style: .default, handler: { (_) in
-//                                   self.performSegue(withIdentifier: "toOnboarding", sender: nil)
-//                               })
-//                               alertController.addAction(alertAction)
-//                               self.present(alertController, animated: true)
-//                           }
-//                       }
-//                   }
-//               }
+        guard let userController = self.userController else {return}
+        
+        if let username = self.emailTextField.text, !username.isEmpty, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
+            userController.logIn(username: username, userpassword: userpassword) { (error) in
+                if let error = error {
+                    NSLog("Error occured during sign up: \(error)")
+                } else {
+                    DispatchQueue.main.async {
+                        let alertController = UIAlertController(title: "Sign up successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
+                        let alertAction =  UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                            self.performSegue(withIdentifier: "toOnboarding", sender: nil)
+                        })
+                        alertController.addAction(alertAction)
+                        self.present(alertController, animated: true)
+                    }
+                }
+            }
+        }
     }
+    
     
     @IBAction func newSignupBtnPressed(_ sender: UIButton) {
         
     }
     
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDashboardVCSegue" {
             if let dashboardVC = segue.destination as? DashboardVC {
