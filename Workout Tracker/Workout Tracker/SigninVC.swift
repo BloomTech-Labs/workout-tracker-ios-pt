@@ -21,7 +21,7 @@ class SigninVC: UIViewController {
     @IBOutlet weak var newSignupButton:      UIButton!
     
     
-
+    var userController: UserController?
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonStyling()
@@ -40,7 +40,25 @@ class SigninVC: UIViewController {
     }
     
     @IBAction func signInBtnPressed(_ sender: UIButton) {
-        
+//        let userController = self.userController
+//               
+//               if let username = self.nameTextField.text, !username.isEmpty, let email = self.emailTextField.text, let userpassword = self.passwordTextField.text, !userpassword.isEmpty {
+//                   
+//                   userController.signUp(username: username, email: email, userpassword: userpassword) { (error) in
+//                       if let error = error {
+//                           NSLog("Error occured during sign up: \(error)")
+//                       } else {
+//                           DispatchQueue.main.async {
+//                               let alertController = UIAlertController(title: "Sign up successful", message: "Welcome to Workout Tracker", preferredStyle: .alert)
+//                               let alertAction =  UIAlertAction(title: "OK", style: .default, handler: { (_) in
+//                                   self.performSegue(withIdentifier: "toOnboarding", sender: nil)
+//                               })
+//                               alertController.addAction(alertAction)
+//                               self.present(alertController, animated: true)
+//                           }
+//                       }
+//                   }
+//               }
     }
     
     @IBAction func newSignupBtnPressed(_ sender: UIButton) {
@@ -48,4 +66,11 @@ class SigninVC: UIViewController {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDashboardVCSegue" {
+            if let dashboardVC = segue.destination as? DashboardVC {
+                dashboardVC.userController = userController
+            }
+        }
+    }
 }

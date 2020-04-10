@@ -53,7 +53,7 @@
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="OXW-x4-lnn" kind="presentation" modalPresentationStyle="fullScreen" id="2CX-LO-iFG"/>
+                                    <segue destination="OXW-x4-lnn" kind="presentation" identifier="toSignUp" modalPresentationStyle="fullScreen" id="2CX-LO-iFG"/>
                                 </connections>
                             </button>
                         </subviews>

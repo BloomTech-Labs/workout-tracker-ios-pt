@@ -25,6 +25,7 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var sheildImageView: UIImageView!
     
+    var userController: UserController?
     
     override func viewDidLoad() {
         super.viewDidLoad()

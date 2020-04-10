@@ -14,7 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        //pass instance of controller. View controllers should not create own dependencies.
+        var window: UIWindow?
+        if let mainViewController = window?.rootViewController as? LandingPageViewController {
+                   mainViewController.userController = UserController()
+               }
         return true
     }
 

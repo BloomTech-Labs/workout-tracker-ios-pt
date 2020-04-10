@@ -14,7 +14,7 @@ class LandingPageViewController: UIViewController {
     @IBOutlet weak var videoBackground: UIView!
     @IBOutlet weak var getStartedButton: UIButton!
     
-    
+    var userController: UserController?
     var player: AVPlayer?
     let videoURL = Bundle.main.url(forResource: "workoutvid", withExtension: "mp4")!
     var playerItem: AVPlayerItem?
@@ -66,5 +66,15 @@ class LandingPageViewController: UIViewController {
             
         })
         return composition
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSignUp" {
+            guard let signupVC = segue.destination as?
+            SignupVC else {return}
+            signupVC.userController = userController
+        }
     }
 }
