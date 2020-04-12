@@ -13,12 +13,21 @@ class WorkoutLibraryVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var cancelBtn: UIBarButtonItem!
+    
     let workoutController = WorkoutController()
+    
+    var showCancelBtn: Bool = false {
+        didSet {
+            showCancel()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        showCancel()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -39,6 +48,17 @@ class WorkoutLibraryVC: UIViewController {
             let muscle = self.workoutController.muscleCategoryArray[indexPath.row]
             workoutVC.muscle = muscle
         }
+    }
+    func showCancel() {
+        if showCancelBtn {
+            cancelBtn.isEnabled = true
+        } else {
+            cancelBtn.isEnabled = false
+        }
+    }
+    
+    @IBAction func cancelBtnPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

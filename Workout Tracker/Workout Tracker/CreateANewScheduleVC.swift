@@ -13,8 +13,6 @@ class CreateANewScheduleVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var bGView: UIView!
     @IBOutlet weak var workoutCollectionView: UICollectionView!
-    @IBOutlet weak var workoutNameLbl: UILabel!
-    
     
     @IBOutlet weak var nameYourWorkoutTextField: UITextField!
     @IBOutlet weak var dateTextField:            UITextField!
@@ -50,7 +48,8 @@ class CreateANewScheduleVC: UIViewController {
     }
     
     @IBAction func libraryBtnPressed(_ sender: UIButton) {
-        
+//        let workoutLibraryVC = WorkoutLibraryVC()
+//        workoutLibraryVC.showCancelBtn = true
     }
     
     @IBAction func reminderToggleSwitched(_ sender: UISwitch) {

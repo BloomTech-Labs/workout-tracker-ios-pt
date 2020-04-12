@@ -93,6 +93,7 @@
                                         </state>
                                         <connections>
                                             <action selector="libraryBtnPressed:" destination="zPY-v2-q1c" eventType="touchUpInside" id="e5c-2S-P6V"/>
+                                            <segue destination="bj9-L5-y72" kind="show" id="brk-1t-Mzy"/>
                                         </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9LS-Sl-JjB">
@@ -304,6 +305,16 @@ Schedule</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="29X-9Z-X88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1685.5072463768117" y="164.73214285714286"/>
+        </scene>
+        <!--WorkoutLibrary-->
+        <scene sceneID="TLG-Co-SvU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WorkoutLibrary" id="bj9-L5-y72" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="R0C-mB-xmh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iP-Z0-dZR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2346" y="153"/>
         </scene>
     </scenes>
     <resources>
