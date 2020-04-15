@@ -57,6 +57,7 @@
                     </stackView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" catalog="system" highlightedImage="bell.slash" translatesAutoresizingMaskIntoConstraints="NO" id="Ivo-yt-uaD">
                         <rect key="frame" x="334" y="16" width="40" height="39.5"/>
+                        <color key="tintColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="GxE-wd-mKn"/>
                             <constraint firstAttribute="width" secondItem="Ivo-yt-uaD" secondAttribute="height" multiplier="1:1" id="Rdc-r7-eG5"/>

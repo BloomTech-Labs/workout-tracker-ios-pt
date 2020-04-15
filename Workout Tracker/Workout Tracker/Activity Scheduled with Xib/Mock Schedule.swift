@@ -9,11 +9,23 @@
 import UIKit
 
 
-struct Schedule {
+struct Schedule: Codable {
     var workoutName: String
     var startTime: Date
+//    var hasBeenCompleted: Bool
+//    var duration: String
+//    var workouts: [ChosenExercise]
+    
+  
+   
 }
-
+//struct ChosenExercise: Codable {
+//    var exerciseName: string
+//    var description: string
+//    var image: string
+//
+//
+//}
 
 //random events
 

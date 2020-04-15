@@ -19,6 +19,7 @@
 		A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F297E23FAE25B00C8157E /* OnboardingSecondViewController.swift */; };
 		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
 		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
+		A374DD9F2446C895008DA2D0 /* ScheduledWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */; };
 		A3A168422429AC22000D1E11 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A168412429AC22000D1E11 /* UserController.swift */; };
 		A3E04CE42404D68200B114B9 /* CalendarSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */; };
 		A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */; };
@@ -69,6 +70,7 @@
 		A35F298023FCCB3B00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
+		A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledWorkout.swift; sourceTree = "<group>"; };
 		A3A168412429AC22000D1E11 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		A3C96DD42427617000E59186 /* workoutvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = workoutvid.mp4; sourceTree = "<group>"; };
 		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */,
 				EFD367E7240DF93B00E3B523 /* Workouts.swift */,
 				EF91949D2417387C009FAE77 /* WorkoutImage.swift */,
+				A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */,
 				EF50C17523F4FF5200B16179 /* AppDelegate.swift in Sources */,
 				EF7644CC23FB953800B9D1F3 /* ProgressVC.swift in Sources */,
+				A374DD9F2446C895008DA2D0 /* ScheduledWorkout.swift in Sources */,
 				A358D8E32423101C00AD45B4 /* ActivityScheduledTableViewCell.swift in Sources */,
 				EF50C17723F4FF5200B16179 /* SceneDelegate.swift in Sources */,
 			);
