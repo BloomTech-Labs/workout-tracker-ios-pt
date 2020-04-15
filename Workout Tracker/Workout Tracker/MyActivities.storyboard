@@ -22,16 +22,24 @@
                                     <constraint firstAttribute="height" constant="200" placeholder="YES" id="Zv0-he-Azz"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="62" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
                                 <rect key="frame" x="56" y="296" width="302" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
-                                        <rect key="frame" x="0.0" y="0.0" width="141" height="30"/>
-                                        <state key="normal" title="Upcoming Activities "/>
+                                        <rect key="frame" x="0.0" y="0.0" width="156.5" height="30"/>
+                                        <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Upcoming Activities ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-sZ-a3D">
-                                        <rect key="frame" x="203" y="0.0" width="99" height="30"/>
-                                        <state key="normal" title="Past activities "/>
+                                        <rect key="frame" x="189.5" y="0.0" width="112.5" height="30"/>
+                                        <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Past activities ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
