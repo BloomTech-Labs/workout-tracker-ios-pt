@@ -78,6 +78,7 @@ class CalendarMainViewController: UIViewController {
             
             cell.selectedView.layer.cornerRadius =  (cell.selectedView.frame.size.height)/2
             cell.selectedView.layer.borderWidth = 1
+            cell.selectedView.layer.borderColor = #colorLiteral(red: 0.8314941525, green: 0.4086731076, blue: 0.1624955237, alpha: 1)
             
             cell.selectedView.isHidden = false
             

@@ -130,7 +130,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view alpha="0.75" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1d-Ml-our">
+                                                <view alpha="0.5" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1d-Ml-our">
                                                     <rect key="frame" x="20" y="20" width="40" height="40"/>
                                                     <color key="backgroundColor" red="0.98546677829999996" green="0.58432024719999998" blue="0.033908646549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>

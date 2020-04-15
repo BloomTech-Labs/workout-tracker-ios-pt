@@ -17,9 +17,9 @@ struct ScheduledWorkout: Codable {
 //    var workouts: [ChosenExercise]
   
 }
-//struct ChosenExercise: Codable {
-//    var exerciseName: string
-//    var description: string
-//    var image: string
-//
-//}
+struct ChosenExercise: Codable {
+    var exerciseName: String
+    var description: String
+    var image: String
+
+}
