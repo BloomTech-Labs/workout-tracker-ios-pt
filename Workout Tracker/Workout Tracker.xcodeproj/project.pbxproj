@@ -20,6 +20,9 @@
 		A35F298623FE3CEB00C8157E /* OnBoardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */; };
 		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
 		A374DD9F2446C895008DA2D0 /* ScheduledWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */; };
+		A374DDA224480285008DA2D0 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DDA124480285008DA2D0 /* CodableStorage.swift */; };
+		A374DDA424480A4C008DA2D0 /* FileManagerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */; };
+		A39AE3BB2449634400CFEE93 /* WorkoutStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */; };
 		A3A168422429AC22000D1E11 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A168412429AC22000D1E11 /* UserController.swift */; };
 		A3E04CE42404D68200B114B9 /* CalendarSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */; };
 		A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */; };
@@ -71,6 +74,9 @@
 		A35F298523FE3CEB00C8157E /* OnBoardingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPageViewController.swift; sourceTree = "<group>"; };
 		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
 		A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledWorkout.swift; sourceTree = "<group>"; };
+		A374DDA124480285008DA2D0 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
+		A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerStorage.swift; sourceTree = "<group>"; };
+		A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStorage.swift; sourceTree = "<group>"; };
 		A3A168412429AC22000D1E11 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		A3C96DD42427617000E59186 /* workoutvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = workoutvid.mp4; sourceTree = "<group>"; };
 		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
@@ -178,6 +184,16 @@
 			name = "Custom Views";
 			sourceTree = "<group>";
 		};
+		A374DDA02448025E008DA2D0 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A374DDA124480285008DA2D0 /* CodableStorage.swift */,
+				A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */,
+				A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		EF50C16823F4FF5100B16179 = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +269,7 @@
 		EF50C18B23F5061300B16179 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A374DDA02448025E008DA2D0 /* Persistence */,
 				EFAC0AA32407669D0051FA0C /* Networking */,
 			);
 			name = Controller;
@@ -465,6 +482,7 @@
 				A3E04CEC2404E84000B114B9 /* MyActivitiesViewController.swift in Sources */,
 				A35F297923FA3DFC00C8157E /* LandingPageViewController.swift in Sources */,
 				A358D8E62423156900AD45B4 /* Mock Schedule.swift in Sources */,
+				A39AE3BB2449634400CFEE93 /* WorkoutStorage.swift in Sources */,
 				EFB63D52244026830060D5CF /* WorkoutCollectionViewCell.swift in Sources */,
 				EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */,
 				EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */,
@@ -472,6 +490,7 @@
 				EF5D16562423111A00B1F0D3 /* CustomTextField.swift in Sources */,
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A358D8E8242316D200AD45B4 /* Extensions to xibs.swift in Sources */,
+				A374DDA224480285008DA2D0 /* CodableStorage.swift in Sources */,
 				A35F297D23FAE25000C8157E /* OnboardingFirstViewController.swift in Sources */,
 				A3A168422429AC22000D1E11 /* UserController.swift in Sources */,
 				EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */,
@@ -483,6 +502,7 @@
 				A3E04CE82404E05300B114B9 /* DateCell.swift in Sources */,
 				A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */,
 				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
+				A374DDA424480A4C008DA2D0 /* FileManagerStorage.swift in Sources */,
 				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
 				A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */,
