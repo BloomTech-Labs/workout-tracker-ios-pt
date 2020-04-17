@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fmi-ct-L9w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fmi-ct-L9w">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -223,7 +223,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cbq-Gm-imR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1608" y="81"/>
+            <point key="canvasLocation" x="1449" y="206"/>
         </scene>
         <!--CreateASchedule-->
         <scene sceneID="VhY-Vp-EaW">
@@ -233,7 +233,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K78-7N-fA1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="15"/>
+            <point key="canvasLocation" x="1474" y="12"/>
         </scene>
         <!--Progress-->
         <scene sceneID="doI-Ox-HQ9">
@@ -268,7 +268,7 @@
     </scenes>
     <resources>
         <image name="gold shield" width="512" height="512"/>
-        <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="square.grid.3x2.fill" catalog="system" width="64" height="40"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.grid.3x2.fill" catalog="system" width="128" height="80"/>
     </resources>
 </document>
