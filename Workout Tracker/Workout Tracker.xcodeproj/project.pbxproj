@@ -54,6 +54,7 @@
 		EF91949E2417387C009FAE77 /* WorkoutImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF91949D2417387C009FAE77 /* WorkoutImage.swift */; };
 		EFAC0AA5240767110051FA0C /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA4240767110051FA0C /* WorkoutController.swift */; };
 		EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */; };
+		EFB0901D244BB47A003D5675 /* FBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0901C244BB47A003D5675 /* FBController.swift */; };
 		EFB63D52244026830060D5CF /* WorkoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */; };
 		EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC7674E2413426400FA3071 /* WorkoutDetailVC.swift */; };
 		EFD367E8240DF93B00E3B523 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD367E7240DF93B00E3B523 /* Workouts.swift */; };
@@ -77,7 +78,7 @@
 		A374DDA124480285008DA2D0 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
 		A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerStorage.swift; sourceTree = "<group>"; };
 		A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStorage.swift; sourceTree = "<group>"; };
-		A3A168412429AC22000D1E11 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		A3A168412429AC22000D1E11 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Workout Tracker/UserController.swift"; sourceTree = "<group>"; };
 		A3C96DD42427617000E59186 /* workoutvid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = workoutvid.mp4; sourceTree = "<group>"; };
 		A3E04CE32404D68200B114B9 /* CalendarSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarSetup.storyboard; sourceTree = "<group>"; };
 		A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarMainViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 		EF91949D2417387C009FAE77 /* WorkoutImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutImage.swift; sourceTree = "<group>"; };
 		EFAC0AA4240767110051FA0C /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutController.swift; path = "Workout Tracker/WorkoutController.swift"; sourceTree = "<group>"; };
 		EFAC0AA6240767D60051FA0C /* MuscleGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroups.swift; sourceTree = "<group>"; };
+		EFB0901C244BB47A003D5675 /* FBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FBController.swift; path = "Workout Tracker/FBController.swift"; sourceTree = "<group>"; };
 		EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCollectionViewCell.swift; sourceTree = "<group>"; };
 		EFC7674E2413426400FA3071 /* WorkoutDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorkoutDetailVC.swift; path = "Workout Tracker/WorkoutDetailVC.swift"; sourceTree = "<group>"; };
 		EFD367E7240DF93B00E3B523 /* Workouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			children = (
 				EFAC0AA4240767110051FA0C /* WorkoutController.swift */,
 				A3A168412429AC22000D1E11 /* UserController.swift */,
+				EFB0901C244BB47A003D5675 /* FBController.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				EFC7674F2413426400FA3071 /* WorkoutDetailVC.swift in Sources */,
 				EFAC0AA7240767D60051FA0C /* MuscleGroups.swift in Sources */,
 				EF91949E2417387C009FAE77 /* WorkoutImage.swift in Sources */,
+				EFB0901D244BB47A003D5675 /* FBController.swift in Sources */,
 				EF5D16562423111A00B1F0D3 /* CustomTextField.swift in Sources */,
 				EF7644CA23FB950900B9D1F3 /* WorkoutLibraryVC.swift in Sources */,
 				A358D8E8242316D200AD45B4 /* Extensions to xibs.swift in Sources */,
