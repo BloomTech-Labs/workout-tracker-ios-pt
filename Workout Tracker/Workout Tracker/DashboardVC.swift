@@ -27,12 +27,15 @@ class DashboardVC: UIViewController {
     
     var userController: UserController?
     
+    let fbController = FBController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         setupUI()
         setupViewNibs()
+        fetchScheduledWorkouts()
     }
     
     func setupUI() {
@@ -55,16 +58,37 @@ class DashboardVC: UIViewController {
         let myNib2 = UINib(nibName: "ActivityScheduledTableViewCell", bundle: Bundle.main)
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
+    
+    func fetchScheduledWorkouts() {
+        fbController.fetchScheduledWorkouts { (error) in
+            if let error = error {
+                NSLog("There was an error fetching workouts in DashBoard")
+            }
+            self.tableView.reloadData()
+        }
+    }
 
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // TODO: Change this to the data source.
+        return self.fbController.scheduledWorkoutArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
+        
+        // Getting the workout name
+        let workout = fbController.scheduledWorkoutArray[indexPath.row]
+        cell.workoutNameLabel.text = workout.workoutName
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .short
+        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
         
         return cell
     }

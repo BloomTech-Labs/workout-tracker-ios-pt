@@ -193,7 +193,8 @@
 				A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */,
 				A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */,
 			);
-			path = Persistence;
+			name = Persistence;
+			path = "Workout Tracker/Persistence";
 			sourceTree = "<group>";
 		};
 		EF50C16823F4FF5100B16179 = {

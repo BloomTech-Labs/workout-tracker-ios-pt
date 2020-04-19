@@ -25,13 +25,13 @@ struct ScheduledWorkout: Codable {
 struct ChosenExercise: Codable {
     var exerciseName: String
     var description: String
-    var image: [ExerciseImage]
+    //var image: [ExerciseImage]
 
 }
 
-struct ExerciseImage: Codable {
-    var image: URL
-}
+//struct ExerciseImage: Codable {
+//    var image: URL
+//}
 
  
 //let scheduledWorkout = ScheduledWorkout(workoutName: "w1", startTime: "s1", hasBeenCompleted: false, duration: "d1", workouts: [ChosenExercise(exerciseName: <#T##String#>, description: <#T##String#>, image: []])])

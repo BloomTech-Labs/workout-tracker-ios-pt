@@ -20,16 +20,16 @@ class WorkoutStorage {
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let exerciseDate = dateFormatter.string(from: Date())
         
-        if () {
-              try fetch(exerciseDate: exerciseDate)
-        }
-        else {
-            do {
-                try storage.save([workout], for: exerciseDate)
-            } catch {
-                print(error)
-            }
-        }
+//        if () {
+//              try fetch(exerciseDate: exerciseDate)
+//        }
+//        else {
+//            do {
+//                try storage.save([workout], for: exerciseDate)
+//            } catch {
+//                print(error)
+//            }
+//        }
         
     }
     

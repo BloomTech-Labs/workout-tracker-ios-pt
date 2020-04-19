@@ -27,6 +27,11 @@ class CreateANewScheduleVC: UIViewController {
     
     let workoutsArray = ["Benchpress Dumbell", "Jumping Jacks", "Treadmill Run"]
     
+    let fbController = FBController()
+    
+    
+    let testWorkout = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +62,13 @@ class CreateANewScheduleVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
+        fbController.save(testWorkout) { (error) in
+            if let error = error {
+                NSLog("There was an error saving the workout from Save Button")
+                
+            }
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
