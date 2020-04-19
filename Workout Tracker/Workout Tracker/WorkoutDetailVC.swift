@@ -47,7 +47,7 @@ class WorkoutDetailVC: UIViewController {
         
         workoutController.fetchWorkoutImageURL(imageID: workout.id) { (imageURL, error) in
             if let error = error {
-                NSLog("There was an error retrieving imageURLs in WDVC: \(error)")
+                NSLog("There was an error retrieving imageURLs in WorkoutDetailVC: \(error)")
                 
             }
             if !self.workoutController.imageURLsArray.isEmpty {
@@ -72,9 +72,16 @@ class WorkoutDetailVC: UIViewController {
     
     // MARK: - Actions
     
-    @IBAction func chooseWorkoutBtnPressed(_ sender: UIBarButtonItem) {
-        
-        
+    @IBAction func saveWorkoutBtnPressed(_ sender: UIBarButtonItem) {
+        guard let workout = workout else { return }
+        let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description)
+        WorkoutController.chosenExercisesArray.append(chosenExercise)
+//        workoutController.chosenExercisesArray.append(chosenExercise)
+//        print("ChosenExerciseArray \(workoutController.chosenExercisesArray)\n Count: \(workoutController.chosenExercisesArray.count)")
+        self.dismiss(animated: true) {
+            // We need to pass the workoutController Object from this VC to the WorkoutController in the CreateAScheduleVC.
+            
+        }
     }
     
 

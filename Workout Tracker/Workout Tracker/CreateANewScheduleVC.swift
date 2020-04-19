@@ -28,20 +28,42 @@ class CreateANewScheduleVC: UIViewController {
     let workoutsArray = ["Benchpress Dumbell", "Jumping Jacks", "Treadmill Run"]
     
     let fbController = FBController()
+//    var workoutController: WorkoutController? {
+//        didSet {
+//            workoutCollectionView.reloadData()
+//        }
+//    }
+    //var workoutController: WorkoutController? // need to have this passed from the workoutDetailVC Save button method.
     
     
-    let testWorkout = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
+    let testWorkout1 = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("ViewDidLoadCalled")
+        //print(workoutController.chosenExercisesArray.count, "\n")
         backgroundSetup()
         workoutCollectionView.delegate = self
         workoutCollectionView.dataSource = self
+        workoutCollectionView.reloadData()
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewWillAppeared")
+        //print(workoutController.chosenExercisesArray.count, "\n")
+        workoutCollectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        //0print(workoutController.chosenExercisesArray.count, "\n")
+        workoutCollectionView.reloadData()
+        
+    }
     
     // MARK: - Actions
     
@@ -62,11 +84,12 @@ class CreateANewScheduleVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
-        fbController.save(testWorkout) { (error) in
+        fbController.save(testWorkout1) { (error) in
             if let error = error {
                 NSLog("There was an error saving the workout from Save Button")
                 
             }
+            //self.fbController.scheduledWorkoutArray.append(self.testWorkout1)
         }
         
         dismiss(animated: true, completion: nil)
@@ -81,14 +104,14 @@ class CreateANewScheduleVC: UIViewController {
 
 extension CreateANewScheduleVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return workoutsArray.count
+        return WorkoutController.chosenExercisesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "workoutRoutineCell", for: indexPath) as? WorkoutCollectionViewCell else { return UICollectionViewCell() }
         
-        let workoutNames = workoutsArray[indexPath.row]
-        collectionCell.workoutNameLbl.text = workoutNames
+        let workoutNames = WorkoutController.chosenExercisesArray[indexPath.row]
+        collectionCell.workoutNameLbl.text = workoutNames.exerciseName
         
         collectionCell.layer.backgroundColor = UIColor.systemGray5.cgColor
         

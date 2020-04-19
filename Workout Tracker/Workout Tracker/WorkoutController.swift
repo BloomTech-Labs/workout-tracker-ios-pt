@@ -33,6 +33,8 @@ class WorkoutController {
     private(set) var imageURLsArray = [ImageInfo]()   // For use with the fetchWorkoutImageURL
     private(set) var imageArray = [UIImage]()         // For use with the Images returned from workouts
     
+    static var chosenExercisesArray = [ChosenExercise]() // For use when the user saves a workout from the WorkoutDetailVC Save button
+    
     
     // MARK: - FetchMuscleGroups
     func fetchMuscleGroups(completion: @escaping (MuscleGroups?, Error?) -> Void) {

@@ -37,6 +37,10 @@ class DashboardVC: UIViewController {
         setupViewNibs()
         fetchScheduledWorkouts()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
     
     func setupUI() {
         let cornerRadius: CGFloat = 5
@@ -54,7 +58,7 @@ class DashboardVC: UIViewController {
     }
     
     func setupViewNibs() {
-      
+        
         let myNib2 = UINib(nibName: "ActivityScheduledTableViewCell", bundle: Bundle.main)
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
@@ -67,7 +71,7 @@ class DashboardVC: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
