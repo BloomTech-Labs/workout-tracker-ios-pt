@@ -74,7 +74,7 @@ class LandingPageViewController: UIViewController {
         if segue.identifier == "toSignUp" {
             guard let signupVC = segue.destination as?
             SignupVC else {return}
-            signupVC.userController = userController
+            //signupVC.userController = userController
         }
     }
 }
