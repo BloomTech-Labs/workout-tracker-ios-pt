@@ -178,9 +178,7 @@
 		A35F298A23FF967800C8157E /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */,
-				A3E04CE72404E05300B114B9 /* DateCell.swift */,
-				A3E04CE92404E06E00B114B9 /* DateHeader.swift */,
+				A3860D79244D61BE006F8D67 /* Calendar Custom */,
 				EFB63D51244026830060D5CF /* WorkoutCollectionViewCell.swift */,
 			);
 			name = "Custom Views";
@@ -195,6 +193,16 @@
 			);
 			name = Persistence;
 			path = "Workout Tracker/Persistence";
+			sourceTree = "<group>";
+		};
+		A3860D79244D61BE006F8D67 /* Calendar Custom */ = {
+			isa = PBXGroup;
+			children = (
+				A3E04CE52404E03D00B114B9 /* CalendarMainViewController.swift */,
+				A3E04CE72404E05300B114B9 /* DateCell.swift */,
+				A3E04CE92404E06E00B114B9 /* DateHeader.swift */,
+			);
+			path = "Calendar Custom";
 			sourceTree = "<group>";
 		};
 		EF50C16823F4FF5100B16179 = {

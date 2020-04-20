@@ -16,6 +16,7 @@ class MyActivitiesDetailViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     
+    @IBOutlet weak var workoutCollectionView: UICollectionView!
     
     @IBOutlet weak var whereLocationLabel: UILabel!
     
@@ -30,6 +31,8 @@ class MyActivitiesDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.4631554372, green: 0.3478105556, blue: 0.1369482507, alpha: 1)
+        workoutCollectionView.delegate = self
+        workoutCollectionView.dataSource = self
     }
     
     
@@ -52,4 +55,16 @@ class MyActivitiesDetailViewController: UIViewController {
         
     }
       
+}
+
+extension MyActivitiesDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
 }
