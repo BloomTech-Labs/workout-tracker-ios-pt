@@ -59,11 +59,15 @@ class MyActivitiesDetailViewController: UIViewController {
 
 extension MyActivitiesDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "workoutRoutineCell", for: indexPath) as? WorkoutCollectionViewCell else { return UICollectionViewCell() }
+        
+        collectionCell.layer.backgroundColor = UIColor.systemGray5.cgColor
+        
+        return collectionCell
     }
     
     

@@ -15,5 +15,8 @@ class WorkoutCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 10
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = #colorLiteral(red: 0.8314941525, green: 0.4086731076, blue: 0.1624955237, alpha: 1)
+        
     }
 }
