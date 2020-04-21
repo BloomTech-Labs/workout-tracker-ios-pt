@@ -12,14 +12,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-//    var window: UIWindow?
+ 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
-        //pass instance of controller. View controllers should not create own dependencies.
-       
-//        if let mainViewController = window?.rootViewController as? LandingPageViewController {
-//                   mainViewController.userController = UserController()
-//               }
+ 
         return true
     }
 
