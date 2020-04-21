@@ -46,22 +46,34 @@ class CreateANewScheduleVC: UIViewController {
         backgroundSetup()
         workoutCollectionView.delegate = self
         workoutCollectionView.dataSource = self
-        workoutCollectionView.reloadData()
+        //workoutCollectionView.reloadData()
         
+        NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(refreshCV),
+                                                   name: .updateCollectionView,
+                                                   object: nil)
+        
+        
+    }
+    
+    // 4 Called when notification is heard
+    @objc func refreshCV() {
+        print("refreshCV called")
+        workoutCollectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("ViewWillAppeared")
         //print(workoutController.chosenExercisesArray.count, "\n")
-        workoutCollectionView.reloadData()
+        //workoutCollectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("viewDidAppear")
         //0print(workoutController.chosenExercisesArray.count, "\n")
-        workoutCollectionView.reloadData()
+        //workoutCollectionView.reloadData()
         
     }
     

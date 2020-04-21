@@ -80,9 +80,15 @@ class WorkoutDetailVC: UIViewController {
 //        print("ChosenExerciseArray \(workoutController.chosenExercisesArray)\n Count: \(workoutController.chosenExercisesArray.count)")
         self.dismiss(animated: true) {
             // We need to pass the workoutController Object from this VC to the WorkoutController in the CreateAScheduleVC.
-            
+            NotificationCenter.default.post(name: .updateCollectionView, object: self)
         }
     }
     
+    
+    
 
+}
+// MARK: - Notification Extension
+extension NSNotification.Name {
+    static let updateCollectionView = NSNotification.Name("updateCollectionView")
 }
