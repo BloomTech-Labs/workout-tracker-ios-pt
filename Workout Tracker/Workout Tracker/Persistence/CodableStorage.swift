@@ -150,5 +150,3 @@ class CodableStorage {
         try storage.save(value: data, for: key)
     }
 }
-
-
