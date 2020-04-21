@@ -72,14 +72,14 @@ class DashboardVC: UIViewController {
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
     
-    func fetchScheduledWorkouts() {
-        fbController.fetchScheduledWorkouts { (error) in
-            if let error = error {
-                NSLog("There was an error fetching workouts in DashBoard")
-            }
-            self.tableView.reloadData()
-        }
-    }
+//    func fetchScheduledWorkouts() {
+//        fbController.fetchScheduledWorkouts { (error) in
+//            if let error = error {
+//                NSLog("There was an error fetching workouts in DashBoard")
+//            }
+//            self.tableView.reloadData()
+//        }
+//    }
     
 }
 
