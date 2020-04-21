@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        if let mainViewController = window?.rootViewController as? LandingPageViewController {
 //            mainViewController.userController = UserController()
 //        }
+        
+    // COMMENT: Uncomment line 22-24 if using login 
       /*
          this would orrived scene delegate presentation , main tab bar controller of the Dashboard would be the "Main"storyboard & then could do : 
          if not login {
