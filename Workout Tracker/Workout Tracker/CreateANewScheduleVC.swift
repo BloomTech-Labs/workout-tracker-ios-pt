@@ -96,7 +96,17 @@ class CreateANewScheduleVC: UIViewController {
     }
     
     @IBAction func saveBtnPressed(_ sender: UIButton) {
-        fbController.save(testWorkout1) { (error) in
+        guard let workoutName = nameYourWorkoutTextField.text, !workoutName.isEmpty,
+            let duration = durationTextField.text, !duration.isEmpty else {
+                return
+                
+        }
+        let chosenExcercises = WorkoutController.chosenExercisesArray
+        
+        let scheduledWorkout = ScheduledWorkout(workoutName: workoutName, startTime: Date(), hasBeenCompleted: false, duration: duration, workouts: chosenExcercises)
+        
+        
+        fbController.save(scheduledWorkout) { (error) in
             if let error = error {
                 NSLog("There was an error saving the workout from Save Button")
                 
