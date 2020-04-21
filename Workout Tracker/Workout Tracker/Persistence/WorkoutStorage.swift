@@ -6,44 +6,57 @@
 //  Copyright © 2020 LambdaLabsPT7. All rights reserved.
 //
 
-import Foundation
+ import Foundation
 
-class WorkoutStorage {
-    
-    let path = URL(fileURLWithPath: NSTemporaryDirectory())
-    let dateFormatter = DateFormatter()
 
-    func save(workout: ScheduledWorkout, exerciseDate: Date) {
-    
-        let disk = DiskStorage(path: path)
-        let storage = CodableStorage(storage: disk)
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        let exerciseDate = dateFormatter.string(from: Date())
-        
-//        if () {
-//              try fetch(exerciseDate: exerciseDate)
-//        }
-//        else {
-//            do {
-//                try storage.save([workout], for: exerciseDate)
-//            } catch {
-//                print(error)
-//            }
-//        }
-        
-    }
-    
-    func fetch(exerciseDate: String) {
-        let disk = DiskStorage(path: path)
-        let storage = CodableStorage(storage: disk)
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        let exerciseDate = dateFormatter.string(from: Date())
-        
-        do {
-            let _: [ScheduledWorkout] = try storage.fetch(for: exerciseDate)
-        } catch {
-            print(error)
-        }
-}
-}
+ class WorkoutStorage {
+     var disk: DiskStorage
+     var storage: CodableStorage
+     let dateFormatter = { () -> DateFormatter in
+         let formatter = DateFormatter()
+         formatter.dateFormat = "yyyy-MM-dd"
+         formatter.locale = Locale(identifier: "en_US_POSIX")
+         return formatter
+     }()
+     init() {
+         guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("WorkoutStorage") else { preconditionFailure() }
+         disk = DiskStorage(path: path)
+         storage = CodableStorage(storage: disk)
+     }
+     func save(workout: ScheduledWorkout, for exerciseDate: Date) throws {
+         let exerciseDateString = dateFormatter.string(from: exerciseDate)
+         var existingWorkouts: [ScheduledWorkout]
+          do {
+            existingWorkouts = try storage.fetch(for: exerciseDateString)
+         } catch {
+             existingWorkouts = [] // no workouts were saved yet
+         }
+         existingWorkouts.append(workout)
+         try storage.save(existingWorkouts, for: exerciseDateString)
+     }
+     func remove(workoutName: String, for exerciseDate: Date) throws {
+         let exerciseDateString = dateFormatter.string(from: exerciseDate)
+         var existingWorkouts: [ScheduledWorkout]
+         do {
+             existingWorkouts = try storage.fetch(for: exerciseDateString)
+         } catch {
+             existingWorkouts = [] // no workouts were saved yet
+         }
+         existingWorkouts.removeAll {
+             workout in
+             return workout.workoutName == workoutName
+         }
+         try storage.save(existingWorkouts, for: exerciseDateString)
+     }
+     func fetch(exerciseDate: Date) -> [ScheduledWorkout] {
+         let exerciseDateString = dateFormatter.string(from: exerciseDate)
+         var existingWorkouts: [ScheduledWorkout]
+         do {
+             existingWorkouts =  try storage.fetch(for: exerciseDateString)
+         } catch {
+             existingWorkouts = [] // no workouts were saved yet
+         }
+         return existingWorkouts
+     }
+ }
 
