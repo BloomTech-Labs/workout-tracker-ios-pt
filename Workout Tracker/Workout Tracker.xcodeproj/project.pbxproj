@@ -21,7 +21,6 @@
 		A35F298823FE439900C8157E /* MyActivities.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A35F298723FE439900C8157E /* MyActivities.storyboard */; };
 		A374DD9F2446C895008DA2D0 /* ScheduledWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */; };
 		A374DDA224480285008DA2D0 /* CodableStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DDA124480285008DA2D0 /* CodableStorage.swift */; };
-		A374DDA424480A4C008DA2D0 /* FileManagerStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */; };
 		A3860D7B244D66B8006F8D67 /* ActivityDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3860D7A244D66B8006F8D67 /* ActivityDetail.storyboard */; };
 		A39AE3BB2449634400CFEE93 /* WorkoutStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */; };
 		A3A168422429AC22000D1E11 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A168412429AC22000D1E11 /* UserController.swift */; };
@@ -77,7 +76,6 @@
 		A35F298723FE439900C8157E /* MyActivities.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = MyActivities.storyboard; path = "Workout Tracker/MyActivities.storyboard"; sourceTree = "<group>"; };
 		A374DD9E2446C895008DA2D0 /* ScheduledWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduledWorkout.swift; sourceTree = "<group>"; };
 		A374DDA124480285008DA2D0 /* CodableStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableStorage.swift; sourceTree = "<group>"; };
-		A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerStorage.swift; sourceTree = "<group>"; };
 		A3860D7A244D66B8006F8D67 /* ActivityDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ActivityDetail.storyboard; path = "Workout Tracker/ActivityDetail.storyboard"; sourceTree = "<group>"; };
 		A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStorage.swift; sourceTree = "<group>"; };
 		A3A168412429AC22000D1E11 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserController.swift; path = "Workout Tracker/UserController.swift"; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				A374DDA124480285008DA2D0 /* CodableStorage.swift */,
-				A374DDA324480A4C008DA2D0 /* FileManagerStorage.swift */,
 				A39AE3BA2449634400CFEE93 /* WorkoutStorage.swift */,
 			);
 			name = Persistence;
@@ -519,7 +516,6 @@
 				A3E04CE82404E05300B114B9 /* DateCell.swift in Sources */,
 				A3E04CE62404E03D00B114B9 /* CalendarMainViewController.swift in Sources */,
 				EF7644CE23FB957600B9D1F3 /* SettingsVC.swift in Sources */,
-				A374DDA424480A4C008DA2D0 /* FileManagerStorage.swift in Sources */,
 				EF7644C823FB94DB00B9D1F3 /* DashboardVC.swift in Sources */,
 				EF7644C523F84D7D00B9D1F3 /* SigninVC.swift in Sources */,
 				A35F297F23FAE25B00C8157E /* OnboardingSecondViewController.swift in Sources */,
