@@ -36,7 +36,7 @@ class CreateANewScheduleVC: UIViewController {
     //var workoutController: WorkoutController? // need to have this passed from the workoutDetailVC Save button method.
     
     
-    let testWorkout1 = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
+//    let testWorkout1 = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
     
     
     override func viewDidLoad() {
