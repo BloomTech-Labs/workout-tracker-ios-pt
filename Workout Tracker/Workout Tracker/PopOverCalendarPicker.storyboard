@@ -12,33 +12,38 @@
             <objects>
                 <viewController storyboardIdentifier="CalendarDatePicker" id="VxC-Xy-xfq" customClass="CalendarPopUpViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zop-H7-bwh">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="450"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-jG-Ypf">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="350"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U6y-0n-Txe">
+                                <rect key="frame" x="7" y="223" width="400" height="450"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-jG-Ypf">
+                                        <rect key="frame" x="1" y="0.0" width="398" height="350"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="kEk-es-moY"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="kEk-es-moY"/>
+                                    <constraint firstAttribute="height" constant="450" id="8DL-zM-8fM"/>
+                                    <constraint firstItem="DsQ-jG-Ypf" firstAttribute="leading" secondItem="U6y-0n-Txe" secondAttribute="leading" constant="1" id="Ycf-sx-SFt"/>
+                                    <constraint firstAttribute="width" constant="400" id="k2e-R3-oFZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="DsQ-jG-Ypf" secondAttribute="trailing" constant="1" id="sIh-MD-oKt"/>
+                                    <constraint firstItem="DsQ-jG-Ypf" firstAttribute="top" secondItem="U6y-0n-Txe" secondAttribute="top" id="tQY-ha-NJX"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wge-Ea-J4f">
-                                <rect key="frame" x="131" y="370" width="168" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="DsQ-jG-Ypf" firstAttribute="top" secondItem="Zop-H7-bwh" secondAttribute="top" id="Asc-5Y-XXc"/>
-                            <constraint firstItem="W8i-db-TSu" firstAttribute="bottom" secondItem="wge-Ea-J4f" secondAttribute="bottom" constant="16" id="ChN-pC-R54"/>
-                            <constraint firstItem="wge-Ea-J4f" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="20" id="RM7-4t-soB"/>
-                            <constraint firstItem="W8i-db-TSu" firstAttribute="trailing" secondItem="DsQ-jG-Ypf" secondAttribute="trailing" id="iBI-Sq-iaO"/>
-                            <constraint firstItem="DsQ-jG-Ypf" firstAttribute="leading" secondItem="W8i-db-TSu" secondAttribute="leading" id="mMm-3W-CA4"/>
+                            <constraint firstItem="U6y-0n-Txe" firstAttribute="centerY" secondItem="Zop-H7-bwh" secondAttribute="centerY" id="Wse-tU-ngb"/>
+                            <constraint firstItem="U6y-0n-Txe" firstAttribute="centerX" secondItem="Zop-H7-bwh" secondAttribute="centerX" id="hR8-wL-Ik4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W8i-db-TSu"/>
                     </view>
                     <navigationItem key="navigationItem" id="Nho-AW-oyw"/>
-                    <size key="freeformSize" width="430" height="450"/>
                     <connections>
                         <outlet property="containerView" destination="DsQ-jG-Ypf" id="noI-35-E9g"/>
                     </connections>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateANewScheduleVC: UIViewController {
+class CreateANewScheduleVC: UIViewController, UIPopoverControllerDelegate {
     
     // MARK: - Outlets
     @IBOutlet weak var bGView: UIView!
@@ -77,17 +77,27 @@ class CreateANewScheduleVC: UIViewController {
         
     }
     
-    @IBAction func presentPopOverCalendarPicker(_ sender: Any) {
+    @IBAction func presentPopOverCalendarPicker(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
         let popoverVC = storyboard.instantiateViewController(
                    withIdentifier: "CalendarDatePicker")
         popoverVC.modalPresentationStyle = .popover
-//        popoverVC.popoverPresentationController?.bu
+        popoverVC.popoverPresentationController?.sourceView = sender
+        popoverVC.popoverPresentationController?.sourceRect = sender.bounds
+        popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+        popoverVC.preferredContentSize = CGSize(width: 430, height: 490)
         self.present(popoverVC, animated: true)
         
         
     }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
+    
+    
+
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         guard let workoutName = nameYourWorkoutTextField.text, !workoutName.isEmpty,
             let duration = durationTextField.text, !duration.isEmpty else {
