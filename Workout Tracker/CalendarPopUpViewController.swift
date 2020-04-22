@@ -48,6 +48,15 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
         }
     }
     
+    var combinedDateAndTime: Date {
+        get {
+            Int(formattedTime)
+            let startTime = Calendar.current.date(byAdding: .hour, value: 10, to: selectedDate)!
+            return startTime
+        }
+    }
+
+    
     var formattedDuration: String {
         get {
             

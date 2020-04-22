@@ -28,6 +28,8 @@ class CreateANewScheduleVC: UIViewController{
     let workoutsArray = ["Benchpress Dumbell", "Jumping Jacks", "Treadmill Run"]
     
     let fbController = FBController()
+    
+    var combinedTimeAndDate = Date()
 //    var workoutController: WorkoutController? {
 //        didSet {
 //            workoutCollectionView.reloadData()
@@ -55,7 +57,8 @@ class CreateANewScheduleVC: UIViewController{
               let dateVC = notification.object as! CalendarPopUpViewController
               self.dateTextField.text = dateVC.formattedDate
               self.timeTextField.text = dateVC.formattedTime
-            self.durationTextField.text = dateVC.formattedDuration
+              self.durationTextField.text = dateVC.formattedDuration
+              self.combinedTimeAndDate  = dateVC.combinedDateAndTime
         }
         
     }
