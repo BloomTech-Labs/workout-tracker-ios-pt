@@ -76,10 +76,8 @@ class WorkoutDetailVC: UIViewController {
         guard let workout = workout else { return }
         let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description)
         WorkoutController.chosenExercisesArray.append(chosenExercise)
-//        workoutController.chosenExercisesArray.append(chosenExercise)
-//        print("ChosenExerciseArray \(workoutController.chosenExercisesArray)\n Count: \(workoutController.chosenExercisesArray.count)")
-        self.dismiss(animated: true) {
-            // We need to pass the workoutController Object from this VC to the WorkoutController in the CreateAScheduleVC.
+        
+        dismiss(animated: true) {
             NotificationCenter.default.post(name: .updateCollectionView, object: self)
         }
     }
@@ -91,4 +89,5 @@ class WorkoutDetailVC: UIViewController {
 // MARK: - Notification Extension
 extension NSNotification.Name {
     static let updateCollectionView = NSNotification.Name("updateCollectionView")
+    static let updateMyActivitiesTableView = NSNotification.Name("updateMyActivitesTableView")
 }

@@ -41,12 +41,9 @@ class CreateANewScheduleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ViewDidLoadCalled")
-        //print(workoutController.chosenExercisesArray.count, "\n")
         backgroundSetup()
         workoutCollectionView.delegate = self
         workoutCollectionView.dataSource = self
-        //workoutCollectionView.reloadData()
         
         NotificationCenter.default.addObserver(self,
                                                    selector: #selector(refreshCV),
@@ -60,21 +57,6 @@ class CreateANewScheduleVC: UIViewController {
     @objc func refreshCV() {
         print("refreshCV called")
         workoutCollectionView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("ViewWillAppeared")
-        //print(workoutController.chosenExercisesArray.count, "\n")
-        //workoutCollectionView.reloadData()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear")
-        //0print(workoutController.chosenExercisesArray.count, "\n")
-        //workoutCollectionView.reloadData()
-        
     }
     
     // MARK: - Actions
@@ -111,10 +93,14 @@ class CreateANewScheduleVC: UIViewController {
                 NSLog("There was an error saving the workout from Save Button")
                 
             }
-            //self.fbController.scheduledWorkoutArray.append(self.testWorkout1)
+            
         }
+        FBController.scheduledWorkoutArray.append(scheduledWorkout)
+        print("\nSWA.Count: \(FBController.scheduledWorkoutArray.count)\n")
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+        }
     }
     
     @IBAction func cancelBtnPressed(_ sender: UIButton) {

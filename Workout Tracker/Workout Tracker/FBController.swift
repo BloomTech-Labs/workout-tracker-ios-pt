@@ -11,7 +11,7 @@ import Foundation
 class FBController {
     let fbBaseURL = URL(string: "https://workouttracker-b9bea.firebaseio.com/")!
     
-    var scheduledWorkoutArray = [ScheduledWorkout]()
+    static var scheduledWorkoutArray = [ScheduledWorkout]()
     
     func save(_ scheduledWorkout: ScheduledWorkout, completion: @escaping (Error?) -> Void) {
         var url = fbBaseURL
@@ -62,8 +62,9 @@ class FBController {
             do {
                 let scheduledWorkoutsDictionarys = try JSONDecoder().decode([String : ScheduledWorkout].self, from: data)
                 print(scheduledWorkoutsDictionarys)
-                let scheduledWorkouts = Array(scheduledWorkoutsDictionarys.values)
-                self.scheduledWorkoutArray.append(contentsOf: scheduledWorkouts)
+                let scheduledWorkouts = Array(scheduledWorkoutsDictionarys.values).sorted { $0.startTime < $1.startTime }
+                FBController.scheduledWorkoutArray.append(contentsOf: scheduledWorkouts)
+                print("\n Scheduled Workouts", FBController.scheduledWorkoutArray.count, "\n")
                 DispatchQueue.main.async {
                     completion(nil)
                 }

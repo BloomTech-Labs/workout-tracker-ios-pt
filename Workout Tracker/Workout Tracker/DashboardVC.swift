@@ -9,9 +9,10 @@
 import UIKit
 
 class DashboardVC: UIViewController {
-    let activityScheduledCellIdentifier = "activityScheduledCell"
-    // MARK: - Outlets
     
+    let activityScheduledCellIdentifier = "activityScheduledCell"
+    
+    // MARK: - Outlets
     @IBOutlet weak var scheduleBtn: UIButton!
     @IBOutlet weak var viewAllScheduleBtn: UIButton!
     @IBOutlet weak var seeMoreProgressBtn: UIButton!
@@ -36,10 +37,17 @@ class DashboardVC: UIViewController {
         setupUI()
         setupViewNibs()
         fetchScheduledWorkouts()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .updateMyActivitiesTableView, object: nil)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.tableView.reloadData()
+    }
+    
+    @objc func refreshTableView() {
+        print("\nrefreshTableView Called\n")
+        tableView.reloadData()
     }
     
     func setupUI() {
@@ -76,14 +84,14 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.fbController.scheduledWorkoutArray.count
+        return FBController.scheduledWorkoutArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         
         // Getting the workout name
-        let workout = fbController.scheduledWorkoutArray[indexPath.row]
+        let workout = FBController.scheduledWorkoutArray[indexPath.row]
         cell.workoutNameLabel.text = workout.workoutName
         
         let dateFormatter = DateFormatter()
