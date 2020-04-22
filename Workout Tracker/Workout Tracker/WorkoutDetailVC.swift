@@ -74,8 +74,8 @@ class WorkoutDetailVC: UIViewController {
     
     @IBAction func saveWorkoutBtnPressed(_ sender: UIBarButtonItem) {
         guard let workout = workout else { return }
-        let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description)
-        WorkoutController.chosenExercisesArray.append(chosenExercise)
+//        let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description)
+//        WorkoutController.chosenExercisesArray.append(chosenExercise)
         
         dismiss(animated: true) {
             NotificationCenter.default.post(name: .updateCollectionView, object: self)

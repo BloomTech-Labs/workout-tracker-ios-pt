@@ -35,13 +35,27 @@
                                             <action selector="saveDateButtonTapped:" destination="VxC-Xy-xfq" eventType="touchUpInside" id="fJ5-V2-2QA"/>
                                         </connections>
                                     </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="x7y-Vu-guG">
+                                        <rect key="frame" x="8" y="358" width="147" height="84"/>
+                                    </datePicker>
+                                    <datePicker contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="1800" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0d-5n-jC5">
+                                        <rect key="frame" x="245" y="357" width="147" height="87"/>
+                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="x7y-Vu-guG" secondAttribute="bottom" constant="8" id="4f9-wp-I1v"/>
                                     <constraint firstItem="X3D-0A-mER" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="25" id="6hF-W2-Qzp"/>
                                     <constraint firstAttribute="height" constant="450" id="8DL-zM-8fM"/>
+                                    <constraint firstItem="X3D-0A-mER" firstAttribute="leading" secondItem="x7y-Vu-guG" secondAttribute="trailing" constant="8" id="AIo-Hp-LDT"/>
+                                    <constraint firstItem="C0d-5n-jC5" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="7" id="BUn-sW-uFe"/>
                                     <constraint firstAttribute="bottom" secondItem="X3D-0A-mER" secondAttribute="bottom" constant="45" id="Fqx-Jv-6ah"/>
+                                    <constraint firstItem="x7y-Vu-guG" firstAttribute="leading" secondItem="U6y-0n-Txe" secondAttribute="leading" constant="8" id="HLW-vo-Emc"/>
+                                    <constraint firstAttribute="bottom" secondItem="C0d-5n-jC5" secondAttribute="bottom" constant="6" id="JYt-bX-keU"/>
+                                    <constraint firstItem="x7y-Vu-guG" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="8" id="WP3-u6-iA6"/>
                                     <constraint firstItem="DsQ-jG-Ypf" firstAttribute="leading" secondItem="U6y-0n-Txe" secondAttribute="leading" constant="1" id="Ycf-sx-SFt"/>
+                                    <constraint firstItem="C0d-5n-jC5" firstAttribute="leading" secondItem="X3D-0A-mER" secondAttribute="trailing" constant="8" id="c8q-29-XP8"/>
+                                    <constraint firstAttribute="trailing" secondItem="C0d-5n-jC5" secondAttribute="trailing" constant="8" id="fIe-6Y-yfg"/>
                                     <constraint firstItem="X3D-0A-mER" firstAttribute="centerX" secondItem="DsQ-jG-Ypf" secondAttribute="centerX" id="iK6-BM-NJX"/>
                                     <constraint firstAttribute="width" constant="400" id="k2e-R3-oFZ"/>
                                     <constraint firstAttribute="trailing" secondItem="DsQ-jG-Ypf" secondAttribute="trailing" constant="1" id="sIh-MD-oKt"/>
@@ -59,6 +73,8 @@
                     <navigationItem key="navigationItem" id="Nho-AW-oyw"/>
                     <connections>
                         <outlet property="containerView" destination="DsQ-jG-Ypf" id="noI-35-E9g"/>
+                        <outlet property="datePicker" destination="x7y-Vu-guG" id="MTA-Tb-imk"/>
+                        <outlet property="durationPicker" destination="C0d-5n-jC5" id="1Re-7n-FxR"/>
                         <outlet property="saveButton" destination="X3D-0A-mER" id="tUO-ga-UlH"/>
                     </connections>
                 </viewController>

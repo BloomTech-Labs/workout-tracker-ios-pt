@@ -54,6 +54,8 @@ class CreateANewScheduleVC: UIViewController{
         NotificationCenter.default.addObserver(forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
               let dateVC = notification.object as! CalendarPopUpViewController
               self.dateTextField.text = dateVC.formattedDate
+              self.timeTextField.text = dateVC.formattedTime
+            self.durationTextField.text = dateVC.formattedDuration
         }
         
     }

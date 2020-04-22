@@ -7,7 +7,7 @@
 //
 
 import UIKit
- 
+/*
 // Corey's workingModel
 
 //struct DayScheduled: Codable {
@@ -33,8 +33,8 @@ struct ChosenExercise: Codable {
 //struct ExerciseImage: Codable {
 //    var image: URL
 //}
+ */
  
-/*
 //Stephanie's workingModel
 struct ScheduledWorkout: Codable, Equatable {
     
@@ -54,4 +54,4 @@ struct ExerciseImage: Codable, Equatable {
     var image: URL
 }
 
-*/
+ 

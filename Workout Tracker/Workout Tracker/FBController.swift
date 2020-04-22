@@ -62,12 +62,12 @@ class FBController {
             do {
                 let scheduledWorkoutsDictionarys = try JSONDecoder().decode([String : ScheduledWorkout].self, from: data)
                 print(scheduledWorkoutsDictionarys)
-                let scheduledWorkouts = Array(scheduledWorkoutsDictionarys.values).sorted { $0.startTime < $1.startTime }
-                FBController.scheduledWorkoutArray.append(contentsOf: scheduledWorkouts)
-                print("\n Scheduled Workouts", FBController.scheduledWorkoutArray.count, "\n")
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
+//                let scheduledWorkouts = Array(scheduledWorkoutsDictionarys.values).sorted { $0.startTime < $1.startTime }
+//                FBController.scheduledWorkoutArray.append(contentsOf: scheduledWorkouts)
+//                print("\n Scheduled Workouts", FBController.scheduledWorkoutArray.count, "\n")
+//                DispatchQueue.main.async {
+//                    completion(nil)
+//                }
             } catch {
                 NSLog("There was an error decoding Scheduled Workouts.")
                 DispatchQueue.main.async {

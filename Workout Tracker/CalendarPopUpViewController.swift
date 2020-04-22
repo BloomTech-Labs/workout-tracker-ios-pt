@@ -10,14 +10,19 @@ import UIKit
 
 class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerDelegate {
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
-//        let selectedDate = calendarChildVC.calendarView.selectedDates.first
+        //        let selectedDate = calendarChildVC.calendarView.selectedDates.first
     }
     
-
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var saveButton: UIButton!
+    
+    
+    @IBOutlet weak var durationPicker: UIDatePicker!
+    
     
     var selectedDate: Date {
         get {
@@ -32,8 +37,27 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
             return formatter.string(from: selectedDate)
         }
     }
+    
+    var formattedTime: String {
+        get {
+     
+            let timeFormatter = DateFormatter()
+            timeFormatter.timeStyle = .short
+            return timeFormatter.string(from: datePicker.date)
+            
+        }
+    }
+    
+    var formattedDuration: String {
+        get {
+            
+            return String(durationPicker.countDownDuration)
+          
+        }
+    }
+    
     let calendarChildVC =
-           UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
+        UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
     
     
     override func viewDidLoad() {
@@ -42,23 +66,25 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     }
     
     func addCalendarChildVC(){
-           addChild(calendarChildVC)
-           calendarChildVC.view.translatesAutoresizingMaskIntoConstraints = false
-           containerView.addSubview(calendarChildVC.view)
-           
-           calendarChildVC.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
-           calendarChildVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0).isActive = true
-           
-           calendarChildVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0).isActive = true
-           calendarChildVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0).isActive = true
-
-           calendarChildVC.didMove(toParent: self)
-                  
-       }
- 
+        addChild(calendarChildVC)
+        calendarChildVC.view.translatesAutoresizingMaskIntoConstraints = false
+        containerView.addSubview(calendarChildVC.view)
+        
+        calendarChildVC.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 0).isActive = true
+        calendarChildVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 0).isActive = true
+        
+        calendarChildVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 0).isActive = true
+        calendarChildVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: 0).isActive = true
+        
+        calendarChildVC.didMove(toParent: self)
+        
+    }
+    
     @IBAction func saveDateButtonTapped(_ sender: UIButton) {
         
         NotificationCenter.default.post(name: .saveDateTime, object: self)
+        
+        
         dismiss(animated: true)
     }
     
