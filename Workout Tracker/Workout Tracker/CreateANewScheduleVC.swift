@@ -49,11 +49,21 @@ class CreateANewScheduleVC: UIViewController{
                                                    selector: #selector(refreshCV),
                                                    name: .updateCollectionView,
                                                    object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(handleDatePopupClosing), name: .saveDateTime, object: nil)
         
+        NotificationCenter.default.addObserver(forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
+              let dateVC = notification.object as! CalendarPopUpViewController
+              self.dateTextField.text = dateVC.formattedDate
+        }
         
     }
     
     // 4 Called when notification is heard
+//    @objc func handleDatePopupClosing(notification: Notification) {
+//        let dateVC = notification.object as! CalendarPopUpViewController
+//        dateTextField.text = dateVC.formattedDate
+//    }
+    
     @objc func refreshCV() {
         print("refreshCV called")
         workoutCollectionView.reloadData()

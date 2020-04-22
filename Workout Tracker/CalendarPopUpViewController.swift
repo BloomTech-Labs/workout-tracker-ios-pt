@@ -8,13 +8,31 @@
 
 import UIKit
 
-class CalendarPopUpViewController: UIViewController {
+class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerDelegate {
+    func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
+//        let selectedDate = calendarChildVC.calendarView.selectedDates.first
+    }
+    
 
     
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var saveButton: UIButton!
-    let formatter = DateFormatter()
+//    let formatter = DateFormatter()
+    
+    var selectedDate: Date {
+        get {
+            
+            calendarChildVC.calendarView.selectedDates.first!
+        }
+    }
+    var formattedDate: String {
+        get {
+            let formatter  = DateFormatter()
+            formatter.dateStyle = .medium
+            return formatter.string(from: selectedDate)
+        }
+    }
     let calendarChildVC =
            UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
     
@@ -22,7 +40,7 @@ class CalendarPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
-        formatter.dateFormat = "yyyy MM dd"
+//        formatter.dateFormat = "yyyy MM dd"
     }
     
     func addCalendarChildVC(){
@@ -40,9 +58,15 @@ class CalendarPopUpViewController: UIViewController {
                   
        }
  
-    @IBAction func saveDateButtonTapped(_ sender: Any) {
+    @IBAction func saveDateButtonTapped(_ sender: UIButton) {
         
+        NotificationCenter.default.post(name: .saveDateTime, object: self)
         dismiss(animated: true)
     }
     
+}
+
+
+extension Notification.Name {
+    static let saveDateTime = NSNotification.Name(rawValue: "")
 }
