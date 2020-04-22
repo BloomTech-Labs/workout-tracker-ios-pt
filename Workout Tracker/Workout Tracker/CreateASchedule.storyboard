@@ -225,9 +225,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="VxC-Xy-xfq" kind="popoverPresentation" identifier="toCalendarDatePick" popoverAnchorView="TOP-Fo-X4Z" id="lSM-dY-fBN">
-                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                            </segue>
+                                            <action selector="presentPopOverCalendarPicker:" destination="zPY-v2-q1c" eventType="touchUpInside" id="riH-ps-ciy"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -342,21 +340,13 @@ Schedule</string>
             </objects>
             <point key="canvasLocation" x="2252" y="-23"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NGg-Gr-1EY">
+        <!--PopOverCalendarPicker-->
+        <scene sceneID="qHz-OR-xqf">
             <objects>
-                <viewController id="VxC-Xy-xfq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zop-H7-bwh">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="450"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="W8i-db-TSu"/>
-                    </view>
-                    <size key="freeformSize" width="400" height="450"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kLs-yB-vo2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="PopOverCalendarPicker" id="7PC-5v-IMd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFW-xv-L7o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="181"/>
+            <point key="canvasLocation" x="2303" y="216"/>
         </scene>
     </scenes>
     <resources>

@@ -77,6 +77,17 @@ class CreateANewScheduleVC: UIViewController {
         
     }
     
+    @IBAction func presentPopOverCalendarPicker(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
+        let popoverVC = storyboard.instantiateViewController(
+                   withIdentifier: "CalendarDatePicker")
+        popoverVC.modalPresentationStyle = .popover
+//        popoverVC.popoverPresentationController?.bu
+        self.present(popoverVC, animated: true)
+        
+        
+    }
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         guard let workoutName = nameYourWorkoutTextField.text, !workoutName.isEmpty,
             let duration = durationTextField.text, !duration.isEmpty else {

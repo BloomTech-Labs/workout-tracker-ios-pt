@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VxC-Xy-xfq">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calendar Pop Up View Controller-->
+        <scene sceneID="NGg-Gr-1EY">
+            <objects>
+                <viewController storyboardIdentifier="CalendarDatePicker" id="VxC-Xy-xfq" customClass="CalendarPopUpViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zop-H7-bwh">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="450"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsQ-jG-Ypf">
+                                <rect key="frame" x="0.0" y="0.0" width="430" height="350"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="kEk-es-moY"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wge-Ea-J4f">
+                                <rect key="frame" x="131" y="370" width="168" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DsQ-jG-Ypf" firstAttribute="top" secondItem="Zop-H7-bwh" secondAttribute="top" id="Asc-5Y-XXc"/>
+                            <constraint firstItem="W8i-db-TSu" firstAttribute="bottom" secondItem="wge-Ea-J4f" secondAttribute="bottom" constant="16" id="ChN-pC-R54"/>
+                            <constraint firstItem="wge-Ea-J4f" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="20" id="RM7-4t-soB"/>
+                            <constraint firstItem="W8i-db-TSu" firstAttribute="trailing" secondItem="DsQ-jG-Ypf" secondAttribute="trailing" id="iBI-Sq-iaO"/>
+                            <constraint firstItem="DsQ-jG-Ypf" firstAttribute="leading" secondItem="W8i-db-TSu" secondAttribute="leading" id="mMm-3W-CA4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="W8i-db-TSu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nho-AW-oyw"/>
+                    <size key="freeformSize" width="430" height="450"/>
+                    <connections>
+                        <outlet property="containerView" destination="DsQ-jG-Ypf" id="noI-35-E9g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kLs-yB-vo2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2926.0869565217395" y="186.83035714285714"/>
+        </scene>
+    </scenes>
+</document>
