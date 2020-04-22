@@ -18,7 +18,6 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var saveButton: UIButton!
-//    let formatter = DateFormatter()
     
     var selectedDate: Date {
         get {
@@ -40,7 +39,6 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
-//        formatter.dateFormat = "yyyy MM dd"
     }
     
     func addCalendarChildVC(){
