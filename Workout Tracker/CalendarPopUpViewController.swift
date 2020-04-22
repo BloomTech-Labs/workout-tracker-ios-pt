@@ -13,6 +13,7 @@ class CalendarPopUpViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
+    @IBOutlet weak var saveButton: UIButton!
     let formatter = DateFormatter()
     let calendarChildVC =
            UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
@@ -39,5 +40,9 @@ class CalendarPopUpViewController: UIViewController {
                   
        }
  
-
+    @IBAction func saveDateButtonTapped(_ sender: Any) {
+        
+        dismiss(animated: true)
+    }
+    
 }

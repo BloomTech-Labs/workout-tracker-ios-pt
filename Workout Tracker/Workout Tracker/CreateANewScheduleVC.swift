@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateANewScheduleVC: UIViewController, UIPopoverControllerDelegate {
+class CreateANewScheduleVC: UIViewController{
     
     // MARK: - Outlets
     @IBOutlet weak var bGView: UIView!
@@ -79,16 +79,16 @@ class CreateANewScheduleVC: UIViewController, UIPopoverControllerDelegate {
     
     @IBAction func presentPopOverCalendarPicker(_ sender: UIButton) {
         
-        let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
-        let popoverVC = storyboard.instantiateViewController(
-                   withIdentifier: "CalendarDatePicker")
-        popoverVC.modalPresentationStyle = .popover
-        popoverVC.popoverPresentationController?.sourceView = sender
-        popoverVC.popoverPresentationController?.sourceRect = sender.bounds
-        popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-        popoverVC.preferredContentSize = CGSize(width: 430, height: 490)
-        self.present(popoverVC, animated: true)
-        
+//        let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
+//        let popoverVC = storyboard.instantiateViewController(
+//                   withIdentifier: "CalendarDatePicker")
+//        popoverVC.modalPresentationStyle = .popover
+//        popoverVC.popoverPresentationController?.sourceView = sender
+//        popoverVC.popoverPresentationController?.sourceRect = sender.bounds
+//        popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+//        popoverVC.preferredContentSize = CGSize(width: 430, height: 490)
+//        self.present(popoverVC, animated: true)
+//        
         
     }
     

@@ -10,7 +10,7 @@
         <!--Calendar Pop Up View Controller-->
         <scene sceneID="NGg-Gr-1EY">
             <objects>
-                <viewController storyboardIdentifier="CalendarDatePicker" id="VxC-Xy-xfq" customClass="CalendarPopUpViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalendarDatePicker" modalPresentationStyle="overCurrentContext" id="VxC-Xy-xfq" customClass="CalendarPopUpViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zop-H7-bwh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,18 +25,31 @@
                                             <constraint firstAttribute="height" constant="350" id="kEk-es-moY"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3D-0A-mER">
+                                        <rect key="frame" x="163" y="375" width="74" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="GeQ-6v-wwf"/>
+                                        </constraints>
+                                        <state key="normal" title="Save Date "/>
+                                        <connections>
+                                            <action selector="saveDateButtonTapped:" destination="VxC-Xy-xfq" eventType="touchUpInside" id="fJ5-V2-2QA"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="X3D-0A-mER" firstAttribute="top" secondItem="DsQ-jG-Ypf" secondAttribute="bottom" constant="25" id="6hF-W2-Qzp"/>
                                     <constraint firstAttribute="height" constant="450" id="8DL-zM-8fM"/>
+                                    <constraint firstAttribute="bottom" secondItem="X3D-0A-mER" secondAttribute="bottom" constant="45" id="Fqx-Jv-6ah"/>
                                     <constraint firstItem="DsQ-jG-Ypf" firstAttribute="leading" secondItem="U6y-0n-Txe" secondAttribute="leading" constant="1" id="Ycf-sx-SFt"/>
+                                    <constraint firstItem="X3D-0A-mER" firstAttribute="centerX" secondItem="DsQ-jG-Ypf" secondAttribute="centerX" id="iK6-BM-NJX"/>
                                     <constraint firstAttribute="width" constant="400" id="k2e-R3-oFZ"/>
                                     <constraint firstAttribute="trailing" secondItem="DsQ-jG-Ypf" secondAttribute="trailing" constant="1" id="sIh-MD-oKt"/>
                                     <constraint firstItem="DsQ-jG-Ypf" firstAttribute="top" secondItem="U6y-0n-Txe" secondAttribute="top" id="tQY-ha-NJX"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="0.46818814212328769" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="U6y-0n-Txe" firstAttribute="centerY" secondItem="Zop-H7-bwh" secondAttribute="centerY" id="Wse-tU-ngb"/>
                             <constraint firstItem="U6y-0n-Txe" firstAttribute="centerX" secondItem="Zop-H7-bwh" secondAttribute="centerX" id="hR8-wL-Ik4"/>
@@ -46,6 +59,7 @@
                     <navigationItem key="navigationItem" id="Nho-AW-oyw"/>
                     <connections>
                         <outlet property="containerView" destination="DsQ-jG-Ypf" id="noI-35-E9g"/>
+                        <outlet property="saveButton" destination="X3D-0A-mER" id="tUO-ga-UlH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLs-yB-vo2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

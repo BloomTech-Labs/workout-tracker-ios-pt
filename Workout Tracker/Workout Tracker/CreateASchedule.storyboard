@@ -226,6 +226,7 @@
                                         </state>
                                         <connections>
                                             <action selector="presentPopOverCalendarPicker:" destination="zPY-v2-q1c" eventType="touchUpInside" id="riH-ps-ciy"/>
+                                            <segue destination="7PC-5v-IMd" kind="presentation" id="fU0-ah-CkY"/>
                                         </connections>
                                     </button>
                                 </subviews>
