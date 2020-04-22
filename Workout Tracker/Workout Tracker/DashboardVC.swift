@@ -36,7 +36,8 @@ class DashboardVC: UIViewController {
         tableView.dataSource = self
         setupUI()
         setupViewNibs()
-        fetchScheduledWorkouts()
+        
+        //fetchScheduledWorkouts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .updateMyActivitiesTableView, object: nil)
     }
@@ -84,23 +85,29 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FBController.scheduledWorkoutArray.count
+        return 5
+        
+        //return FBController.scheduledWorkoutArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         
+        
+        
+        
+        
         // Getting the workout name
-        let workout = FBController.scheduledWorkoutArray[indexPath.row]
-        cell.workoutNameLabel.text = workout.workoutName
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
-        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
-        
-        let timeFormatter = DateFormatter()
-        timeFormatter.timeStyle = .short
-        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
+//        let workout = FBController.scheduledWorkoutArray[indexPath.row]
+//        cell.workoutNameLabel.text = workout.workoutName
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .short
+//        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
+//
+//        let timeFormatter = DateFormatter()
+//        timeFormatter.timeStyle = .short
+//        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
         
         return cell
     }

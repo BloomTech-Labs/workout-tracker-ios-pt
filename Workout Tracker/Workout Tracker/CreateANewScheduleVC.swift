@@ -88,19 +88,21 @@ class CreateANewScheduleVC: UIViewController {
         let scheduledWorkout = ScheduledWorkout(workoutName: workoutName, startTime: Date(), hasBeenCompleted: false, duration: duration, workouts: chosenExcercises)
         
         
-        fbController.save(scheduledWorkout) { (error) in
-            if let error = error {
-                NSLog("There was an error saving the workout from Save Button")
-                
-            }
-            
-        }
-        FBController.scheduledWorkoutArray.append(scheduledWorkout)
-        print("\nSWA.Count: \(FBController.scheduledWorkoutArray.count)\n")
+//        fbController.save(scheduledWorkout) { (error) in
+//            if let error = error {
+//                NSLog("There was an error saving the workout from Save Button")
+//
+//            }
+//
+//        }
+//        FBController.scheduledWorkoutArray.append(scheduledWorkout)
+//        print("\nSWA.Count: \(FBController.scheduledWorkoutArray.count)\n")
+//
+//        dismiss(animated: true) {
+//            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+//        }
         
-        dismiss(animated: true) {
-            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
-        }
+        
     }
     
     @IBAction func cancelBtnPressed(_ sender: UIButton) {
