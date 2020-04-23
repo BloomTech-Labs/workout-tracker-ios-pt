@@ -48,11 +48,10 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
         }
     }
     
-    var combinedDateAndTime: Date {
+    var combinedDateAndTime: Date? {
         get {
-            Int(formattedTime)
-            let startTime = Calendar.current.date(byAdding: .hour, value: 10, to: selectedDate)!
-            return startTime
+
+            return combineDateWithTime(date: selectedDate, time: datePicker.date)
         }
     }
 
@@ -73,7 +72,23 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
+//        self.datePicker.timeZone = TimeZone.current
+        //TODO: Set Timezone when displaying the saved time.
     }
+    
+    func combineDateWithTime(date: Date, time: Date) -> Date? {
+           let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        let timeComponents = calendar.dateComponents([.hour, .minute, .second], from: time)
+        var mergedComponents = DateComponents()
+               mergedComponents.year = dateComponents.year
+               mergedComponents.month = dateComponents.month
+               mergedComponents.day = dateComponents.day
+               mergedComponents.hour = timeComponents.hour
+               mergedComponents.minute = timeComponents.minute
+               mergedComponents.second = timeComponents.second
+        return calendar.date(from: mergedComponents)
+       }
     
     func addCalendarChildVC(){
         addChild(calendarChildVC)

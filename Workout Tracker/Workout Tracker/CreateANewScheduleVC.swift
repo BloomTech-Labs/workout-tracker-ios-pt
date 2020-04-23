@@ -58,7 +58,7 @@ class CreateANewScheduleVC: UIViewController{
               self.dateTextField.text = dateVC.formattedDate
               self.timeTextField.text = dateVC.formattedTime
               self.durationTextField.text = dateVC.formattedDuration
-              self.combinedTimeAndDate  = dateVC.combinedDateAndTime
+              self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
         }
         
     }
