@@ -26,9 +26,13 @@ class DashboardVC: UIViewController {
     
     @IBOutlet weak var sheildImageView: UIImageView!
     
+    var recentlySavedDate = Date()
+    
     var userController: UserController?
     
     let fbController = FBController()
+    
+    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,14 @@ class DashboardVC: UIViewController {
         //fetchScheduledWorkouts()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .updateMyActivitiesTableView, object: nil)
+        
+        NotificationCenter.default.addObserver(forName: .updateDate, object: nil, queue: OperationQueue.main) { (notification) in
+                   let scheduleVC = notification.object as! CreateANewScheduleVC
+                   self.recentlySavedDate = scheduleVC.combinedTimeAndDate
+                   self.fetchWorkoutFromStorage()
+                   self.tableView.reloadData()
+               }
+        fetchWorkoutFromStorage()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -49,6 +61,8 @@ class DashboardVC: UIViewController {
     @objc func refreshTableView() {
         print("\nrefreshTableView Called\n")
         tableView.reloadData()
+        
+         
     }
     
     func setupUI() {
@@ -80,12 +94,21 @@ class DashboardVC: UIViewController {
 //            self.tableView.reloadData()
 //        }
 //    }
-    
+    func fetchWorkoutFromStorage(){
+        do {
+            let cached: [ScheduledWorkout] = try  WorkoutStorage.shared.fetch(exerciseDate: recentlySavedDate)
+            self.arrayOfStoredSchedules.append(cached)
+            print(cached)
+        } catch {
+            print( error )
+        }
+       
+    }
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrayOfStoredSchedules.count
         
         //return FBController.scheduledWorkoutArray.count
     }
@@ -93,9 +116,19 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         
-        
-        
-        
+ 
+        for workout in arrayOfStoredSchedules[indexPath.row] {
+            cell.workoutNameLabel.text = workout.workoutName
+                 
+                 let dateFormatter = DateFormatter()
+                 dateFormatter.dateStyle = .short
+                 cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime!)
+                 
+                 let timeFormatter = DateFormatter()
+                 timeFormatter.timeStyle = .short
+                 cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime!)
+        }
+     
         
         // Getting the workout name
 //        let workout = FBController.scheduledWorkoutArray[indexPath.row]

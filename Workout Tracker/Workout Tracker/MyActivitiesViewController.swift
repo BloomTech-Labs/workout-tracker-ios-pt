@@ -11,7 +11,9 @@ import UIKit
 class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CalendarMainViewControllerDelegate {
     
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
-        getSchedule()
+//        getSchedule()
+        getScheduleFromStorage()
+        tableView.reloadData()
     }
     
     
@@ -19,31 +21,33 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var containerView: UIView!
+    
+    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
     let numOfRandomEvent = 100
     let activityScheduledCellIdentifier = "activityScheduledCell"
     let formatter = DateFormatter()
     let calendarChildVC =
         UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
     
-    var scheduleGroup : [String: [Schedule]]? {
-        didSet {
-            calendarChildVC.calendarView.reloadData()
-            tableView.reloadData()
-        }
-    }
-    var schedules: [Schedule] {
-        get {
-            guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {
-                return []
-            }
-            
-            guard let data = scheduleGroup?[self.formatter.string(from: selectedDate)] else {
-                return []
-            }
-            
-            return data.sorted()
-        }
-    }
+//    var scheduleGroup : [String: [Schedule]]? {
+//        didSet {
+//            calendarChildVC.calendarView.reloadData()
+//            tableView.reloadData()
+//        }
+//    }
+//    var schedules: [Schedule] {
+//        get {
+//            guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {
+//                return []
+//            }
+//
+//            guard let data = scheduleGroup?[self.formatter.string(from: selectedDate)] else {
+//                return []
+//            }
+//
+//            return data.sorted()
+//        }
+//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
@@ -61,26 +65,36 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
     
-    
-    func getSchedule(){
-        if let startDate = calendarChildVC.calendarView.visibleDates().monthDates.first?.date {
-            let endDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)
-            getSchedule(fromDate: startDate, toDate: endDate!)
-            print("Showing enddate:\(endDate)")
-            print("Showing startdate: \(startDate)")
-        }
+    func getScheduleFromStorage() {
+        let selectedDate = calendarChildVC.calendarView.selectedDates.first!
+                      
+        do {
+                  let cached: [ScheduledWorkout] = try  WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+                  self.arrayOfStoredSchedules.append(cached)
+                  print(cached)
+              } catch {
+                  print( error )
+              }
     }
-    func getSchedule(fromDate: Date, toDate: Date) {
-        var schedules: [Schedule] = []
-        for _ in 1...numOfRandomEvent {
-            schedules.append(Schedule(fromStartDate: fromDate))
-        }
-        
-        scheduleGroup = schedules.group{
-            return self.formatter.string(from: $0.startTime)}
-        //empty string from formatter .  po a self.formatter.string 
-        //The hashable
-    }
+//    func getSchedule(){
+//        if let startDate = calendarChildVC.calendarView.visibleDates().monthDates.first?.date {
+//            let endDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)
+//            getSchedule(fromDate: startDate, toDate: endDate!)
+//            print("Showing enddate:\(endDate)")
+//            print("Showing startdate: \(startDate)")
+//        }
+//    }
+//    func getSchedule(fromDate: Date, toDate: Date) {
+//        var schedules: [Schedule] = []
+//        for _ in 1...numOfRandomEvent {
+//            schedules.append(Schedule(fromStartDate: fromDate))
+//        }
+//
+//        scheduleGroup = schedules.group{
+//            return self.formatter.string(from: $0.startTime)}
+//        //empty string from formatter .  po a self.formatter.string
+//        //The hashable
+//    }
     
     func addCalendarChildVC(){
         addChild(calendarChildVC)
@@ -101,14 +115,43 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         performSegue(withIdentifier: "toActivityDetail", sender: indexPath)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return schedules.count
+//        return schedules.count
+        return arrayOfStoredSchedules.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as! ActivityScheduledTableViewCell
-        cell.schedule = schedules[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
+//        cell.schedule = schedules[indexPath.row]
         
-        print(cell.schedule!)
+//        cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+        
+        for workout in arrayOfStoredSchedules[indexPath.row] {
+                    cell.workoutNameLabel.text = workout.workoutName
+
+                         let dateFormatter = DateFormatter()
+                         dateFormatter.dateStyle = .short
+                         cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime!)
+
+                         let timeFormatter = DateFormatter()
+                         timeFormatter.timeStyle = .short
+                         cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime!)
+                }
+//
+                
+                // Getting the workout name
+        //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
+        //        cell.workoutNameLabel.text = workout.workoutName
+        //
+        //        let dateFormatter = DateFormatter()
+        //        dateFormatter.dateStyle = .short
+        //        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
+        //
+        //        let timeFormatter = DateFormatter()
+        //        timeFormatter.timeStyle = .short
+        //        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
+                 
+        
+//        print(cell.schedule!)
         return cell
         
     }
@@ -117,8 +160,8 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         if segue.identifier == "toActivityDetail" {
             guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
-            
-            destinationVC.schedule = schedules[indexPath.row]
+//            destinationVC.scheduleFromStorage =
+//            destinationVC.schedule = schedules[indexPath.row]
         }
     }
     

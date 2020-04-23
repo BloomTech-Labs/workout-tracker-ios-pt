@@ -134,6 +134,7 @@ class CreateANewScheduleVC: UIViewController{
         
         dismiss(animated: true){
             NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+             NotificationCenter.default.post(name: .updateDate, object: self)
         }
         //        fbController.save(scheduledWorkout) { (error) in
         //            if let error = error {
