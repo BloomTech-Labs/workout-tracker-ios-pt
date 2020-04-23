@@ -34,6 +34,8 @@ class DashboardVC: UIViewController {
     
     var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
     
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

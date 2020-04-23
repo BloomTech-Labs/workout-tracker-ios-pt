@@ -23,12 +23,33 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var containerView: UIView!
     
     var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
+//    var arrayOfStoredSchedules: [ScheduledWorkout] {
+//            get {
+////                let now = [Date()]
+////                let dateNow = calendarChildVC.calendarView.selectDates(now)
+////                WorkoutStorage.shared.fetch(exerciseDate: dateNow.first)
+//                let selectedDate = calendarChildVC.calendarView.selectedDates.first!
+//                return WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+//                }
+//
+//
+//
+////        set {
+////            func getWorkout(){
+////                WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+////            }
+////        }
+//        }
+//
+
+    
     let numOfRandomEvent = 100
     let activityScheduledCellIdentifier = "activityScheduledCell"
     let formatter = DateFormatter()
     let calendarChildVC =
         UIStoryboard(name: "CalendarSetup", bundle: nil).instantiateViewController(withIdentifier: "calendarSetup") as! CalendarMainViewController
-    
+  
+    //MARK: Mock Test Computed Properties
 //    var scheduleGroup : [String: [Schedule]]? {
 //        didSet {
 //            calendarChildVC.calendarView.reloadData()
@@ -48,6 +69,8 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
 //            return data.sorted()
 //        }
 //    }
+    //MARK: Mock Test Computed Properties End
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addCalendarChildVC()
@@ -65,9 +88,10 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
     
+
     func getScheduleFromStorage() {
-        let selectedDate = calendarChildVC.calendarView.selectedDates.first!
-                      
+        guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
+
         do {
                   let cached: [ScheduledWorkout] = try  WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
                   self.arrayOfStoredSchedules.append(cached)
@@ -76,6 +100,9 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
                   print( error )
               }
     }
+    
+    
+    //MARK: Mock Tests calls
 //    func getSchedule(){
 //        if let startDate = calendarChildVC.calendarView.visibleDates().monthDates.first?.date {
 //            let endDate = Calendar.current.date(byAdding: .month, value: 1, to: startDate)
@@ -95,7 +122,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
 //        //empty string from formatter .  po a self.formatter.string
 //        //The hashable
 //    }
-    
+    // MARK: Mock tests End
     func addCalendarChildVC(){
         addChild(calendarChildVC)
         calendarChildVC.view.translatesAutoresizingMaskIntoConstraints = false
@@ -136,7 +163,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
                          timeFormatter.timeStyle = .short
                          cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime!)
                 }
-//
+
                 
                 // Getting the workout name
         //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
