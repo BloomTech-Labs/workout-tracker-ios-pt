@@ -29,16 +29,18 @@ class CreateANewScheduleVC: UIViewController{
     
     let fbController = FBController()
     
+    
+    
     var combinedTimeAndDate = Date()
-//    var workoutController: WorkoutController? {
-//        didSet {
-//            workoutCollectionView.reloadData()
-//        }
-//    }
+    //    var workoutController: WorkoutController? {
+    //        didSet {
+    //            workoutCollectionView.reloadData()
+    //        }
+    //    }
     //var workoutController: WorkoutController? // need to have this passed from the workoutDetailVC Save button method.
     
     
-//    let testWorkout1 = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
+    //    let testWorkout1 = ScheduledWorkout(workoutName: "Test Chest", startTime: Date(), hasBeenCompleted: false, duration: "1 Hour", workouts: [.init(exerciseName: "BenchPress", description: "Lifting with your chest.")])
     
     
     override func viewDidLoad() {
@@ -48,26 +50,26 @@ class CreateANewScheduleVC: UIViewController{
         workoutCollectionView.dataSource = self
         
         NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(refreshCV),
-                                                   name: .updateCollectionView,
-                                                   object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleDatePopupClosing), name: .saveDateTime, object: nil)
+                                               selector: #selector(refreshCV),
+                                               name: .updateCollectionView,
+                                               object: nil)
+        //        NotificationCenter.default.addObserver(self, selector: #selector(handleDatePopupClosing), name: .saveDateTime, object: nil)
         
         NotificationCenter.default.addObserver(forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
-              let dateVC = notification.object as! CalendarPopUpViewController
-              self.dateTextField.text = dateVC.formattedDate
-              self.timeTextField.text = dateVC.formattedTime
-              self.durationTextField.text = dateVC.formattedDuration
-              self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
+            let dateVC = notification.object as! CalendarPopUpViewController
+            self.dateTextField.text = dateVC.formattedDate
+            self.timeTextField.text = dateVC.formattedTime
+            self.durationTextField.text = dateVC.formattedDuration
+            self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
         }
         
     }
     
     // 4 Called when notification is heard
-//    @objc func handleDatePopupClosing(notification: Notification) {
-//        let dateVC = notification.object as! CalendarPopUpViewController
-//        dateTextField.text = dateVC.formattedDate
-//    }
+    //    @objc func handleDatePopupClosing(notification: Notification) {
+    //        let dateVC = notification.object as! CalendarPopUpViewController
+    //        dateTextField.text = dateVC.formattedDate
+    //    }
     
     @objc func refreshCV() {
         print("refreshCV called")
@@ -84,8 +86,9 @@ class CreateANewScheduleVC: UIViewController{
     }
     
     @IBAction func libraryBtnPressed(_ sender: UIButton) {
-//        let workoutLibraryVC = WorkoutLibraryVC()
-//        workoutLibraryVC.showCancelBtn = true
+        //        let workoutLibraryVC = WorkoutLibraryVC()
+        //        workoutLibraryVC.showCancelBtn = true
+        
     }
     
     @IBAction func reminderToggleSwitched(_ sender: UISwitch) {
@@ -94,16 +97,16 @@ class CreateANewScheduleVC: UIViewController{
     
     @IBAction func presentPopOverCalendarPicker(_ sender: UIButton) {
         
-//        let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
-//        let popoverVC = storyboard.instantiateViewController(
-//                   withIdentifier: "CalendarDatePicker")
-//        popoverVC.modalPresentationStyle = .popover
-//        popoverVC.popoverPresentationController?.sourceView = sender
-//        popoverVC.popoverPresentationController?.sourceRect = sender.bounds
-//        popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
-//        popoverVC.preferredContentSize = CGSize(width: 430, height: 490)
-//        self.present(popoverVC, animated: true)
-//        
+        //        let storyboard = UIStoryboard(name: "PopOverCalendarPicker", bundle: nil)
+        //        let popoverVC = storyboard.instantiateViewController(
+        //                   withIdentifier: "CalendarDatePicker")
+        //        popoverVC.modalPresentationStyle = .popover
+        //        popoverVC.popoverPresentationController?.sourceView = sender
+        //        popoverVC.popoverPresentationController?.sourceRect = sender.bounds
+        //        popoverVC.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+        //        popoverVC.preferredContentSize = CGSize(width: 430, height: 490)
+        //        self.present(popoverVC, animated: true)
+        //
         
     }
     
@@ -112,7 +115,7 @@ class CreateANewScheduleVC: UIViewController{
     }
     
     
-
+    
     @IBAction func saveBtnPressed(_ sender: UIButton) {
         guard let workoutName = nameYourWorkoutTextField.text, !workoutName.isEmpty,
             let duration = durationTextField.text, !duration.isEmpty else {
@@ -123,20 +126,28 @@ class CreateANewScheduleVC: UIViewController{
         
         let scheduledWorkout = ScheduledWorkout(workoutName: workoutName, startTime: combinedTimeAndDate, hasBeenCompleted: false, duration: duration, workouts: chosenExcercises)
         
+        do {
+            try WorkoutStorage.shared.save(workout: scheduledWorkout, for: combinedTimeAndDate)
+        } catch {
+            NSLog("There was an error saving the workout to Workout Storage")
+        }
         
-//        fbController.save(scheduledWorkout) { (error) in
-//            if let error = error {
-//                NSLog("There was an error saving the workout from Save Button")
-//
-//            }
-//
-//        }
-//        FBController.scheduledWorkoutArray.append(scheduledWorkout)
-//        print("\nSWA.Count: \(FBController.scheduledWorkoutArray.count)\n")
-//
-//        dismiss(animated: true) {
-//            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
-//        }
+        dismiss(animated: true){
+            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+        }
+        //        fbController.save(scheduledWorkout) { (error) in
+        //            if let error = error {
+        //                NSLog("There was an error saving the workout from Save Button")
+        //
+        //            }
+        //
+        //        }
+        //        FBController.scheduledWorkoutArray.append(scheduledWorkout)
+        //        print("\nSWA.Count: \(FBController.scheduledWorkoutArray.count)\n")
+        //
+        //        dismiss(animated: true) {
+        //            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+        //        }
         
         
     }

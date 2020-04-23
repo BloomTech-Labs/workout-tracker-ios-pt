@@ -10,6 +10,8 @@
 
 
  class WorkoutStorage {
+    
+     static let shared = WorkoutStorage()
      var disk: DiskStorage
      var storage: CodableStorage
      let dateFormatter = { () -> DateFormatter in
