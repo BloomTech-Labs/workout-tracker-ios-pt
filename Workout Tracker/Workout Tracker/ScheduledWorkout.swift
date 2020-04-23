@@ -48,10 +48,10 @@ struct ScheduledWorkout: Codable, Equatable {
 struct ChosenExercise: Codable, Equatable {
     var exerciseName: String
     var description: String
-    var image: [ExerciseImage]
+    var image: [ExerciseImage]?
 }
 struct ExerciseImage: Codable, Equatable {
-    var image: URL
+    var image: URL?
 }
 
  

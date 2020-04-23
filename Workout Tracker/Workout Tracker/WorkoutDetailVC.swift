@@ -74,8 +74,11 @@ class WorkoutDetailVC: UIViewController {
     
     @IBAction func saveWorkoutBtnPressed(_ sender: UIBarButtonItem) {
         guard let workout = workout else { return }
-//        let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description)
-//        WorkoutController.chosenExercisesArray.append(chosenExercise)
+
+        //TODO:  figure out saving image arrays
+        
+        let chosenExercise = ChosenExercise(exerciseName: workout.name, description: workout.description, image: nil)
+        WorkoutController.chosenExercisesArray.append(chosenExercise)
         
         dismiss(animated: true) {
             NotificationCenter.default.post(name: .updateCollectionView, object: self)

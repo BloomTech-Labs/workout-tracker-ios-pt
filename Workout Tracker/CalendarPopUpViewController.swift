@@ -26,7 +26,7 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     
     var selectedDate: Date {
         get {
-            
+            //TODO: guard properly
             calendarChildVC.calendarView.selectedDates.first!
         }
     }
@@ -106,10 +106,9 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     }
     
     @IBAction func saveDateButtonTapped(_ sender: UIButton) {
-        
+   
         NotificationCenter.default.post(name: .saveDateTime, object: self)
-        
-        
+   
         dismiss(animated: true)
     }
     

@@ -121,7 +121,7 @@ class CreateANewScheduleVC: UIViewController{
         }
         let chosenExcercises = WorkoutController.chosenExercisesArray
         
-        let scheduledWorkout = ScheduledWorkout(workoutName: workoutName, startTime: Date(), hasBeenCompleted: false, duration: duration, workouts: chosenExcercises)
+        let scheduledWorkout = ScheduledWorkout(workoutName: workoutName, startTime: combinedTimeAndDate, hasBeenCompleted: false, duration: duration, workouts: chosenExcercises)
         
         
 //        fbController.save(scheduledWorkout) { (error) in

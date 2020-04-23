@@ -32,7 +32,7 @@ class WorkoutController {
     private(set) var workoutsArray = [Workout]()      // For use with the fetchWorkouts method
     private(set) var imageURLsArray = [ImageInfo]()   // For use with the fetchWorkoutImageURL
     private(set) var imageArray = [UIImage]()         // For use with the Images returned from workouts
-    
+    private(set) var chosenImageURLs = [URL]()
     static var chosenExercisesArray = [ChosenExercise]() // For use when the user saves a workout from the WorkoutDetailVC Save button
     
     
@@ -208,6 +208,7 @@ class WorkoutController {
             
             guard let image = UIImage(data: data) else { return }
             self.imageArray.append(image)
+            self.chosenImageURLs.append(imageBaseURL)
             print("ImageArray: \(self.imageArray) Count: \(self.imageArray.count)")
             DispatchQueue.main.async {
                 completion(image, nil)
