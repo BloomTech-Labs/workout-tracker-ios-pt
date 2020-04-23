@@ -85,7 +85,7 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1
         
         //return FBController.scheduledWorkoutArray.count
     }
