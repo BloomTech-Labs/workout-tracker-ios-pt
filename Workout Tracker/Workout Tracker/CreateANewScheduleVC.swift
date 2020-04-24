@@ -12,6 +12,9 @@ class CreateANewScheduleVC: UIViewController{
     
     // MARK: - Outlets
     @IBOutlet weak var bGView: UIView!
+    @IBOutlet weak var lineViewSeparator: UIView!
+    
+    
     @IBOutlet weak var workoutCollectionView: UICollectionView!
     
     @IBOutlet weak var nameYourWorkoutTextField: UITextField!
@@ -24,6 +27,7 @@ class CreateANewScheduleVC: UIViewController{
     
     @IBOutlet weak var libraryButton: UIButton!
     @IBOutlet weak var saveButton:    UIButton!
+    @IBOutlet weak var pickADateBtn: UIButton!
     
     let workoutsArray = ["Benchpress Dumbell", "Jumping Jacks", "Treadmill Run"]
     
@@ -44,6 +48,7 @@ class CreateANewScheduleVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         backgroundSetup()
+        buttonUISetup()
         workoutCollectionView.delegate = self
         workoutCollectionView.dataSource = self
         
@@ -81,6 +86,11 @@ class CreateANewScheduleVC: UIViewController{
         bGView.layer.backgroundColor = UIColor.white.cgColor
         bGView.layer.cornerRadius = 50
         bGView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        lineViewSeparator.layer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
+    
+    func buttonUISetup() {
+        saveButton.layer.cornerRadius = 5
     }
     
     @IBAction func libraryBtnPressed(_ sender: UIButton) {

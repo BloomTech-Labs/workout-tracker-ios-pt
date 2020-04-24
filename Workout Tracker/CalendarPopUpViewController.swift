@@ -59,7 +59,7 @@ class CalendarPopUpViewController: UIViewController, CalendarMainViewControllerD
     var formattedDuration: String {
         get {
             let dcf = DateComponentsFormatter()
-            dcf.unitsStyle = .brief
+            dcf.unitsStyle = .short
             return dcf.string(from: durationPicker.countDownDuration)!
           
         }
