@@ -20,13 +20,25 @@ class MyActivitiesDetailViewController: UIViewController {
     
     @IBOutlet weak var whereLocationLabel: UILabel!
     
-    var schedule: Schedule? {
-        didSet {
+//    var schedule: Schedule? {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.updateViews()
+//            }
+//        }
+//    }
+//
+    
+    var scheduleFromStorage: ScheduledWorkout? {
+       didSet {
             DispatchQueue.main.async {
                 self.updateViews()
             }
         }
     }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,29 +53,46 @@ class MyActivitiesDetailViewController: UIViewController {
     }
     
     func updateViews(){
-        guard let schedule = schedule,
-            isViewLoaded else { return }
-      
-        title = schedule.workoutName
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy"
-        dateLabel.text = dateFormatter.string(from: schedule.startTime)
-    
-        let startTimeFormatter = DateFormatter()
-        startTimeFormatter.dateFormat = "HH:mm"
-        timeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+        guard let scheduleFromStorage = scheduleFromStorage,
+                isViewLoaded else { return }
+          
+            title = scheduleFromStorage.workoutName
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+        dateLabel.text = dateFormatter.string(from: scheduleFromStorage.startTime!)
         
+            let startTimeFormatter = DateFormatter()
+            startTimeFormatter.dateFormat = "HH:mm"
+        timeLabel.text = startTimeFormatter.string(from: scheduleFromStorage.startTime!)
+        durationLabel.text = scheduleFromStorage.duration
+            
+        
+//        guard let schedule = schedule,
+//            isViewLoaded else { return }
+//
+//        title = schedule.workoutName
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/dd/yyyy"
+//        dateLabel.text = dateFormatter.string(from: schedule.startTime)
+//
+//        let startTimeFormatter = DateFormatter()
+//        startTimeFormatter.dateFormat = "HH:mm"
+//        timeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+//
     }
       
 }
 
 extension MyActivitiesDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return scheduleFromStorage!.workouts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "workoutRoutineCell", for: indexPath) as? WorkoutCollectionViewCell else { return UICollectionViewCell() }
+        
+        let workoutNames = scheduleFromStorage!.workouts[indexPath.row]
+        collectionCell.workoutNameLbl.text = workoutNames.exerciseName
         
         collectionCell.layer.backgroundColor = UIColor.systemGray5.cgColor
         

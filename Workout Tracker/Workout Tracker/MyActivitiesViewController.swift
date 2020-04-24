@@ -12,7 +12,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
     func calendarController(_ controller: CalendarMainViewController, didSelect date: Date) {
         //        getSchedule()
-        //        getScheduleFromStorage()
+        getScheduleFromStorage()
         tableView.reloadData()
     }
     
@@ -22,22 +22,22 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var containerView: UIView!
     
-    //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
+    var arrayOfStoredSchedules = [ScheduledWorkout]()
     
     
-    var arrayOfStoredSchedules: [ScheduledWorkout] {
-        get {
-            let selectedDate = calendarChildVC.calendarView.selectedDates.first!
-            //                 guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
-            //                let now = [Date()]
-            //                let dateNow = calendarChildVC.calendarView.selectDates(now)
-            //                WorkoutStorage.shared.fetch(exerciseDate: dateNow.first)
-            //                let selectedDate = calendarChildVC.calendarView.selectedDates.first!
-            //                let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-            //                return fetched
-            return WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-        }
-    }
+//    var arrayOfStoredSchedules: [ScheduledWorkout] {
+//        get {
+//            let selectedDate = calendarChildVC.calendarView.selectedDates.first!
+//            //                 guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
+//            //                let now = [Date()]
+//            //                let dateNow = calendarChildVC.calendarView.selectDates(now)
+//            //                WorkoutStorage.shared.fetch(exerciseDate: dateNow.first)
+//            //                let selectedDate = calendarChildVC.calendarView.selectedDates.first!
+//            //                let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+//            //                return fetched
+//            return WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+//        }
+//    }
     
     //
     //
@@ -96,17 +96,14 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-    //    func getScheduleFromStorage() {
-    //        guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
-    //
-    //        do {
-    //                  let cached: [ScheduledWorkout] = try  WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-    //                  self.arrayOfStoredSchedules.append(cached)
-    //                  print(cached)
-    //              } catch {
-    //                  print( error )
-    //              }
-    //    }
+        func getScheduleFromStorage() {
+            guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
+    
+        let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+        self.arrayOfStoredSchedules = fetched
+                 
+                
+        }
     
     
     //MARK: Mock Tests calls
@@ -157,7 +154,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         //        cell.schedule = schedules[indexPath.row]
         
-        //        cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+        cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
         
         //        for workout in arrayOfStoredSchedules[indexPath.row] {
         //                    cell.workoutNameLabel.text = workout.workoutName
@@ -194,7 +191,7 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         if segue.identifier == "toActivityDetail" {
             guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
-            //            destinationVC.scheduleFromStorage =
+            destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
             //            destinationVC.schedule = schedules[indexPath.row]
         }
     }
