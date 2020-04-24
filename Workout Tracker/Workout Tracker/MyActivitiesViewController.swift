@@ -24,32 +24,6 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
     
-    
-//    var arrayOfStoredSchedules: [ScheduledWorkout] {
-//        get {
-//            let selectedDate = calendarChildVC.calendarView.selectedDates.first!
-//            //                 guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
-//            //                let now = [Date()]
-//            //                let dateNow = calendarChildVC.calendarView.selectDates(now)
-//            //                WorkoutStorage.shared.fetch(exerciseDate: dateNow.first)
-//            //                let selectedDate = calendarChildVC.calendarView.selectedDates.first!
-//            //                let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-//            //                return fetched
-//            return WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-//        }
-//    }
-    
-    //
-    //
-    ////        set {
-    ////            func getWorkout(){
-    ////                WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
-    ////            }
-    ////        }
-    //        }
-    //
-    
-    
     let numOfRandomEvent = 100
     let activityScheduledCellIdentifier = "activityScheduledCell"
     let formatter = DateFormatter()
@@ -96,14 +70,14 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     
-        func getScheduleFromStorage() {
-            guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
-    
+    func getScheduleFromStorage() {
+        guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
+        
         let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
         self.arrayOfStoredSchedules = fetched
-                 
-                
-        }
+        
+        
+    }
     
     
     //MARK: Mock Tests calls
@@ -155,18 +129,6 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         //        cell.schedule = schedules[indexPath.row]
         
         cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
-        
-        //        for workout in arrayOfStoredSchedules[indexPath.row] {
-        //                    cell.workoutNameLabel.text = workout.workoutName
-        //
-        //                         let dateFormatter = DateFormatter()
-        //                         dateFormatter.dateStyle = .short
-        //                         cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime!)
-        //
-        //                         let timeFormatter = DateFormatter()
-        //                         timeFormatter.timeStyle = .short
-        //                         cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime!)
-        //                }
         
         
         // Getting the workout name
