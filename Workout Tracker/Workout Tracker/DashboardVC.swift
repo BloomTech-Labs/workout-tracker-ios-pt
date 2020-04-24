@@ -32,9 +32,10 @@ class DashboardVC: UIViewController {
     
     let fbController = FBController()
     
-    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
+    var arrayOfStoredSchedules = [ScheduledWorkout]()
+    //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
     
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +49,12 @@ class DashboardVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .updateMyActivitiesTableView, object: nil)
         
         NotificationCenter.default.addObserver(forName: .updateDate, object: nil, queue: OperationQueue.main) { (notification) in
-                   let scheduleVC = notification.object as! CreateANewScheduleVC
-                   self.recentlySavedDate = scheduleVC.combinedTimeAndDate
-                   self.fetchWorkoutFromStorage()
-                   self.tableView.reloadData()
-               }
-        fetchWorkoutFromStorage()
+            let scheduleVC = notification.object as! CreateANewScheduleVC
+            self.recentlySavedDate = scheduleVC.combinedTimeAndDate
+            self.getScheduleFromStorage()
+            self.tableView.reloadData()
+        }
+        getScheduleFromStorage()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -64,7 +65,7 @@ class DashboardVC: UIViewController {
         print("\nrefreshTableView Called\n")
         tableView.reloadData()
         
-         
+        
     }
     
     func setupUI() {
@@ -88,29 +89,31 @@ class DashboardVC: UIViewController {
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
     
-//    func fetchScheduledWorkouts() {
-//        fbController.fetchScheduledWorkouts { (error) in
-//            if let error = error {
-//                NSLog("There was an error fetching workouts in DashBoard")
-//            }
-//            self.tableView.reloadData()
-//        }
-//    }
-    func fetchWorkoutFromStorage(){
-        do {
-            let cached: [ScheduledWorkout] = try  WorkoutStorage.shared.fetch(exerciseDate: recentlySavedDate)
-            self.arrayOfStoredSchedules.append(cached)
-            print(cached)
-        } catch {
-            print( error )
-        }
-       
+    //    func fetchScheduledWorkouts() {
+    //        fbController.fetchScheduledWorkouts { (error) in
+    //            if let error = error {
+    //                NSLog("There was an error fetching workouts in DashBoard")
+    //            }
+    //            self.tableView.reloadData()
+    //        }
+    //    }
+    func getScheduleFromStorage() {
+        let selectedDate = recentlySavedDate
+        
+        let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+        self.arrayOfStoredSchedules = fetched
+        
+        
     }
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfStoredSchedules.count
+        let someArray = arrayOfStoredSchedules
+        let first1 = Array(someArray.prefix(1))
+        
+        
+        return first1.count
         
         //return FBController.scheduledWorkoutArray.count
     }
@@ -118,35 +121,33 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: activityScheduledCellIdentifier, for: indexPath) as? ActivityScheduledTableViewCell else { return UITableViewCell() }
         
- 
-        for workout in arrayOfStoredSchedules[indexPath.row] {
-            cell.workoutNameLabel.text = workout.workoutName
-                 
-                 let dateFormatter = DateFormatter()
-                 dateFormatter.dateStyle = .short
-                 cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime!)
-                 
-                 let timeFormatter = DateFormatter()
-                 timeFormatter.timeStyle = .short
-                 cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime!)
-        }
-     
+        cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+        cell.workoutNameLabel.text = arrayOfStoredSchedules[indexPath.row].workoutName
         
-        // Getting the workout name
-//        let workout = FBController.scheduledWorkoutArray[indexPath.row]
-//        cell.workoutNameLabel.text = workout.workoutName
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = .short
-//        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
-//
-//        let timeFormatter = DateFormatter()
-//        timeFormatter.timeStyle = .short
-//        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        cell.dateScheduledLabel.text = dateFormatter.string(from: arrayOfStoredSchedules[indexPath.row].startTime!)
         
-        return cell
-    }
+        let timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .short
+        cell.startTimeLabel.text = timeFormatter.string(from: arrayOfStoredSchedules[indexPath.row].startTime!)
+  
     
+    // Getting the workout name
+    //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
+    //        cell.workoutNameLabel.text = workout.workoutName
+    //
+    //        let dateFormatter = DateFormatter()
+    //        dateFormatter.dateStyle = .short
+    //        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
+    //
+    //        let timeFormatter = DateFormatter()
+    //        timeFormatter.timeStyle = .short
+    //        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
     
-    
+    return cell
+}
+
+
+
 }
