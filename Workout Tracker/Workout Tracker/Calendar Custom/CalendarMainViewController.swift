@@ -40,7 +40,9 @@ class CalendarMainViewController: UIViewController {
         calendarView.showsHorizontalScrollIndicator = true
         calendarView.visibleDates { (visibleDates) in
             self.setUpMonthViews(from: visibleDates)
+            self.showToday(animate: false)
         }
+//       self.showToday(animate: false)
         
     }
     //MARK: View Setup
@@ -267,4 +269,28 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     }
     
 }
+//MARK: Show today
+ extension CalendarMainViewController {
+//     @objc func showTodayWithAnimate() {
+//         showToday(animate: true)
+//     }
 
+     func showToday(animate:Bool) {
+
+        calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: animate, preferredScrollPosition: nil, extraAddedOffset: 0) {
+        self.calendarView.selectDates([Date()])
+//         self.delegate?.calendarController(self, didSelect: Date())
+//         calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: animate, preferredScrollPosition: nil, extraAddedOffset: 0) { [unowned self] in
+////             self.getSchedule()
+//            self.delegate?.calendarController(self, didSelect: Date())
+//             self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
+//                 self.setUpMonthViews(from: visibleDates)
+//             }
+//
+// //            self.adjustCalendarViewHeight()
+//             self.calendarView.selectDates([Date()])
+//         }
+//     }
+ }
+}
+}

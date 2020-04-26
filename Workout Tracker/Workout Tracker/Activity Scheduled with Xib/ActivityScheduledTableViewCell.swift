@@ -22,18 +22,35 @@ class ActivityScheduledTableViewCell: UITableViewCell {
            layer.borderColor = #colorLiteral(red: 0.9973149896, green: 0.9178334519, blue: 0.8440256684, alpha: 1)
            layer.cornerRadius = 5
        }
-    var schedule: Schedule! {
+//    var schedule: Schedule! {
+//        didSet {
+//
+//            workoutNameLabel.text = schedule.workoutName
+//
+//
+//            let startTimeFormatter = DateFormatter()
+//            startTimeFormatter.dateFormat = "HH:mm"
+//            startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "MM/dd/yyyy"
+//            dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
+//
+//        }
+//    }
+//
+    
+    var scheduleFromStorage: ScheduledWorkout! {
         didSet {
             
-            workoutNameLabel.text = schedule.workoutName
+            workoutNameLabel.text = scheduleFromStorage.workoutName
             
             
             let startTimeFormatter = DateFormatter()
             startTimeFormatter.dateFormat = "HH:mm"
-            startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+            startTimeLabel.text = startTimeFormatter.string(from: scheduleFromStorage.startTime!)
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
-            dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
+            dateScheduledLabel.text = dateFormatter.string(from: scheduleFromStorage.startTime!)
             
         }
     }
