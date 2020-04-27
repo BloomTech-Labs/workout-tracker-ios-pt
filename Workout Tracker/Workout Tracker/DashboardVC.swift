@@ -90,7 +90,10 @@ class DashboardVC: UIViewController {
     }
     
     @IBAction func goToCreateNewSchedule(_ sender: Any) {
-        NotificationCenter.default.post(name: .clearCollectionView, object: self)
+ 
+        WorkoutController.chosenExercisesArray.removeAll()
+   
+        NotificationCenter.default.post(name: .updateCollectionView, object: self)
     }
     
     

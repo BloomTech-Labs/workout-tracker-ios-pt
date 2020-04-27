@@ -58,30 +58,27 @@ class CreateANewScheduleVC: UIViewController{
                                                selector: #selector(refreshCV),
                                                name: .updateCollectionView,
                                                object: nil)
-        //        NotificationCenter.default.addObserver(self, selector: #selector(handleDatePopupClosing), name: .saveDateTime, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDatePopupClosing), name: .saveDateTime, object: nil)
         
-        NotificationCenter.default.addObserver(forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
-            let dateVC = notification.object as! CalendarPopUpViewController
-            self.dateTextField.text = dateVC.formattedDate
-            self.timeTextField.text = dateVC.formattedTime
-            self.durationTextField.text = dateVC.formattedDuration
-            self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
-        }
-       
-        NotificationCenter.default.addObserver(forName: .clearCollectionView, object: nil, queue: OperationQueue.main) { (notification) in
-            print("clearCV called")
-            var toClear = WorkoutController.chosenExercisesArray
-            toClear.removeAll()
-            self.workoutCollectionView.reloadData()
-            
-        }
+//        NotificationCenter.default.addObserver(forName: .saveDateTime, object: nil, queue: OperationQueue.main) { (notification) in
+//            let dateVC = notification.object as! CalendarPopUpViewController
+//            self.dateTextField.text = dateVC.formattedDate
+//            self.timeTextField.text = dateVC.formattedTime
+//            self.durationTextField.text = dateVC.formattedDuration
+//            self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
+//        }
+        
+        
     }
     
     // 4 Called when notification is heard
-    //    @objc func handleDatePopupClosing(notification: Notification) {
-    //        let dateVC = notification.object as! CalendarPopUpViewController
-    //        dateTextField.text = dateVC.formattedDate
-    //    }
+    @objc func handleDatePopupClosing(notification: Notification) {
+        let dateVC = notification.object as! CalendarPopUpViewController
+        self.dateTextField.text = dateVC.formattedDate
+        self.timeTextField.text = dateVC.formattedTime
+        self.durationTextField.text = dateVC.formattedDuration
+        self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
+    }
     
     @objc func refreshCV() {
         print("refreshCV called")
@@ -151,7 +148,7 @@ class CreateANewScheduleVC: UIViewController{
         
         dismiss(animated: true){
             NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
-             NotificationCenter.default.post(name: .updateDate, object: self)
+            NotificationCenter.default.post(name: .updateDate, object: self)
         }
         //        fbController.save(scheduledWorkout) { (error) in
         //            if let error = error {
