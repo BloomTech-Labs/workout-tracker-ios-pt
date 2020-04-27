@@ -130,21 +130,6 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
         
-        
-        // Getting the workout name
-        //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
-        //        cell.workoutNameLabel.text = workout.workoutName
-        //
-        //        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateStyle = .short
-        //        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
-        //
-        //        let timeFormatter = DateFormatter()
-        //        timeFormatter.timeStyle = .short
-        //        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
-        
-        
-        //        print(cell.schedule!)
         return cell
         
     }
