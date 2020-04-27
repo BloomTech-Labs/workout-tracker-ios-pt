@@ -94,4 +94,5 @@ extension NSNotification.Name {
     static let updateCollectionView = NSNotification.Name("updateCollectionView")
     static let updateMyActivitiesTableView = NSNotification.Name("updateMyActivitesTableView")
     static let updateDate = NSNotification.Name("updateDate")
+    static let clearCollectionView = NSNotification.Name("clearCollectionView")
 }

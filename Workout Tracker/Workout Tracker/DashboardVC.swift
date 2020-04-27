@@ -89,6 +89,11 @@ class DashboardVC: UIViewController {
         tableView.register(myNib2, forCellReuseIdentifier: activityScheduledCellIdentifier)
     }
     
+    @IBAction func goToCreateNewSchedule(_ sender: Any) {
+        NotificationCenter.default.post(name: .clearCollectionView, object: self)
+    }
+    
+    
     //    func fetchScheduledWorkouts() {
     //        fbController.fetchScheduledWorkouts { (error) in
     //            if let error = error {

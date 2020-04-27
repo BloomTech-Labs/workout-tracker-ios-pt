@@ -67,7 +67,14 @@ class CreateANewScheduleVC: UIViewController{
             self.durationTextField.text = dateVC.formattedDuration
             self.combinedTimeAndDate  = dateVC.combinedDateAndTime!
         }
-        
+       
+        NotificationCenter.default.addObserver(forName: .clearCollectionView, object: nil, queue: OperationQueue.main) { (notification) in
+            print("clearCV called")
+            var toClear = WorkoutController.chosenExercisesArray
+            toClear.removeAll()
+            self.workoutCollectionView.reloadData()
+            
+        }
     }
     
     // 4 Called when notification is heard

@@ -61,6 +61,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="goToCreateNewSchedule:" destination="ShT-An-yGE" eventType="touchUpInside" id="eEL-cV-pIz"/>
                                     <segue destination="CAw-Vc-rDJ" kind="show" id="bt7-e9-5TG"/>
                                 </connections>
                             </button>
