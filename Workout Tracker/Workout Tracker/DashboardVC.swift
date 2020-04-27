@@ -90,9 +90,9 @@ class DashboardVC: UIViewController {
     }
     
     @IBAction func goToCreateNewSchedule(_ sender: Any) {
- 
+        
         WorkoutController.chosenExercisesArray.removeAll()
-   
+        
         NotificationCenter.default.post(name: .updateCollectionView, object: self)
     }
     
@@ -139,23 +139,30 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         let timeFormatter = DateFormatter()
         timeFormatter.timeStyle = .short
         cell.startTimeLabel.text = timeFormatter.string(from: arrayOfStoredSchedules[indexPath.row].startTime!)
-  
+        
+        
+        // Getting the workout name
+        //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
+        //        cell.workoutNameLabel.text = workout.workoutName
+        //
+        //        let dateFormatter = DateFormatter()
+        //        dateFormatter.dateStyle = .short
+        //        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
+        //
+        //        let timeFormatter = DateFormatter()
+        //        timeFormatter.timeStyle = .short
+        //        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
+        
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toActivityDetail" {
+            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+         
+        }
+    }
     
-    // Getting the workout name
-    //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
-    //        cell.workoutNameLabel.text = workout.workoutName
-    //
-    //        let dateFormatter = DateFormatter()
-    //        dateFormatter.dateStyle = .short
-    //        cell.dateScheduledLabel.text = dateFormatter.string(from: workout.startTime)
-    //
-    //        let timeFormatter = DateFormatter()
-    //        timeFormatter.timeStyle = .short
-    //        cell.startTimeLabel.text = timeFormatter.string(from: workout.startTime)
     
-    return cell
-}
-
-
-
 }
