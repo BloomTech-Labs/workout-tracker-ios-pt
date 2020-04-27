@@ -148,7 +148,22 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         return cell
         
     }
-    
+  
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+             guard let selectedDate = calendarChildVC.calendarView.selectedDates.first else {return}
+            let workoutName = arrayOfStoredSchedules[indexPath.row].workoutName
+             
+            arrayOfStoredSchedules.remove(at: indexPath.row)
+            
+            do {
+                try WorkoutStorage.shared.remove(workoutName: workoutName, for: selectedDate)
+            } catch {
+                print(error)
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toActivityDetail" {
             guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
