@@ -34,7 +34,7 @@ class DashboardVC: UIViewController {
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
     //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
-    
+    var totalCount = 0
     
     
     override func viewDidLoad() {
@@ -55,6 +55,7 @@ class DashboardVC: UIViewController {
             self.tableView.reloadData()
         }
         getScheduleFromStorage()
+//        checkForGoldStatus(totalCount)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -114,9 +115,15 @@ class DashboardVC: UIViewController {
         
     }
     
+    fileprivate func checkForGoldStatus(_ totalCount: Int) {
+        if totalCount >= 10 {
+            sheildImageView.image = UIImage(named: "gold shield")
+        }
+    }
+    
     @IBAction func seeMoreProgressTapped(_ sender: Any) {
         let fileManager = FileManager.default
-        var totalCount = 0
+        
         do {
             let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
             let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -147,9 +154,7 @@ class DashboardVC: UIViewController {
         }
         print(totalCount)
         activitiesCountLbl.text = String(totalCount)
-        if totalCount >= 10 {
-            sheildImageView.image = UIImage(named: "silver shield")
-        }
+        checkForGoldStatus(totalCount)
     }
     
 }
