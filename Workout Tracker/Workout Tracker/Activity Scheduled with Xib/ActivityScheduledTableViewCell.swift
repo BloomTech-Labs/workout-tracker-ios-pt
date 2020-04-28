@@ -9,35 +9,36 @@
 import UIKit
 
 class ActivityScheduledTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var workoutNameLabel: UILabel!
     
     @IBOutlet weak var startTimeLabel: UILabel!
     
     @IBOutlet weak var dateScheduledLabel: UILabel!
     
+    @IBOutlet weak var bellButton: UIButton!
     override func awakeFromNib() {
-           super.awakeFromNib()
-           layer.borderWidth = 1
-           layer.borderColor = #colorLiteral(red: 0.9973149896, green: 0.9178334519, blue: 0.8440256684, alpha: 1)
-           layer.cornerRadius = 5
-       }
-//    var schedule: Schedule! {
-//        didSet {
-//
-//            workoutNameLabel.text = schedule.workoutName
-//
-//
-//            let startTimeFormatter = DateFormatter()
-//            startTimeFormatter.dateFormat = "HH:mm"
-//            startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
-//            let dateFormatter = DateFormatter()
-//            dateFormatter.dateFormat = "MM/dd/yyyy"
-//            dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
-//
-//        }
-//    }
-//
+        super.awakeFromNib()
+        layer.borderWidth = 1
+        layer.borderColor = #colorLiteral(red: 0.9973149896, green: 0.9178334519, blue: 0.8440256684, alpha: 1)
+        layer.cornerRadius = 5
+    }
+    //    var schedule: Schedule! {
+    //        didSet {
+    //
+    //            workoutNameLabel.text = schedule.workoutName
+    //
+    //
+    //            let startTimeFormatter = DateFormatter()
+    //            startTimeFormatter.dateFormat = "HH:mm"
+    //            startTimeLabel.text = startTimeFormatter.string(from: schedule.startTime)
+    //            let dateFormatter = DateFormatter()
+    //            dateFormatter.dateFormat = "MM/dd/yyyy"
+    //            dateScheduledLabel.text = dateFormatter.string(from: schedule.startTime)
+    //
+    //        }
+    //    }
+    //
     
     var scheduleFromStorage: ScheduledWorkout! {
         didSet {
@@ -54,4 +55,17 @@ class ActivityScheduledTableViewCell: UITableViewCell {
             
         }
     }
+    
+    @IBAction func selectButton(_ sender: Any) {
+        if bellButton.isSelected == true {
+            bellButton.isSelected = false
+            //            bellButton.setImage(UIImage(named : "unselectedImage"), for: .normal
+            //            )
+        }else {
+            bellButton.isSelected = true
+            //            bellButton.setImage(UIImage(named : "selectedImage"), for: .normal)
+        }
+    }
+    
+    
 }
