@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateANewScheduleVC: UIViewController{
+class CreateANewScheduleVC: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var bGView: UIView!
@@ -172,9 +172,12 @@ class CreateANewScheduleVC: UIViewController{
         
     }
     
+   
+    
 }
 
-extension CreateANewScheduleVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CreateANewScheduleVC: UICollectionViewDelegate, UICollectionViewDataSource, DeleteCellDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return WorkoutController.chosenExercisesArray.count
     }
@@ -186,9 +189,20 @@ extension CreateANewScheduleVC: UICollectionViewDelegate, UICollectionViewDataSo
         collectionCell.workoutNameLbl.text = workoutNames.exerciseName
         
         collectionCell.layer.backgroundColor = UIColor.systemGray5.cgColor
+        collectionCell.delegate = self
         
         return collectionCell
     }
+    
+  
+    func delete(cell: WorkoutCollectionViewCell) {
+        if let indexPath = workoutCollectionView.indexPath(for: cell) {
+            WorkoutController.chosenExercisesArray.remove(at: indexPath.item)
+            workoutCollectionView.deleteItems(at: [indexPath])
+        }
+    }
+    
+    
     
     
     

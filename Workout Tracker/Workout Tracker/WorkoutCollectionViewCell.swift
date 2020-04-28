@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol DeleteCellDelegate: class {
+    func delete(cell: WorkoutCollectionViewCell)
+}
+
 class WorkoutCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var workoutNameLbl: UILabel!
+    
+    weak var delegate: DeleteCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,4 +25,9 @@ class WorkoutCollectionViewCell: UICollectionViewCell {
 //        self.layer.borderColor = #colorLiteral(red: 0.8314941525, green: 0.4086731076, blue: 0.1624955237, alpha: 1)
         
     }
+    
+    @IBAction func collectionViewDeleteBtnPressed(_ sender: UIButton) {
+        delegate?.delete(cell: self)
+           
+       }
 }
