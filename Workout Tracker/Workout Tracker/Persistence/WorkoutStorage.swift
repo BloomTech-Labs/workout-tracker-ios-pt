@@ -61,6 +61,16 @@
          return existingWorkouts
      }
     
+    func fetchByString(exerciseDateString: String) -> [ScheduledWorkout] {
+        var existingWorkouts: [ScheduledWorkout]
+        do {
+            existingWorkouts =  try storage.fetch(for: exerciseDateString)
+        } catch {
+            existingWorkouts = [] // no workouts were saved yet
+        }
+        return existingWorkouts
+    }
+    
     
 //    func update(workout: ScheduledWorkout, for exerciseDate: Date) throws {
 //        let exerciseDateString = dateFormatter.string(from: exerciseDate)
