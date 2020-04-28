@@ -34,7 +34,7 @@ class DashboardVC: UIViewController {
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
     //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
-    var totalCount = 0
+  
     
     
     override func viewDidLoad() {
@@ -123,7 +123,7 @@ class DashboardVC: UIViewController {
     
     @IBAction func seeMoreProgressTapped(_ sender: Any) {
         let fileManager = FileManager.default
-        
+        var totalCount = 0
         do {
             let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
             let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -147,7 +147,6 @@ class DashboardVC: UIViewController {
                         totalCount += scheduledCount
                     }
                 }
-                
             }
         } catch {
             print(error)
