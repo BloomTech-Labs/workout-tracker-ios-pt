@@ -122,19 +122,17 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMr-Xr-KQd">
-                                                            <rect key="frame" x="104.33333333333333" y="21" width="37.666666666666671" height="20.333333333333329"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14e-M4-qdr">
+                                                            <rect key="frame" x="120" y="8" width="30" height="46"/>
+                                                            <state key="normal" title="X"/>
+                                                        </button>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="Gv5-aP-SQx" firstAttribute="leading" secondItem="WBT-f6-znE" secondAttribute="leading" constant="8" id="6AH-i3-hwM"/>
-                                                        <constraint firstAttribute="trailing" secondItem="sMr-Xr-KQd" secondAttribute="trailing" constant="8" id="6qq-Bu-KEf"/>
+                                                        <constraint firstItem="14e-M4-qdr" firstAttribute="top" secondItem="WBT-f6-znE" secondAttribute="top" constant="8" id="Ndt-2f-WCs"/>
                                                         <constraint firstItem="Gv5-aP-SQx" firstAttribute="top" secondItem="WBT-f6-znE" secondAttribute="top" constant="8" id="QFd-Sk-a79"/>
-                                                        <constraint firstItem="sMr-Xr-KQd" firstAttribute="centerY" secondItem="WBT-f6-znE" secondAttribute="centerY" id="atV-03-aW3"/>
-                                                        <constraint firstItem="sMr-Xr-KQd" firstAttribute="leading" secondItem="Gv5-aP-SQx" secondAttribute="trailing" constant="20" id="kW5-SC-0Kn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="14e-M4-qdr" secondAttribute="bottom" constant="8" id="ebQ-B7-24n"/>
+                                                        <constraint firstAttribute="trailing" secondItem="14e-M4-qdr" secondAttribute="trailing" id="zpy-5b-4ma"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="150" height="62"/>
