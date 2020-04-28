@@ -129,6 +129,9 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         //        cell.schedule = schedules[indexPath.row]
         
         cell.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+//        if cell.scheduleFromStorage.hasBeenCompleted == true {
+//            cell.bellButton.setImage(UIImage(named : "radiochecked"), for: .normal)
+//        }
         
         return cell
         
@@ -154,6 +157,8 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
             guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+            let cell = tableView.cellForRow(at: indexPath) as! ActivityScheduledTableViewCell
+            destinationVC.delegate = cell
             //            destinationVC.schedule = schedules[indexPath.row]
         }
     }

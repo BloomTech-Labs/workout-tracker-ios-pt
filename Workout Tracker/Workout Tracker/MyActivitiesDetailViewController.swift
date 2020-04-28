@@ -8,8 +8,12 @@
 
 import UIKit
 
+protocol ActivityScheduledCellDelegate: class {
+    func markAsCompleted()
+}
+
 class MyActivitiesDetailViewController: UIViewController {
-    
+    weak var delegate: ActivityScheduledCellDelegate?
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -49,7 +53,17 @@ class MyActivitiesDetailViewController: UIViewController {
     
     
     @IBAction func markAsCompleted(_ sender: Any) {
+        scheduleFromStorage?.hasBeenCompleted  = true
+        guard let scheduleFromStorage = scheduleFromStorage else {return}
+        do {
+            try WorkoutStorage.shared.save(workout: scheduleFromStorage, for: scheduleFromStorage.startTime!)
+              } catch {
+                  NSLog("There was an error saving the workout to Workout Storage")
+              }
+        delegate?.markAsCompleted()
         self.navigationController?.popViewController(animated: true)
+        
+        
     }
     
     func updateViews(){
