@@ -118,6 +118,8 @@ class DashboardVC: UIViewController {
     fileprivate func checkForGoldStatus(_ totalCount: Int) {
         if totalCount >= 10 {
             sheildImageView.image = UIImage(named: "gold shield")
+        } else {
+            sheildImageView.image = UIImage(named: "silver shield")
         }
     }
     
