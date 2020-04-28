@@ -52,14 +52,27 @@ class MyActivitiesDetailViewController: UIViewController {
     }
     
     
-    @IBAction func markAsCompleted(_ sender: Any) {
-        scheduleFromStorage?.hasBeenCompleted  = true
-        guard let scheduleFromStorage = scheduleFromStorage else {return}
+    @IBAction func markAsCompletedTapped(_ sender: Any) {
+        guard var scheduleFromStorage = scheduleFromStorage else {return}
+        scheduleFromStorage.hasBeenCompleted  = true
+        
+        let updatedSchedule = scheduleFromStorage
         do {
-            try WorkoutStorage.shared.save(workout: scheduleFromStorage, for: scheduleFromStorage.startTime!)
+            try WorkoutStorage.shared.remove(workoutName: scheduleFromStorage.workoutName, for: scheduleFromStorage.startTime!)
+        } catch {
+            NSLog("remove error")
+        }
+        do {
+            try WorkoutStorage.shared.save(workout: updatedSchedule, for: updatedSchedule.startTime!)
               } catch {
                   NSLog("There was an error saving the workout to Workout Storage")
               }
+        
+//        do {
+//            try WorkoutStorage.shared.update(workout: scheduleFromStorage, for: scheduleFromStorage.startTime!)
+//        } catch {
+//            NSLog("There was an error updating the workout to Workout Storage")
+//        }
         delegate?.markAsCompleted()
         self.navigationController?.popViewController(animated: true)
         
