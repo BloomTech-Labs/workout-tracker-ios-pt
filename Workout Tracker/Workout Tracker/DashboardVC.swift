@@ -141,6 +141,8 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         cell.startTimeLabel.text = timeFormatter.string(from: arrayOfStoredSchedules[indexPath.row].startTime!)
         
         
+        
+        
         // Getting the workout name
         //        let workout = FBController.scheduledWorkoutArray[indexPath.row]
         //        cell.workoutNameLabel.text = workout.workoutName
@@ -155,14 +157,15 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toActivityDetail" {
-            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
-                let indexPath = tableView.indexPathForSelectedRow else { return }
-            destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
-         
-        }
-    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toActivityDetail" {
+//            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
+//                let indexPath = tableView.indexPathForSelectedRow else { return }
+//            destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+//         
+//        }
+//    }
     
     
 }

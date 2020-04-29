@@ -80,7 +80,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Pz5-0a-Cbx" kind="showDetail" id="fkY-Ct-DCx"/>
+                                            <segue destination="Pz5-0a-Cbx" kind="show" id="KGA-RN-nJY"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
