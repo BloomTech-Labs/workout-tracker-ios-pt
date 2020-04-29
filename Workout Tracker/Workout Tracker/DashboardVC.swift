@@ -25,6 +25,8 @@ class DashboardVC: UIViewController {
     @IBOutlet weak var activitiesCountLbl: UILabel!
     
     @IBOutlet weak var sheildImageView: UIImageView!
+    //    var totalCount = 0
+    //IF I make it a global variable it adds keeps adding extra values
     
     var recentlySavedDate = Date()
     
@@ -34,7 +36,7 @@ class DashboardVC: UIViewController {
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
     //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
-  
+    
     
     
     override func viewDidLoad() {
@@ -43,6 +45,9 @@ class DashboardVC: UIViewController {
         tableView.dataSource = self
         setupUI()
         setupViewNibs()
+        //        loopForNumberOfTotalWorkouts()
+        //        activitiesCountLbl.text = String(totalCount)
+        //        checkForGoldStatus()
         
         //fetchScheduledWorkouts()
         
@@ -55,7 +60,7 @@ class DashboardVC: UIViewController {
             self.tableView.reloadData()
         }
         getScheduleFromStorage()
-//        checkForGoldStatus(totalCount)
+        //        checkForGoldStatus(totalCount)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -65,7 +70,6 @@ class DashboardVC: UIViewController {
     @objc func refreshTableView() {
         print("\nrefreshTableView Called\n")
         tableView.reloadData()
-        
         
     }
     
@@ -123,7 +127,9 @@ class DashboardVC: UIViewController {
         }
     }
     
+    
     @IBAction func seeMoreProgressTapped(_ sender: Any) {
+        //        loopForNumberOfTotalWorkouts(<#T##totalCount: Int##Int#>)
         let fileManager = FileManager.default
         var totalCount = 0
         do {

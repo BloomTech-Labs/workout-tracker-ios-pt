@@ -11,9 +11,10 @@ import UIKit
 
 class ActivityScheduledTableViewCell: UITableViewCell, ActivityScheduledCellDelegate {
     func markAsCompleted() {
+        guard scheduleFromStorage.hasBeenCompleted == true else {return}
         let image = UIImage(systemName: "checkmark.rectangle")
         bellButton.setImage(image, for: .normal)
-        
+       
 //        checkmark.rectangle
     }
     
@@ -64,9 +65,13 @@ class ActivityScheduledTableViewCell: UITableViewCell, ActivityScheduledCellDele
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MM/dd/yyyy"
             dateScheduledLabel.text = dateFormatter.string(from: scheduleFromStorage.startTime!)
-            
+            markAsCompleted()
             if scheduleFromStorage.hasBeenCompleted == true {
                  markAsCompleted()
+            } else {
+//                scheduleFromStorage.hasBeenCompleted == false
+                let image = UIImage(systemName: "bell")
+                bellButton.setImage(image, for: .normal)
             }
             
         }
