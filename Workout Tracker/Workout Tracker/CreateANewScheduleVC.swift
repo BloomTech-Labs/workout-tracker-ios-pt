@@ -146,10 +146,13 @@ class CreateANewScheduleVC: UIViewController {
             NSLog("There was an error saving the workout to Workout Storage")
         }
         
-        dismiss(animated: true){
-            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
-            NotificationCenter.default.post(name: .updateDate, object: self)
-        }
+        saveAlertController()
+        
+//        dismiss(animated: true){
+//            self.saveAlertController()
+//            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+//            NotificationCenter.default.post(name: .updateDate, object: self)
+//        }
         //        fbController.save(scheduledWorkout) { (error) in
         //            if let error = error {
         //                NSLog("There was an error saving the workout from Save Button")
@@ -172,7 +175,18 @@ class CreateANewScheduleVC: UIViewController {
         
     }
     
-   
+    func saveAlertController() {
+        let alert = UIAlertController(title: "Success!", message: "You have saved your workout", preferredStyle: .alert)
+        present(alert, animated: true, completion: nil)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            alert.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true) {
+                NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+                NotificationCenter.default.post(name: .updateDate, object: self)
+            }
+        }
+    }
     
 }
 
