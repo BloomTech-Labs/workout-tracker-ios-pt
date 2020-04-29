@@ -8,7 +8,16 @@
 
 import UIKit
 
-class ActivityScheduledTableViewCell: UITableViewCell {
+
+class ActivityScheduledTableViewCell: UITableViewCell, ActivityScheduledCellDelegate {
+    func markAsCompleted() {
+        let image = UIImage(systemName: "checkmark.rectangle")
+        bellButton.setImage(image, for: .normal)
+        
+//        checkmark.rectangle
+    }
+    
+   
     
     @IBOutlet weak var workoutNameLabel: UILabel!
     
@@ -22,7 +31,10 @@ class ActivityScheduledTableViewCell: UITableViewCell {
         layer.borderWidth = 1
         layer.borderColor = #colorLiteral(red: 0.9973149896, green: 0.9178334519, blue: 0.8440256684, alpha: 1)
         layer.cornerRadius = 5
+        
     }
+    
+
     //    var schedule: Schedule! {
     //        didSet {
     //
@@ -53,9 +65,13 @@ class ActivityScheduledTableViewCell: UITableViewCell {
             dateFormatter.dateFormat = "MM/dd/yyyy"
             dateScheduledLabel.text = dateFormatter.string(from: scheduleFromStorage.startTime!)
             
+            if scheduleFromStorage.hasBeenCompleted == true {
+                 markAsCompleted()
+            }
+            
         }
     }
-    
+  
     @IBAction func selectButton(_ sender: Any) {
         if bellButton.isSelected == true {
             bellButton.isSelected = false

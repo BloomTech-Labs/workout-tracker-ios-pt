@@ -34,7 +34,7 @@ class DashboardVC: UIViewController {
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
     //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
-    
+  
     
     
     override func viewDidLoad() {
@@ -55,6 +55,7 @@ class DashboardVC: UIViewController {
             self.tableView.reloadData()
         }
         getScheduleFromStorage()
+//        checkForGoldStatus(totalCount)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -113,6 +114,50 @@ class DashboardVC: UIViewController {
         
         
     }
+    
+    fileprivate func checkForGoldStatus(_ totalCount: Int) {
+        if totalCount >= 10 {
+            sheildImageView.image = UIImage(named: "gold shield")
+        } else {
+            sheildImageView.image = UIImage(named: "silver shield")
+        }
+    }
+    
+    @IBAction func seeMoreProgressTapped(_ sender: Any) {
+        let fileManager = FileManager.default
+        var totalCount = 0
+        do {
+            let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
+            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let enumerator = FileManager.default.enumerator(at: documentsURL,
+                                                            includingPropertiesForKeys: resourceKeys,
+                                                            options: [.skipsHiddenFiles], errorHandler: { (url, error) -> Bool in
+                                                                print("directoryEnumerator error at \(url): ", error)
+                                                                return true
+            })!
+            for case let fileURL as URL in enumerator {
+                let resourceValues = try fileURL.resourceValues(forKeys: Set(resourceKeys))
+                //                        print(fileURL.path, resourceValues.creationDate!, resourceValues.isDirectory!)
+                
+                if resourceValues.isDirectory == true {
+                    let dirContents = try fileManager.contentsOfDirectory(atPath: fileURL.path)
+                    for item in dirContents {
+                        print("found \(item)")
+                        let fetchedArray = WorkoutStorage.shared.fetchByString(exerciseDateString: item)
+                        let scheduledCount = fetchedArray.count
+                        print(scheduledCount)
+                        totalCount += scheduledCount
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
+        print(totalCount)
+        activitiesCountLbl.text = String(totalCount)
+        checkForGoldStatus(totalCount)
+    }
+    
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
