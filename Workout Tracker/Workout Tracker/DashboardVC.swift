@@ -121,8 +121,9 @@ class DashboardVC: UIViewController {
         guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("WorkoutStorage") else {preconditionFailure()}
                    
         guard let fileURLsArray = try? FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil) else {return}
+        let sortedFileURLs = fileURLsArray.sorted { $0.lastPathComponent > $1.lastPathComponent }
         
-        let dateString = fileURLsArray[0].lastPathComponent
+        let dateString = sortedFileURLs[0].lastPathComponent
 //        let selectedDate = recentlySavedDate
         let fetched = WorkoutStorage.shared.fetchByString(exerciseDateString: dateString)
         self.arrayOfStoredSchedules = fetched
