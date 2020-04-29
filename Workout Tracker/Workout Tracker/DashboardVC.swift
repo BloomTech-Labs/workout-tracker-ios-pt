@@ -35,7 +35,7 @@ class DashboardVC: UIViewController {
     let fbController = FBController()
     
     var arrayOfStoredSchedules = [ScheduledWorkout]()
-    //    var arrayOfStoredSchedules = [Array<ScheduledWorkout>]()
+   
     
     
     
@@ -111,14 +111,14 @@ class DashboardVC: UIViewController {
     //        }
     //    }
     func getScheduleFromStorage() {
+     //MARK: TODO
+       /* post notification when a full day is deleted
+         subcribe to notification here
         
-        //post notification when a full day is deleted
-        //subcribe to notification here
-        
-        
-        // or make a new func to fetch all and return last one.
+           or
+          or make a new func to fetch all and return last one.
+         */
         let selectedDate = recentlySavedDate
-        
         let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
         self.arrayOfStoredSchedules = fetched
         
@@ -135,41 +135,67 @@ class DashboardVC: UIViewController {
     
     
     @IBAction func seeMoreProgressTapped(_ sender: Any) {
-        //        loopForNumberOfTotalWorkouts(<#T##totalCount: Int##Int#>)
-        let fileManager = FileManager.default
         var totalCount = 0
-        do {
-            let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
-            //            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            guard let path2 = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("WorkoutStorage") else {preconditionFailure()}
             
-            let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-            let enumerator = FileManager.default.enumerator(at: path,
-                                                            includingPropertiesForKeys: resourceKeys,
-                                                            options: [.skipsHiddenFiles], errorHandler: { (url, error) -> Bool in
-                                                                print("directoryEnumerator error at \(url): ", error)
-                                                                return true
-            })!
-            for case let fileURL as URL in enumerator {
-                let resourceValues = try fileURL.resourceValues(forKeys: Set(resourceKeys))
-                print(fileURL.path, resourceValues.creationDate!, resourceValues.isDirectory!)
-                
-                if resourceValues.isDirectory == true {
-                    let dirContents = try fileManager.contentsOfDirectory(atPath: fileURL.path)
-                    for item in dirContents {
-                        print("found \(item)")
-                        let fetchedArray = WorkoutStorage.shared.fetchByString(exerciseDateString: item)
+            guard let fileURLsArray = try? FileManager.default.contentsOfDirectory(at: path2, includingPropertiesForKeys: nil) else {return}
+
+ 
+            for case let fileURL in fileURLsArray {
+                print(fileURL)
+
+                let dateString = fileURL.lastPathComponent
+                print(dateString)
+
+                        let fetchedArray = WorkoutStorage.shared.fetchByString(exerciseDateString: dateString)
                         let scheduledCount = fetchedArray.count
                         print(scheduledCount)
                         totalCount += scheduledCount
-                    }
-                }
+
             }
-        } catch {
-            print(error)
-        }
         print(totalCount)
         activitiesCountLbl.text = String(totalCount)
         checkForGoldStatus(totalCount)
+    }
+    
+    func seeMoreProgressTappedOld(){
+        //        loopForNumberOfTotalWorkouts(<#T##totalCount: Int##Int#>)
+                let fileManager = FileManager.default
+                var totalCount = 0
+                do {
+                    let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
+                    //            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                    
+            
+        
+                    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                    let enumerator = FileManager.default.enumerator(at: path ,
+                                                                    includingPropertiesForKeys: resourceKeys,
+                                                                    options: [.skipsHiddenFiles], errorHandler: { (url, error) -> Bool in
+                                                                        print("directoryEnumerator error at \(url): ", error)
+                                                                        return true
+                    })!
+                    for case let fileURL as URL in enumerator {
+                        let resourceValues = try fileURL.resourceValues(forKeys: Set(resourceKeys))
+                        print(fileURL.path, resourceValues.creationDate!, resourceValues.isDirectory!)
+                        
+                        if resourceValues.isDirectory == true {
+                            let dirContents = try fileManager.contentsOfDirectory(atPath: fileURL.path)
+                            for item in dirContents {
+                                print("found \(item)")
+                                let fetchedArray = WorkoutStorage.shared.fetchByString(exerciseDateString: item)
+                                let scheduledCount = fetchedArray.count
+                                print(scheduledCount)
+                                totalCount += scheduledCount
+                            }
+                        }
+                    }
+                } catch {
+                    print(error)
+                }
+                print(totalCount)
+                activitiesCountLbl.text = String(totalCount)
+                checkForGoldStatus(totalCount)
     }
     
 }
