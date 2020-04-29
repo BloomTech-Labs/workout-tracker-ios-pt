@@ -48,7 +48,13 @@
              workout in
              return workout.workoutName == workoutName
          }
-         try storage.save(existingWorkouts, for: exerciseDateString)
+        if existingWorkouts.isEmpty {
+             try storage.delete(for: exerciseDateString)
+        } else {
+             try storage.save(existingWorkouts, for: exerciseDateString)
+        }
+       
+       
      }
      func fetch(exerciseDate: Date) -> [ScheduledWorkout] {
          let exerciseDateString = dateFormatter.string(from: exerciseDate)

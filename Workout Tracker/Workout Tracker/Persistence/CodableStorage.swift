@@ -13,11 +13,14 @@ typealias Storage = ReadableStorage & WritableStorage
 protocol ReadableStorage {
     func fetchValue(for key: String) throws -> Data
     func fetchValue(for key: String, handler: @escaping (Result<Data, Error>) -> Void)
+    
 }
 
 protocol WritableStorage {
     func save(value: Data, for key: String) throws
+    func delete(key: String) throws
     func save(value: Data, for key: String, handler: @escaping (Result<Data, Error>) -> Void)
+    func delete(key: String, handler: @escaping (Result<Bool, Error>) -> Void)
 }
 
 enum StorageError: Error {
@@ -148,5 +151,9 @@ class CodableStorage {
     func save<T: Encodable>(_ value: T, for key: String) throws {
         let data = try encoder.encode(value)
         try storage.save(value: data, for: key)
+    }
+    
+    func delete(for key: String) throws {
+        try storage.delete(key: key)
     }
 }

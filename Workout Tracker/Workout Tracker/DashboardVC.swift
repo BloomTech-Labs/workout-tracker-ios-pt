@@ -111,6 +111,12 @@ class DashboardVC: UIViewController {
     //        }
     //    }
     func getScheduleFromStorage() {
+        
+        //post notification when a full day is deleted
+        //subcribe to notification here
+        
+        
+        // or make a new func to fetch all and return last one.
         let selectedDate = recentlySavedDate
         
         let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
@@ -134,8 +140,10 @@ class DashboardVC: UIViewController {
         var totalCount = 0
         do {
             let resourceKeys : [URLResourceKey] = [.creationDateKey, .isDirectoryKey]
-            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-            let enumerator = FileManager.default.enumerator(at: documentsURL,
+            //            let documentsURL = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            
+            let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let enumerator = FileManager.default.enumerator(at: path,
                                                             includingPropertiesForKeys: resourceKeys,
                                                             options: [.skipsHiddenFiles], errorHandler: { (url, error) -> Bool in
                                                                 print("directoryEnumerator error at \(url): ", error)
@@ -143,7 +151,7 @@ class DashboardVC: UIViewController {
             })!
             for case let fileURL as URL in enumerator {
                 let resourceValues = try fileURL.resourceValues(forKeys: Set(resourceKeys))
-                //                        print(fileURL.path, resourceValues.creationDate!, resourceValues.isDirectory!)
+                print(fileURL.path, resourceValues.creationDate!, resourceValues.isDirectory!)
                 
                 if resourceValues.isDirectory == true {
                     let dirContents = try fileManager.contentsOfDirectory(atPath: fileURL.path)

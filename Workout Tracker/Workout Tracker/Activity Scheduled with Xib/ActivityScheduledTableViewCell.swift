@@ -11,11 +11,10 @@ import UIKit
 
 class ActivityScheduledTableViewCell: UITableViewCell, ActivityScheduledCellDelegate {
     func markAsCompleted() {
-        guard scheduleFromStorage.hasBeenCompleted == true else {return}
+//        guard scheduleFromStorage.hasBeenCompleted == true else {return}
         let image = UIImage(systemName: "checkmark.rectangle")
         bellButton.setImage(image, for: .normal)
-       
-//        checkmark.rectangle
+
     }
     
    
