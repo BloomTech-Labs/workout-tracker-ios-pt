@@ -50,16 +50,19 @@ class DashboardVC: UIViewController {
         //        checkForGoldStatus()
         
         //fetchScheduledWorkouts()
-        
+        getScheduleFromStorage()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView), name: .updateMyActivitiesTableView, object: nil)
         
         NotificationCenter.default.addObserver(forName: .updateDate, object: nil, queue: OperationQueue.main) { (notification) in
             let scheduleVC = notification.object as! CreateANewScheduleVC
             self.recentlySavedDate = scheduleVC.combinedTimeAndDate
-            self.getScheduleFromStorage()
+//            self.getScheduleFromStorage()
+            //        let selectedDate = recentlySavedDate
+            let fetched = WorkoutStorage.shared.fetch(exerciseDate: self.recentlySavedDate)
+            self.arrayOfStoredSchedules = fetched
             self.tableView.reloadData()
         }
-        getScheduleFromStorage()
+       
         //        checkForGoldStatus(totalCount)
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -112,17 +115,18 @@ class DashboardVC: UIViewController {
     //    }
     func getScheduleFromStorage() {
      //MARK: TODO
-       /* post notification when a full day is deleted
-         subcribe to notification here
-        
-           or
-          or make a new func to fetch all and return last one.
+       /*
+          or make a new func to fetch all and return lastest date.
          */
-        let selectedDate = recentlySavedDate
-        let fetched = WorkoutStorage.shared.fetch(exerciseDate: selectedDate)
+        guard let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("WorkoutStorage") else {preconditionFailure()}
+                   
+        guard let fileURLsArray = try? FileManager.default.contentsOfDirectory(at: path, includingPropertiesForKeys: nil) else {return}
+        
+        let dateString = fileURLsArray[0].lastPathComponent
+//        let selectedDate = recentlySavedDate
+        let fetched = WorkoutStorage.shared.fetchByString(exerciseDateString: dateString)
         self.arrayOfStoredSchedules = fetched
-        
-        
+      
     }
     
     fileprivate func checkForGoldStatus(_ totalCount: Int) {
