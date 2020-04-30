@@ -42,7 +42,7 @@ class CalendarMainViewController: UIViewController {
             self.setUpMonthViews(from: visibleDates)
             self.showToday(animate: false)
         }
-//       self.showToday(animate: false)
+        //       self.showToday(animate: false)
         
     }
     //MARK: View Setup
@@ -59,8 +59,16 @@ class CalendarMainViewController: UIViewController {
         cell.dateLabel.text = cellState.text
         handleCellTextColor(cell: cell, cellState: cellState)
         handleCellSelected(cell: cell, cellState: cellState)
+        
+        if WorkoutStorage.shared.fetch(exerciseDate: cellState.date) != [] {
+                   cell.eventView.isHidden = false
+               } else {
+                   cell.eventView.isHidden = true
+                   
+               }
     }
     
+
     func handleCellTextColor(cell: DateCell, cellState: CellState) {
         //if cellState.dateBelongsTo == .thisMonth {
         //cell.dateLabel.textColor = UIColor.black
@@ -95,75 +103,75 @@ class CalendarMainViewController: UIViewController {
     //        calendarView.viewWillTransition(to: .zero, with: coordinator, anchorDate: visibleDates.monthDates.first?.date)
     //    }  -< To rotate views
     //MARK: In case of buttons instead of segmented control
-   /*
+    /*
      @IBAction func toggleWeekView(_ sender: Any) {
-        if numberOfRows == 6 {
-            // note: bugging out with .selectDates
-            //            calendarView.selectDates(selectedDates)
-            
-            self.calendarView.alpha = 0
-            self.calendarViewHeightConstraint.constant = 58.33
-            self.numberOfRows = 1
-            
-            let translate = CGAffineTransform(translationX: 0, y: 30)
-            self.calendarView.transform = translate
-            
-            UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCurlUp], animations: {
-                self.calendarView.layoutIfNeeded()
-                self.calendarView.alpha = 1
-                self.calendarView.transform = .identity
-            }) { completed in self.calendarView.reloadData(withAnchor:self.monthLabelDate)
-            } }
-        else {
-            //calendarView.selectDates(selectedDates)
-            self.calendarView.alpha = 0
-            self.calendarViewHeightConstraint.constant = 350
-            self.numberOfRows = 6
-            let translate = CGAffineTransform(translationX: 0, y: 30)
-            self.calendarView.transform = translate
-            
-            UIView.animate(withDuration: 0.3, delay: 0.1, options: [.transitionCurlUp], animations: {
-                self.calendarView.layoutIfNeeded()
-                self.calendarView.alpha = 1
-                self.calendarView.transform = .identity
-                self.calendarView.reloadData(withAnchor: self.monthLabelDate)
-            })
-        }
-    }
-    
-    @IBAction func toggleMonthView(_ sender: Any) {
-        if numberOfRows == 6 {
-            self.calendarView.alpha = 0
-            self.calendarViewHeightConstraint.constant = 58.33
-            self.numberOfRows = 1
-            let translate = CGAffineTransform(translationX: 0, y: 30)
-            self.calendarView.transform = translate
-            UIView.animate(withDuration: 0.2, animations: {
-                self.calendarView.layoutIfNeeded()
-                self.calendarView.alpha = 1
-                self.calendarView.transform = .identity
-            }) { completed in
-                DispatchQueue.main.async {
-                    self.calendarView.reloadData(withAnchor: self.monthLabelDate)
-                }
-            }
-        } else {
-            self.calendarView.alpha = 0
-            self.calendarViewHeightConstraint.constant = 350
-            self.numberOfRows = 6
-            let translate = CGAffineTransform(translationX: 0, y: 30)
-            self.calendarView.transform = translate
-            
-            UIView.animate(withDuration: 0.2, animations: {
-                self.calendarView.layoutIfNeeded()
-                self.calendarView.alpha = 1
-                self.calendarView.transform = .identity
-                DispatchQueue.main.async {
-                    self.calendarView.reloadData(withAnchor: self.monthLabelDate)
-                }
-            })
-        }
-    } */
+     if numberOfRows == 6 {
+     // note: bugging out with .selectDates
+     //            calendarView.selectDates(selectedDates)
+     
+     self.calendarView.alpha = 0
+     self.calendarViewHeightConstraint.constant = 58.33
+     self.numberOfRows = 1
+     
+     let translate = CGAffineTransform(translationX: 0, y: 30)
+     self.calendarView.transform = translate
+     
+     UIView.animate(withDuration: 0.2, delay: 0, options: [.transitionCurlUp], animations: {
+     self.calendarView.layoutIfNeeded()
+     self.calendarView.alpha = 1
+     self.calendarView.transform = .identity
+     }) { completed in self.calendarView.reloadData(withAnchor:self.monthLabelDate)
+     } }
+     else {
+     //calendarView.selectDates(selectedDates)
+     self.calendarView.alpha = 0
+     self.calendarViewHeightConstraint.constant = 350
+     self.numberOfRows = 6
+     let translate = CGAffineTransform(translationX: 0, y: 30)
+     self.calendarView.transform = translate
+     
+     UIView.animate(withDuration: 0.3, delay: 0.1, options: [.transitionCurlUp], animations: {
+     self.calendarView.layoutIfNeeded()
+     self.calendarView.alpha = 1
+     self.calendarView.transform = .identity
+     self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+     })
+     }
+     }
+     
+     @IBAction func toggleMonthView(_ sender: Any) {
+     if numberOfRows == 6 {
+     self.calendarView.alpha = 0
+     self.calendarViewHeightConstraint.constant = 58.33
+     self.numberOfRows = 1
+     let translate = CGAffineTransform(translationX: 0, y: 30)
+     self.calendarView.transform = translate
+     UIView.animate(withDuration: 0.2, animations: {
+     self.calendarView.layoutIfNeeded()
+     self.calendarView.alpha = 1
+     self.calendarView.transform = .identity
+     }) { completed in
+     DispatchQueue.main.async {
+     self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+     }
+     }
+     } else {
+     self.calendarView.alpha = 0
+     self.calendarViewHeightConstraint.constant = 350
+     self.numberOfRows = 6
+     let translate = CGAffineTransform(translationX: 0, y: 30)
+     self.calendarView.transform = translate
+     
+     UIView.animate(withDuration: 0.2, animations: {
+     self.calendarView.layoutIfNeeded()
+     self.calendarView.alpha = 1
+     self.calendarView.transform = .identity
+     DispatchQueue.main.async {
+     self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+     }
+     })
+     }
+     } */
     
     
     @IBAction func toggleCalendarViewWithSegmentedControl(_ sender: Any) {
@@ -187,20 +195,20 @@ class CalendarMainViewController: UIViewController {
             }
         case 1:
             if numberOfRows == 6 {
-                       self.calendarView.alpha = 0
-                       self.calendarViewHeightConstraint.constant = 58.33
-                       self.numberOfRows = 1
-                       let translate = CGAffineTransform(translationX: 0, y: 30)
-                       self.calendarView.transform = translate
-                       UIView.animate(withDuration: 0.2, animations: {
-                           self.calendarView.layoutIfNeeded()
-                           self.calendarView.alpha = 1
-                           self.calendarView.transform = .identity
-                       }) { completed in
-                           DispatchQueue.main.async {
-                               self.calendarView.reloadData(withAnchor: self.monthLabelDate)
-                           }
-                       }
+                self.calendarView.alpha = 0
+                self.calendarViewHeightConstraint.constant = 58.33
+                self.numberOfRows = 1
+                let translate = CGAffineTransform(translationX: 0, y: 30)
+                self.calendarView.transform = translate
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.calendarView.layoutIfNeeded()
+                    self.calendarView.alpha = 1
+                    self.calendarView.transform = .identity
+                }) { completed in
+                    DispatchQueue.main.async {
+                        self.calendarView.reloadData(withAnchor: self.monthLabelDate)
+                    }
+                }
             }
         default:
             break
@@ -213,7 +221,7 @@ extension CalendarMainViewController: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
-//        let endDate = Date()
+        //        let endDate = Date()
         let endDate = formatter.date(from: "2020 10 01")!
         if numberOfRows == 6 {
             return ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: numberOfRows, generateInDates: .forAllMonths,generateOutDates: .tillEndOfRow)
@@ -231,7 +239,7 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
             calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "dateCell", for: indexPath) as! DateCell
         self.calendar(calendar, willDisplay: cell, forItemAt: date, cellState: cellState, indexPath: indexPath)
         return cell
-   
+        
         
     }
     
@@ -271,27 +279,27 @@ extension CalendarMainViewController: JTACMonthViewDelegate {
     
 }
 //MARK: Show today
- extension CalendarMainViewController {
-//     @objc func showTodayWithAnimate() {
-//         showToday(animate: true)
-//     }
-
-     func showToday(animate:Bool) {
-
+extension CalendarMainViewController {
+    //     @objc func showTodayWithAnimate() {
+    //         showToday(animate: true)
+    //     }
+    
+    func showToday(animate:Bool) {
+        
         calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: animate, preferredScrollPosition: nil, extraAddedOffset: 0) {
-        self.calendarView.selectDates([Date()])
-//         self.delegate?.calendarController(self, didSelect: Date())
-//         calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: animate, preferredScrollPosition: nil, extraAddedOffset: 0) { [unowned self] in
-////             self.getSchedule()
-//            self.delegate?.calendarController(self, didSelect: Date())
-//             self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
-//                 self.setUpMonthViews(from: visibleDates)
-//             }
-//
-// //            self.adjustCalendarViewHeight()
-//             self.calendarView.selectDates([Date()])
-//         }
-//     }
- }
-}
+            self.calendarView.selectDates([Date()])
+            //         self.delegate?.calendarController(self, didSelect: Date())
+            //         calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: true, animateScroll: animate, preferredScrollPosition: nil, extraAddedOffset: 0) { [unowned self] in
+            ////             self.getSchedule()
+            //            self.delegate?.calendarController(self, didSelect: Date())
+            //             self.calendarView.visibleDates {[unowned self] (visibleDates: DateSegmentInfo) in
+            //                 self.setUpMonthViews(from: visibleDates)
+            //             }
+            //
+            // //            self.adjustCalendarViewHeight()
+            //             self.calendarView.selectDates([Date()])
+            //         }
+            //     }
+        }
+    }
 }

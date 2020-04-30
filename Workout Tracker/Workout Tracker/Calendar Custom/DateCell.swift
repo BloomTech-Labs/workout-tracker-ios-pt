@@ -16,6 +16,7 @@ class DateCell: JTACDayCell  {
     
     @IBOutlet var selectedView:UIView!
 
- 
+    @IBOutlet weak var eventView: UIView!
+    
 }
 

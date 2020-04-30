@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rew-cc-DXK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rew-cc-DXK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ib Calendar Data Source-->
+        <!--Calendar Main View Controller-->
         <scene sceneID="hgu-zj-Xcj">
             <objects>
                 <viewController storyboardIdentifier="calendarSetup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rew-cc-DXK" customClass="CalendarMainViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -144,10 +144,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVh-aA-aab">
+                                                    <rect key="frame" x="36" y="61" width="8" height="8"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="qVh-aA-aab" secondAttribute="height" multiplier="1:1" id="7fr-QH-elF"/>
+                                                        <constraint firstAttribute="width" constant="8" id="AL0-hN-acl"/>
+                                                        <constraint firstAttribute="height" constant="8" id="COI-VI-Vfk"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="K1d-Ml-our" firstAttribute="centerY" secondItem="WH4-yg-CHy" secondAttribute="centerY" id="8kn-Ic-Tvx"/>
+                                                <constraint firstItem="qVh-aA-aab" firstAttribute="centerX" secondItem="K1d-Ml-our" secondAttribute="centerX" id="9hc-2l-dkI"/>
                                                 <constraint firstItem="K1d-Ml-our" firstAttribute="centerX" secondItem="WH4-yg-CHy" secondAttribute="centerX" id="DA4-Si-bKP"/>
+                                                <constraint firstItem="qVh-aA-aab" firstAttribute="centerY" secondItem="K1d-Ml-our" secondAttribute="centerY" constant="25" id="ZlY-5Q-c7F"/>
                                                 <constraint firstItem="E6M-Ap-H2b" firstAttribute="centerY" secondItem="WH4-yg-CHy" secondAttribute="centerY" id="ety-5O-Ld9"/>
                                                 <constraint firstItem="E6M-Ap-H2b" firstAttribute="centerX" secondItem="WH4-yg-CHy" secondAttribute="centerX" id="hux-ES-Yal"/>
                                             </constraints>
@@ -155,6 +166,7 @@
                                         <size key="customSize" width="80" height="80"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="E6M-Ap-H2b" id="Xpl-Bk-z37"/>
+                                            <outlet property="eventView" destination="qVh-aA-aab" id="JQf-m6-wl9"/>
                                             <outlet property="selectedView" destination="K1d-Ml-our" id="TUZ-fg-yVB"/>
                                         </connections>
                                     </collectionViewCell>

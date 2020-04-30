@@ -14,6 +14,8 @@ class MyActivitiesViewController: UIViewController, UITableViewDelegate, UITable
         //        getSchedule()
         getScheduleFromStorage()
         tableView.reloadData()
+        
+         
     }
     
     
