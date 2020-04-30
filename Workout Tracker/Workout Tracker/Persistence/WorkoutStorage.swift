@@ -76,27 +76,6 @@
         }
         return existingWorkouts
     }
-    
-    
-//    func update(workout: ScheduledWorkout, for exerciseDate: Date) throws {
-//        let exerciseDateString = dateFormatter.string(from: exerciseDate)
-//                var existingWorkouts: [ScheduledWorkout]
-//                 do {
-//                   existingWorkouts = try storage.fetch(for: exerciseDateString)
-//                } catch {
-//                    existingWorkouts = [] // no workouts were saved yet
-//                }
-//          let savingWorkouts = existingWorkouts
-//          let savingDate = exerciseDate
-//        
-////        var existingWorkouts : ScheduledWorkout?
-////        let savingWorkouts = existingWorkouts
-////        let savingExerciseDate = exerciseDate
-////
-//         
-//        try remove(workoutName: existingWorkouts!.workoutName, for: exerciseDate)
-//        
-//        try save(workout: savingWorkouts, for: savingDate)
-//    }
+
  }
 
