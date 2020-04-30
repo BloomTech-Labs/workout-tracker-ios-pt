@@ -213,7 +213,8 @@ extension CalendarMainViewController: JTACMonthViewDataSource {
     func configureCalendar(_ calendar: JTACMonthView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
         let startDate = formatter.date(from: "2020 01 01")!
-        let endDate = Date()
+//        let endDate = Date()
+        let endDate = formatter.date(from: "2020 10 01")!
         if numberOfRows == 6 {
             return ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: numberOfRows, generateInDates: .forAllMonths,generateOutDates: .tillEndOfRow)
         } else {
