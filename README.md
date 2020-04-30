@@ -1,9 +1,3 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 # Workout Tracker
 
 You can find the deployed project at [Workout Tracker](https://github.com/Lambda-School-Labs/workout-tracker-ios-pt7).
@@ -26,8 +20,6 @@ You can find the deployed project at [Workout Tracker](https://github.com/Lambda
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## Project Overview
-
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
  [Trello Board](https://trello.com/b/qWXOu3n5/labspt7-workout-tracker)
 
@@ -53,10 +45,6 @@ We wish to encourage *beginning users* in their fitness journey and assist them 
 
 ### Authentication API here
 
-### Auth0
-
-Auth0 is a secure and universal service which ensures authentication and authorization functionality.
-
 ## wger - Workout Manager API
 
 https://wger.de/en/exercise/muscle/overview/
@@ -66,10 +54,8 @@ Free and open source, and it provides a lot of data for us.
 
 ## Requirements
 
-🚫 These are examples, make sure this matches your project's requirements
-
--   iOS 8.0+
--   Xcode 7.3
+-   iOS 13+
+-   Xcode 11.4.1+
 -   Cocoa Pods
 
 ## Contributing
@@ -122,7 +108,7 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 See [Backend Documentation](https://github.com/Lambda-School-Labs/workout-tracker-be-pt7) for details on the backend of our project.
 
 
-[swift-image]: https://img.shields.io/badge/swift-3.0-orange.svg
+[swift-image]: https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE
