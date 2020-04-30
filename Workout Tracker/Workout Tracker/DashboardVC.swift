@@ -248,6 +248,24 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       performSegue(withIdentifier: "Celldetail", sender: indexPath)
+        modalPresentationStyle = .fullScreen
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Celldetail" {
+            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            destinationVC.scheduleFromStorage = arrayOfStoredSchedules[indexPath.row]
+            let cell = tableView.cellForRow(at: indexPath) as! ActivityScheduledTableViewCell
+            destinationVC.delegate = cell
+            //            destinationVC.schedule = schedules[indexPath.row]
+            
+            
+        }
+    }
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "toActivityDetail" {
 //            guard let destinationVC = segue.destination as? MyActivitiesDetailViewController,
