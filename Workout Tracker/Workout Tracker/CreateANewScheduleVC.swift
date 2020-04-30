@@ -145,8 +145,10 @@ class CreateANewScheduleVC: UIViewController {
         } catch {
             NSLog("There was an error saving the workout to Workout Storage")
         }
+       
+       saveAlertController()
+     
         
-        saveAlertController()
         
 //        dismiss(animated: true){
 //            self.saveAlertController()
@@ -177,17 +179,26 @@ class CreateANewScheduleVC: UIViewController {
     
     func saveAlertController() {
         let alert = UIAlertController(title: "Success!", message: "You have saved your workout", preferredStyle: .alert)
+//        present(alert, animated: true, completion: nil)
+        
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            action in
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+         DispatchQueue.main.async {
+                        alert.dismiss(animated: true, completion: nil)
+                        self.dismiss(animated: true) {
+                            NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
+                            NotificationCenter.default.post(name: .updateDate, object: self)
+                        }
+                    }
+        }))
         present(alert, animated: true, completion: nil)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            alert.dismiss(animated: true, completion: nil)
-            self.dismiss(animated: true) {
-                NotificationCenter.default.post(name: .updateMyActivitiesTableView, object: self)
-                NotificationCenter.default.post(name: .updateDate, object: self)
-            }
-        }
     }
     
+    
+   
 }
 
 extension CreateANewScheduleVC: UICollectionViewDelegate, UICollectionViewDataSource, DeleteCellDelegate {
