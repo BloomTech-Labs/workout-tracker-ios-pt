@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZCR-GP-TI4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Activities-->
+        <scene sceneID="E4W-ly-SqJ">
+            <objects>
+                <viewController id="IwS-nh-VGf" customClass="MyActivitiesViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g8y-Cq-tyb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHt-nQ-ic6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" placeholder="YES" id="Zv0-he-Azz"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="7HQ-mS-0jN">
+                                <rect key="frame" x="56" y="296" width="302" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-0j-ZCT">
+                                        <rect key="frame" x="0.0" y="0.0" width="156.5" height="30"/>
+                                        <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Upcoming Activities ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cZ-sZ-a3D">
+                                        <rect key="frame" x="189.5" y="0.0" width="112.5" height="30"/>
+                                        <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Past activities ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="30x-RG-FR9"/>
+                                    <constraint firstAttribute="width" constant="302" id="sOV-G3-y4P"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TSH-nv-Iis">
+                                <rect key="frame" x="10" y="334" width="394" height="479"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="117" id="KjV-c8-nfb" customClass="ActivityScheduledTableViewCell" customModule="Workout_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="394" height="117"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjV-c8-nfb" id="g13-QA-Qko">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="L5h-v2-dTv" kind="show" identifier="toActivityDetail" id="D40-fJ-Tge"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IwS-nh-VGf" id="rFG-uX-cOI"/>
+                                    <outlet property="delegate" destination="IwS-nh-VGf" id="Psp-3R-85l"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="centerX" secondItem="xHt-nQ-ic6" secondAttribute="centerX" id="D3P-u8-3vr"/>
+                            <constraint firstItem="TSH-nv-Iis" firstAttribute="top" secondItem="7HQ-mS-0jN" secondAttribute="bottom" constant="8" id="F0B-Ez-qe1"/>
+                            <constraint firstItem="7HQ-mS-0jN" firstAttribute="top" secondItem="xHt-nQ-ic6" secondAttribute="bottom" constant="8" id="GO5-BT-LYy"/>
+                            <constraint firstItem="BHx-BN-v4N" firstAttribute="trailing" secondItem="xHt-nQ-ic6" secondAttribute="trailing" id="Paf-G3-1KF"/>
+                            <constraint firstItem="xHt-nQ-ic6" firstAttribute="top" secondItem="BHx-BN-v4N" secondAttribute="top" id="V9f-Pr-DNh"/>
+                            <constraint firstItem="TSH-nv-Iis" firstAttribute="leading" secondItem="g8y-Cq-tyb" secondAttribute="leading" constant="10" id="anx-tl-ms9"/>
+                            <constraint firstItem="xHt-nQ-ic6" firstAttribute="leading" secondItem="BHx-BN-v4N" secondAttribute="leading" id="iUt-2B-Z3Z"/>
+                            <constraint firstAttribute="trailing" secondItem="TSH-nv-Iis" secondAttribute="trailing" constant="10" id="q7o-Aj-fJm"/>
+                            <constraint firstItem="BHx-BN-v4N" firstAttribute="bottom" secondItem="TSH-nv-Iis" secondAttribute="bottom" id="qc4-5f-4AQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BHx-BN-v4N"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="My Activities" id="zZs-TB-CJy">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4SW-g1-kTN"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="containerView" destination="xHt-nQ-ic6" id="Qxk-Zd-g1F"/>
+                        <outlet property="tableView" destination="TSH-nv-Iis" id="ZE3-yv-k8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B88-W6-6Sr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002.8985507246377" y="128.57142857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kha-JG-nZY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZCR-GP-TI4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l84-U1-2hA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99731498959999998" green="0.9774896502" blue="0.94349735980000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" red="0.46315543724873098" green="0.34781055561150026" blue="0.1369482506740953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IwS-nh-VGf" kind="relationship" relationship="rootViewController" id="MHC-Nr-wJB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cht-zQ-kIA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="128.57142857142856"/>
+        </scene>
+        <!--ActivityDetail-->
+        <scene sceneID="SZO-mE-tqw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ActivityDetail" id="L5h-v2-dTv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="YBQ-sr-osT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oB-uY-Jbf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1810.144927536232" y="133.92857142857142"/>
+        </scene>
+    </scenes>
+</document>

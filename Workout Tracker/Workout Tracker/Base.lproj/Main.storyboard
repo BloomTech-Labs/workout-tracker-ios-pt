@@ -7,20 +7,89 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LandingPageViewController" customModule="Workout_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <userGuides>
+                            <userLayoutGuide location="448" affinity="minY"/>
+                            <userLayoutGuide location="209" affinity="minX"/>
+                        </userGuides>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-3Q-PAI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.95705107869999995" green="0.94709905940000005" blue="0.91724300179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dCy-Wc-w3J">
+                                <rect key="frame" x="96" y="295" width="222" height="151.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV4-Sf-dmZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="80.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="62"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empowering you to take control of your workout schedule" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4go-U9-FNJ">
+                                        <rect key="frame" x="0.0" y="90.5" width="222" height="61"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Was-eD-StS">
+                                <rect key="frame" x="238" y="785" width="144" height="45"/>
+                                <color key="backgroundColor" red="0.83149415250000003" green="0.40867310759999997" blue="0.16249552370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="N9X-lU-5LJ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="t9g-n6-nNW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Get Started →">
+                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OXW-x4-lnn" kind="presentation" identifier="toSignUp" modalPresentationStyle="fullScreen" id="2CX-LO-iFG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.957051078680203" green="0.94709905944966377" blue="0.91724300175804585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0DN-gQ-Ll1"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="9Tr-2m-tU8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Was-eD-StS" secondAttribute="bottom" constant="32" id="9oh-Y9-vBr"/>
+                            <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerY" secondItem="Was-eD-StS" secondAttribute="centerY" constant="-437" id="Du0-jG-0tE"/>
+                            <constraint firstItem="dCy-Wc-w3J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="96" id="Pjg-8t-uhD"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aLU-hg-rbf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Was-eD-StS" secondAttribute="trailing" constant="32" id="eHv-MJ-Fp9"/>
+                            <constraint firstItem="dCy-Wc-w3J" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gF0-Mu-xD5"/>
+                            <constraint firstAttribute="trailing" secondItem="dCy-Wc-w3J" secondAttribute="trailing" constant="96" id="oLd-hD-lj4"/>
+                            <constraint firstItem="zTL-3Q-PAI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ocv-b2-2ry"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="Was-eD-StS" id="H1q-8F-avj"/>
+                        <outlet property="videoBackground" destination="zTL-3Q-PAI" id="4Tq-d7-Met"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Signup-->
+        <scene sceneID="1Aa-v5-TlD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Signup" id="OXW-x4-lnn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4mY-UP-Anj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O5j-Nh-TTo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="675" y="41"/>
         </scene>
     </scenes>
 </document>
